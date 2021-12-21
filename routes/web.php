@@ -20,3 +20,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'Guest\GuestController@index')->name('home');
 Route::get('/about', 'Guest\GuestController@about')->name('about');
 Route::get('/program', 'Guest\GuestController@program')->name('program');
+Route::get('/contact', 'Guest\GuestController@contact')->name('contact');

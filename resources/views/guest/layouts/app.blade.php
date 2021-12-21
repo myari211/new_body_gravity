@@ -27,7 +27,7 @@
                         <a class="nav-link" href="{{ route('program') }}">Program</a>
                     </li>
                     <li class="nav-item contact">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                     </li>
                 </ul>
             </div>
@@ -47,6 +47,9 @@
             }
             else if(pathname == '/program') {
                 $('.program').addClass("active");
+            }
+            else if(pathname == '/contact') {
+                $('.contact').addClass("active");
             }
 
 

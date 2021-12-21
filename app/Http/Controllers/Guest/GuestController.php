@@ -18,4 +18,9 @@ class GuestController extends Controller
     public function program() {
         return view('guest.program');
     }
+
+
+    public function contact() {
+        return view('guest.contact');
+    }
 }
