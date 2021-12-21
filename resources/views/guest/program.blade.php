@@ -30,17 +30,17 @@
                 <div>
                     <div class="row">
                         <div class="col-lg-12 d-flex justify-content-center">
-                            <span style="font-size:40px; font-weight:600">Our Program</span>
+                            <span style="font-size:40px; font-weight:600" class="animated fadeInDown">Our Program</span>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-lg-12 d-flex justify-content-center">
-                            <span style="font-size:20px; font-weight:500">Body Gravity was etablished in 2017 and until now we have helped many clients</span>
+                            <span style="font-size:20px; font-weight:500" class="animated fadeInDown delay-1s">Body Gravity was etablished in 2017 and until now we have helped many clients</span>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-lg-12 d-flex justify-content-center">
-                            <span style="font-size:20px; font-weight:500">who have problems with their body posture</span>
+                            <span style="font-size:20px; font-weight:500" class="animated fadeInDown delay-2s">who have problems with their body posture</span>
                         </div>
                     </div>
                 </div>
@@ -51,12 +51,12 @@
 <div class="container">
     <div class="row mt-5">
         <div class="col-lg-12 d-flex justify-content-center">
-            <span style="font-size:30px; font-weight:500" class="text-white">Program for public</span>
+            <span style="font-size:30px; font-weight:500" class="text-white wow fadeInDown">Program for public</span>
         </div>
     </div>
     <div class="row mt-5">
         <div class="col-lg-12">
-            <div class="card rounded-0 z-depth-0">
+            <div class="card rounded-0 z-depth-0 wow fadeInLeft">
                 <div class="card-body p-0">
                     <div class="row">
                         <div class="col-lg-4 d-flex align-items-center">
@@ -105,7 +105,7 @@
     </div>
     <div class="row mt-4">
         <div class="col-lg-12">
-            <div class="card rounded-0 z-depth-0">
+            <div class="card rounded-0 z-depth-0 wow fadeInRight">
                 <div class="card-body p-0">
                     <div class="row">
                         <div class="col-lg-4 d-flex align-items-center">
@@ -154,7 +154,7 @@
     </div>
     <div class="row mt-4">
         <div class="col-lg-12">
-            <div class="card rounded-0 z-depth-0">
+            <div class="card rounded-0 z-depth-0 wow fadeInLeft">
                 <div class="card-body p-0">
                     <div class="row">
                         <div class="col-lg-4 d-flex align-items-center">
@@ -203,7 +203,7 @@
     </div>
     <div class="row mt-4 mb-5">
         <div class="col-lg-12">
-            <div class="card rounded-0 z-depth-0">
+            <div class="card rounded-0 z-depth-0 wow fadeInRight">
                 <div class="card-body p-0">
                     <div class="row">
                         <div class="col-lg-4 d-flex align-items-center">
@@ -255,17 +255,17 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span style="font-size:30px; font-weight:600">Program For Coach</span>
+                <span style="font-size:30px; font-weight:600" class="wow fadeInDown">Program For Coach</span>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span style="font-weight:500">Want to learn about Body Gravity ?</span>
+                <span style="font-weight:500" class="wow fadeInDown">Want to learn about Body Gravity ?</span>
             </div>
         </div>
         <div class="row mt-5">
             <div class="col-lg-12">
-                <div class="card rounded-0">
+                <div class="card rounded-0 wow fadeInDown">
                     <div class="card-body p-0">
                         <div class="row">
                             <div class='col-lg-4'>
@@ -289,6 +289,84 @@
                                 <div class="row mt-auto">
                                     <div class="col-lg-12 d-flex justify-content-between align-items-end">
                                         <a data-toggle="collapse" href="#basic" aria-expanded="false" aria-controls="basic" class="d-flex align-items-center">
+                                            <small class="text-dark" style="font-weight:500">Details</small><i class="fas fa-arrow-down ml-2 text-dark animated fadeInDown infinite slow" style="font-size:10px;"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-sm btn-outline-black rounded-0 z-depth-0 mr-4">
+                                            Take Class <i class="fas fa-arrow-right ml-2 animated fadeInLeft slow infinite"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <div class="card rounded-0 wow fadeInDown">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class='col-lg-4'>
+                                <img src="{{ asset('image/intermediate.jpg') }}" class="w-100">
+                            </div>
+                            <div class="col-lg-8 d-flex flex-column pb-3">
+                                <div>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-12">
+                                            <span style="font-size:25px; font-weight:600">Intermediate Program</span>
+                                        </div>
+                                    </div>
+                                    <div class="collapse" id="intermediate">
+                                        <div class="row mt-5 mb-4">
+                                            <div class="col-lg-12">
+                                                <small>A training program for those of you who work in the world of sports, where we will teach you about Body Gravity at the Intermediate Level.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-auto">
+                                    <div class="col-lg-12 d-flex justify-content-between align-items-end">
+                                        <a data-toggle="collapse" href="#intermediate" aria-expanded="false" aria-controls="basic" class="d-flex align-items-center">
+                                            <small class="text-dark" style="font-weight:500">Details</small><i class="fas fa-arrow-down ml-2 text-dark animated fadeInDown infinite slow" style="font-size:10px;"></i>
+                                        </a>
+                                        <button type="button" class="btn btn-sm btn-outline-black rounded-0 z-depth-0 mr-4">
+                                            Take Class <i class="fas fa-arrow-right ml-2 animated fadeInLeft slow infinite"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="row mt-4">
+            <div class="col-lg-12">
+                <div class="card rounded-0 wow fadeInDown">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class='col-lg-4'>
+                                <img src="{{ asset('image/advance.jpg') }}" class="w-100">
+                            </div>
+                            <div class="col-lg-8 d-flex flex-column pb-3">
+                                <div>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-12">
+                                            <span style="font-size:25px; font-weight:600">Advance Program</span>
+                                        </div>
+                                    </div>
+                                    <div class="collapse" id="advance">
+                                        <div class="row mt-5 mb-4">
+                                            <div class="col-lg-12">
+                                                <small>A training program for those of you who work in the world of sports, where we will teach you about Body Gravity at the Advance Level.</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-auto">
+                                    <div class="col-lg-12 d-flex justify-content-between align-items-end">
+                                        <a data-toggle="collapse" href="#advance" aria-expanded="false" aria-controls="advance" class="d-flex align-items-center">
                                             <small class="text-dark" style="font-weight:500">Details</small><i class="fas fa-arrow-down ml-2 text-dark animated fadeInDown infinite slow" style="font-size:10px;"></i>
                                         </a>
                                         <button type="button" class="btn btn-sm btn-outline-black rounded-0 z-depth-0 mr-4">
