@@ -429,7 +429,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-lg-12 d-flex justify-content-center">
-                            <img src="{{ asset("image/Karen.png") }}" style="width:200px; height:200px;" class="rounded-circle">
+                            <img src="{{ asset("image/karen.png") }}" style="width:200px; height:200px;" class="rounded-circle">
                         </div>
                     </div>
                     <div class="row mt-4">
