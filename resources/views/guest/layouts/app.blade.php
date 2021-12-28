@@ -35,6 +35,9 @@
                         <li class="nav-item mr-3 program">
                             <a class="nav-link" href="{{ route('program') }}">Program</a>
                         </li>
+                        <li class="nav-item mr-3 testimonial">
+                            <a class="nav-link" href="{{ route('testimonial') }}">Testimonial</a>
+                        </li>
                         <li class="nav-item contact">
                             <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                         </li>
@@ -87,6 +90,9 @@
             }
             else if(pathname == '/contact') {
                 $('.contact').addClass("active");
+            }
+            else if(pathname == '/testimonial') {
+                $('.testimonial').addClass("active");
             }
 
 

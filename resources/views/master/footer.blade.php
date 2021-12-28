@@ -117,7 +117,7 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-lg-12">
-                                <span class="text-dark" style="font-weight:600">Saturday - Monday</span>
+                                <span class="text-dark" style="font-weight:600">Saturday - Sunday</span>
                             </div>
                         </div>
                         <div class="row">

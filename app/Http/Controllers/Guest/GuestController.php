@@ -23,4 +23,8 @@ class GuestController extends Controller
     public function contact() {
         return view('guest.contact');
     }
+
+    public function testimonial() {
+        return view('guest.testimonial');
+    }
 }
