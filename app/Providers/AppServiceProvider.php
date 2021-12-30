@@ -14,6 +14,7 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         RealRashid\SweetAlert\SweetAlertServiceProvider::class;
+        Schema::defaultStringLength(191);
     }
 
     /**
