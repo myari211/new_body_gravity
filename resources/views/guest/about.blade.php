@@ -112,40 +112,25 @@
                 <img src="{{ asset('image/body_logo.png') }}" style="width:400px;" class="wow fadeInRight">
             </div>
             <div class="col-lg-6">
-                <div class="row wow fadeInLeft">
+                <div class="row mt-3">
                     <div class="col-lg-12">
-                        <span class="text-white" style="font-weight:500">
-                            Body Gravity is a new way of viewing and training the body with the aim of achieving perfect body connections to produce maximum strength that will keep the body from injury or pain and increase physical abilities quickly as never imagined.
-                        </span>
-                    </div>
-                </div>
-                <div class="row mt-3 wow fadeInLeft">
-                    <div class="col-lg-12">
-                        <span class="text-white" style="font-weight:500">
-                            Body Gravity is a method of changing the body's movement system with the aim of changing the formation / arrangement of the bones of the body.
-                        </span>
+                        <span class="text-white wow fadeInLeft" style="font-weight:600">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement</span>
                     </div>
                 </div>
                 <div class="collapse" id="collapseExample">
-                    <div class="row mt-3">
+                    <div class='row mt-3'>
                         <div class="col-lg-12">
-                            <span class="text-white" style="font-weight:500">
-                                This movement system will provide the body's ability to be able to express truly / deeply / completely / completely by itself without being ordered or thought about, at every joint can be open, free and wide so that it will create a condition that is very possible to train the body to its maximum capacity. so far.
-                            </span>
+                            <span class="text-white" style="font-weight:600">We aim of achieving perfect body connections of our members to gain their maximum strength. We also aim everybody to has knowledge about how a perfect body structure actually is and how to have full body awareness of yours.</span>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-lg-12">
-                            <span class="text-white" style="font-weight:500">
-                                Creating space that didn't exist before, creating energy that was previously incapable of, creating shapes that were previously difficult...
-                            </span>
+                            <span class="font-weight-bold text-white">So, what are you waiting for, go check out our programs !</span>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-lg-12">
-                            <span class="text-white" style="font-weight:500">
-                                which over time will teach the body to use its body weight as a burden to train and use in a better way and become more independent with without assistance or machines to assist in generating or enhancing the body's abilities. Which will make the body to be ready to face every condition or environmental situation that exists even though it is extreme.
-                            </span>
+                            <span class="font-weight-bold text-white">Let us know goal and See you on the studio !</span>
                         </div>
                     </div>
                 </div>
@@ -468,40 +453,32 @@
                 <img src="{{ asset('image/body_logo.png') }}" class="w-100">
             </div>
         </div>
-        <div class="row wow fadeInLeft">
-            <div class="col-lg-12">
-                <span class="text-white text-justify" style="font-weight:500">
-                    Body Gravity is a new way of viewing and training the body with the aim of achieving perfect body connections to produce maximum strength that will keep the body from injury or pain and increase physical abilities quickly as never imagined.
-                </span>
-            </div>
-        </div>
-        <div class="row mt-3 wow fadeInLeft">
-            <div class="col-lg-12">
+        <div class="row mt-4">
+            <div class="col-12 wow fadeInLeft">
                 <span class="text-white" style="font-weight:500">
-                    Body Gravity is a method of changing the body's movement system with the aim of changing the formation / arrangement of the bones of the body.
+                    Body Gravity is a pilate studio located in South Jakarta established since 2017. What differentiate Body Gravity from
+                    another pilates studio is we use different approach that focus on a perfect structure of the body which applied in
+                    each of our movement
                 </span>
             </div>
         </div>
-        <div class="collapse" id="collapseExample">
+        <div class="collapse" id="collapse">
             <div class="row mt-3">
-                <div class="col-lg-12">
-                    <span class="text-white" style="font-weight:500">
-                        This movement system will provide the body's ability to be able to express truly / deeply / completely / completely by itself without being ordered or thought about, at every joint can be open, free and wide so that it will create a condition that is very possible to train the body to its maximum capacity. so far.
+                <div class="col-12">
+                    <span style="font-weight:500" class="text-white">
+                        We aim of achieving perfect body connections of our members to gain their maximum strenght. We also aim every body to
+                        has knowledge about how a perfect body structure actually is and how to have full body awareness of yours.
                     </span>
                 </div>
             </div>
             <div class="row mt-3">
-                <div class="col-lg-12">
-                    <span class="text-white" style="font-weight:500">
-                        Creating space that didn't exist before, creating energy that was previously incapable of, creating shapes that were previously difficult...
-                    </span>
+                <div class="col-12">
+                    <span class="font-weight-bold text-white">So, what are you waiting for, go check out our programs !</span>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-lg-12">
-                    <span class="text-white" style="font-weight:500">
-                        which over time will teach the body to use its body weight as a burden to train and use in a better way and become more independent with without assistance or machines to assist in generating or enhancing the body's abilities. Which will make the body to be ready to face every condition or environmental situation that exists even though it is extreme.
-                    </span>
+                    <span class="font-weight-bold text-white">Let Us know your goal and See you on the studio !</span>
                 </div>
             </div>
         </div>

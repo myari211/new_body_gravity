@@ -18,6 +18,7 @@
         </style>
     </head>
     <body>
+        @include('sweetalert::alert')
         @include('master.loader')
         <div class="d-none d-lg-block">
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top z-depth-0 p-4 d-flex justify-content-between" id="header">

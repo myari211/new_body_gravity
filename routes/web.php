@@ -21,4 +21,7 @@ Route::get('/', 'Guest\GuestController@index')->name('home');
 Route::get('/about', 'Guest\GuestController@about')->name('about');
 Route::get('/program', 'Guest\GuestController@program')->name('program');
 Route::get('/contact', 'Guest\GuestController@contact')->name('contact');
+
+// testimonial
 Route::get('/testimonial', 'Guest\GuestController@testimonial')->name('testimonial');
+Route::post('/testimonial', 'Guest\GuestController@testimonial_post')->name('testimonial_post');

@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 pr-4">
-                                            <small>This program is targeted for people who want an ideal body shape ratio in the arms or thighs, remove fat folds on the back because of bras, shape the buttocks (from flat to round), slim the waist, or remove double chin.</small>
+                                            <small>To help you achieve your dream body</small>
                                         </div>
                                     </div>
                                 </div>
@@ -104,12 +104,16 @@
                                 <div>
                                     <div class="row mt-4">
                                         <div class="col-lg-12">
-                                            <span style="font-size:25px; font-weight:600">Rehabilitation</span>
+                                            <span style="font-size:25px; font-weight:600">Pain Management</span>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 pr-4">
-                                            <small>This program is targeted for people who need physical rehabilitation so they can restore their body function because of knee injury, hip joint injury, ankle injury, shoulder injury, spinal cord injury, pinched nerve, neck pain, waist, back or stiff shoulder.</small>
+                                            <small>
+                                                There are many pains which caused by having bad posture, such as scoliosis, back pain, pinched nerve, etc. Or anyone of you are on injury recovery process.
+                                                We suggest you to take this program because Body Gravity will help you to offload the joints and focus on perfect structures of the body which ultimately leading
+                                                to a reduction of pain and then healed completely.
+                                            </small>
                                         </div>
                                     </div>
                                 </div>
@@ -146,7 +150,10 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 pr-4">
-                                            <small>This program is targeted to building kids’ habit since early age to have good posture as we see nowadays many kids age 8 years old already have back issues due to repeatable bad habits.</small>
+                                            <small>
+                                                Teach your children from a young age to have good movement habits and to keep them active, especially most of the children do less exercise and
+                                                spend more time of sitting while using tech nowadays.    
+                                            </small>
                                         </div>
                                     </div>
                                 </div>
@@ -183,7 +190,11 @@
                                     </div>
                                     <div class="row">
                                         <div class="col-lg-12 pr-4">
-                                            <small>This program is targeted for senior aged people who need rehabilitation so they can restore their body function as many senior people find it difficult to walk or do daily activities and even sleeping because their bodies are stiff or in pain.</small>
+                                            <small>
+                                                Senior program is perfectly fits for seniors who are hardly moved to the body. By taking some trainings the body will have a better body
+                                                will have a better body connection and get stronger to move. You are never too late to begin the pillates practice due pillates will help
+                                                you maintain and/or gain your balance, Strength, Flexibility, Focus, Breath and all areas you may notice have changed with age.
+                                            </small>
                                         </div>
                                     </div>
                                 </div>
@@ -377,7 +388,7 @@
                             <div class="collapse" id="product_1_details">
                                 <div class="row">
                                     <div class="col-12">
-                                        <span>This program is targeted for people who want an ideal body shape ratio in the arms or thighs, remove fat folds on the back because of bras, shape the buttocks (from flat to round), slim the waist, or remove double chin.</span>    
+                                        <span>To Help you achieve your dream body</span>    
                                     </div>
                                 </div>
                             </div>
@@ -411,13 +422,16 @@
                         <div class="pl-3 pr-3 pb-4">
                             <div class="row mt-3">
                                 <div class="col-12">
-                                    <span style="font-size:25px; font-weight:500">Rehabilitation</span>
+                                    <span style="font-size:25px; font-weight:500">Pain Management</span>
                                 </div>
                             </div>
                             <div class="collapse" id="product_2_details">
                                 <div class="row mt-3">
                                     <div class="col-12">
-                                        <span>This program is targeted for people who need physical rehabilitation so they can restore their body function because of knee injury, hip joint injury, ankle injury, shoulder injury, spinal cord injury, pinched nerve, neck pain, waist, back or stiff shoulder.</span>    
+                                        <span>
+                                            There are many pains which caused by having bad posture, such as scoliosis, back pain, pinched nerve, etc. Or anyone of you are on injury recovery process. We suggest you to take this program because Body Gravity will help
+                                            you to offload the joints and focus on perfect structures of the body which ultimately leading to a reduction of pain and them healed completely.
+                                        </span>    
                                     </div>
                                 </div>
                             </div>
@@ -457,7 +471,7 @@
                             <div class="collapse" id="product_3_details">
                                 <div class="row mt-3">
                                     <div class="col-12">
-                                        <span>This program is targeted to building kids’ habit since early age to have good posture as we see nowadays many kids age 8 years old already have back issues due to repeatable bad habits.</span>    
+                                        <span>Teach your children from a young age to have good movement habits and to keep them active, especially most of the children do less exercise and spend more time of sitting while using tech nowadays</span>
                                     </div>
                                 </div>
                             </div>
@@ -497,7 +511,11 @@
                             <div class="collapse" id="product_4_details">
                                 <div class="row mt-3">
                                     <div class="col-12">
-                                        <span>This program is targeted for senior aged people who need rehabilitation so they can restore their body function as many senior people find it difficult to walk or do daily activities and even sleeping because their bodies are stiff or in pain.</span>    
+                                        <span>
+                                            Senior Program is perfectly fits for seniors who are hardly moved the body. By taking some tranings the body will have a better body
+                                            connection and get stronger to move. You are never too late to begin the pilates practice due pilates will help you maintain and/or
+                                            gain your balance, strength, flexibility, focus, breath, and all areas you may notice have changed with age.
+                                        </span>    
                                     </div>
                                 </div>
                             </div>
