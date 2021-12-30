@@ -520,99 +520,99 @@
             </div>
         </div>
     </div>
-</div>
-<div class="bg-white pt-3">
-    <div class="container">
-        <div class="row mt-4">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <span style="font-size:30px; font-weight:600">Our Testimonial</span>
+    <div class="bg-white pt-3">
+        <div class="container">
+            <div class="row mt-4">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <span style="font-size:30px; font-weight:600">Our Testimonial</span>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <span style="font-weight:500">What they say about us ? </span>
+            <div class="row">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <span style="font-weight:500">What they say about us ? </span>
+                </div>
             </div>
-        </div>
-        <div class="row mt-4">
-            <div class="col-lg-1 d-flex align-items-center">
-                <button type="button" class="btn btn-sm p-3 rounded-circle z-depth-0 border" data-target="#carouselExampleControls" role="button" data-slide="prev">
-                    <i class="fas fa-arrow-left"></i>
-                </button>
-            </div>
-            <div class="col-lg-10">
-                <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="card border">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <img src="{{ asset('image/andry.png') }}" class="w-100 rounded-circle">
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span style="font-weight:600; font-size:20px;">Andry</span>
-                                                        </div>
+            <div class="row mt-4">
+                <div class="col-lg-1 d-flex align-items-center">
+                    <button type="button" class="btn btn-sm p-3 rounded-circle z-depth-0 border" data-target="#carouselExampleControls" role="button" data-slide="prev">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                </div>
+                <div class="col-lg-10">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="card border">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <img src="{{ asset('image/andry.png') }}" class="w-100 rounded-circle">
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <i>
-                                                                <small class="text-muted italic" style="font-weight:500">CEO of Body Gravity</small>
-                                                            </i>
+                                                    <div class="col-lg-8">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span style="font-weight:600; font-size:20px;">Andry</span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-4">
-                                                        <div class="col-lg-12">
-                                                            <small>{{ Str::limit("Body Gravity its good choice for your Scoliosis problem", 200) }}</small>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <i>
+                                                                    <small class="text-muted italic" style="font-weight:500">CEO of Body Gravity</small>
+                                                                </i>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-lg-12">
-                                                            <a href="">
-                                                                <small class="text-dark">Read More</small>
-                                                            </a>
+                                                        <div class="row mt-4">
+                                                            <div class="col-lg-12">
+                                                                <small>{{ Str::limit("Body Gravity its good choice for your Scoliosis problem", 200) }}</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12">
+                                                                <a href="">
+                                                                    <small class="text-dark">Read More</small>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="card border">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <img src="{{ asset('image/imelda.png') }}" class="w-100 rounded-circle">
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span style="font-size:20px; font-weight:600">Imelda</span>
-                                                        </div>
+                                    <div class="col-lg-6">
+                                        <div class="card border">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <img src="{{ asset('image/imelda.png') }}" class="w-100 rounded-circle">
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <i>
-                                                                <small class="text-muted" style="font-weight:500">Coach at Body Gravity</small>
-                                                            </i>
+                                                    <div class="col-lg-8">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span style="font-size:20px; font-weight:600">Imelda</span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-4">
-                                                        <div class="col-lg-12">
-                                                            <small>{{ Str::limit("Body Gravity can solve my backpain problem, and my scoliosis geting better and better day by day", 60) }}</small>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <i>
+                                                                    <small class="text-muted" style="font-weight:500">Coach at Body Gravity</small>
+                                                                </i>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-lg-12">
-                                                            <a href="">
-                                                                <small class="text-dark underline">
-                                                                    Read More
-                                                                </small>
-                                                            </a>
+                                                        <div class="row mt-4">
+                                                            <div class="col-lg-12">
+                                                                <small>{{ Str::limit("Body Gravity can solve my backpain problem, and my scoliosis geting better and better day by day", 60) }}</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12">
+                                                                <a href="">
+                                                                    <small class="text-dark underline">
+                                                                        Read More
+                                                                    </small>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -621,78 +621,78 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="carousel-item">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <div class="card border">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <img src="{{ asset('image/karen.png') }}" class="w-100 rounded-circle">
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span style="font-weight:600; font-size:20px;">Karen</span>
-                                                        </div>
+                            <div class="carousel-item">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="card border">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <img src="{{ asset('image/karen.png') }}" class="w-100 rounded-circle">
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <i>
-                                                                <small class="text-muted italic" style="font-weight:500">Coach at Body Gravity</small>
-                                                            </i>
+                                                    <div class="col-lg-8">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span style="font-weight:600; font-size:20px;">Karen</span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-4">
-                                                        <div class="col-lg-12">
-                                                            <small>{{ Str::limit("Body Gravity its good choice for your Scoliosis problem", 200) }}</small>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <i>
+                                                                    <small class="text-muted italic" style="font-weight:500">Coach at Body Gravity</small>
+                                                                </i>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-lg-12">
-                                                            <a href="">
-                                                                <small class="text-dark">Read More</small>
-                                                            </a>
+                                                        <div class="row mt-4">
+                                                            <div class="col-lg-12">
+                                                                <small>{{ Str::limit("Body Gravity its good choice for your Scoliosis problem", 200) }}</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12">
+                                                                <a href="">
+                                                                    <small class="text-dark">Read More</small>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="card border">
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col-lg-4">
-                                                    <img src="{{ asset('image/testi1.jpg') }}" class="rounded-circle" style="width:120px; height:120px;">
-                                                </div>
-                                                <div class="col-lg-8">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span style="font-size:20px; font-weight:600">Jessica</span>
-                                                        </div>
+                                    <div class="col-lg-6">
+                                        <div class="card border">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-4">
+                                                        <img src="{{ asset('image/testi1.jpg') }}" class="rounded-circle" style="width:120px; height:120px;">
                                                     </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <i>
-                                                                <small class="text-muted" style="font-weight:500">Coach at Body Gravity</small>
-                                                            </i>
+                                                    <div class="col-lg-8">
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span style="font-size:20px; font-weight:600">Jessica</span>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-4">
-                                                        <div class="col-lg-12">
-                                                            <small>{{ Str::limit("Body Gravity can solve my backpain problem, and my scoliosis geting better and better day by day", 60) }}</small>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <i>
+                                                                    <small class="text-muted" style="font-weight:500">Coach at Body Gravity</small>
+                                                                </i>
+                                                            </div>
                                                         </div>
-                                                    </div>
-                                                    <div class="row mt-2">
-                                                        <div class="col-lg-12">
-                                                            <a href="">
-                                                                <small class="text-dark underline">
-                                                                    Read More
-                                                                </small>
-                                                            </a>
+                                                        <div class="row mt-4">
+                                                            <div class="col-lg-12">
+                                                                <small>{{ Str::limit("Body Gravity can solve my backpain problem, and my scoliosis geting better and better day by day", 60) }}</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12">
+                                                                <a href="">
+                                                                    <small class="text-dark underline">
+                                                                        Read More
+                                                                    </small>
+                                                                </a>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -704,11 +704,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-1 d-flex align-items-center">
-                <button type="button" class="btn btn-md p-3 rounded-circle border z-depth-0" data-target="#carouselExampleControls" role="button" data-slide="next">
-                    <i class="fas fa-arrow-right text-dark"></i>
-                </button>
+                <div class="col-lg-1 d-flex align-items-center">
+                    <button type="button" class="btn btn-md p-3 rounded-circle border z-depth-0" data-target="#carouselExampleControls" role="button" data-slide="next">
+                        <i class="fas fa-arrow-right text-dark"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </div>
