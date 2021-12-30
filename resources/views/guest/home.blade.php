@@ -1144,5 +1144,108 @@
             </div>
         </div>
     </div>
+    <div class="bg-white pt-4">
+        <div class='container'>
+            <div class="row">
+                <div class="col-lg-12 d-flex justify-content-center">
+                    <span style="font-weight:500; font-size:25px;">What they say about us ? </span>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card border">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-lg-4 d-flex justify-content-center">
+                                                        <img src="{{ asset('image/andry.png') }}" class="rounded-circle" style="width:200px; height:200px;">
+                                                    </div>
+                                                    <div class="col-lg-8">
+                                                        <div class="row mt-4">
+                                                            <div class="col-lg-12 d-flex justify-content-center">
+                                                                <span style="font-weight:600; font-size:20px;">Andry</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12 d-flex justify-content-center">
+                                                                <i>
+                                                                    <small class="text-muted italic" style="font-weight:500">CEO of Body Gravity</small>
+                                                                </i>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-4">
+                                                            <div class="col-lg-12 d-flex justify-content-center">
+                                                                <small>{{ Str::limit("Body Gravity its good choice for your Scoliosis problem", 200) }}</small>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row mt-2">
+                                                            <div class="col-lg-12 d-flex justify-content-center">
+                                                                <a href="">
+                                                                    <small class="text-dark">Read More</small>
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            @for($i = 0; $i < 5; $i++)
+                                <div class="carousel-item">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="card border">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 d-flex justify-content-center">
+                                                            <img src="{{ asset('image/imelda.png') }}" class="rounded-circle" style="width:200px; height:200px;">
+                                                        </div>
+                                                        <div class="col-lg-8">
+                                                            <div class="row mt-4">
+                                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                                    <span style="font-size:20px; font-weight:600">Imelda</span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row">
+                                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                                    <i>
+                                                                        <small class="text-muted" style="font-weight:500">Coach at Body Gravity</small>
+                                                                    </i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-4">
+                                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                                    <small>{{ Str::limit("Body Gravity can solve my backpain problem, and my scoliosis geting better and better day by day", 60) }}</small>
+                                                                </div>
+                                                            </div>
+                                                            <div class="row mt-2">
+                                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                                    <a href="">
+                                                                        <small class="text-dark underline">
+                                                                            Read More
+                                                                        </small>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            @endfor
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection
