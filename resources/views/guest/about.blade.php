@@ -462,7 +462,7 @@
                 </span>
             </div>
         </div>
-        <div class="collapse" id="collapse">
+        <div class="collapse" id="show-more">
             <div class="row mt-3">
                 <div class="col-12">
                     <span style="font-weight:500" class="text-white">
@@ -484,7 +484,7 @@
         </div>
         <div class="row mt-5 mb-5">
             <div class="col-lg-12 d-flex justify-content-center">
-                <button type="button" class="wow fadeIn btn btn-sm rounded-pill btn-outline-white text-capitalize m-0" id="button_hover" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                <button type="button" class="wow fadeIn btn btn-sm rounded-pill btn-outline-white text-capitalize m-0" id="button_hover" data-toggle="collapse" href="#show-more" aria-expanded="false" aria-controls="collapseExample">
                     Read More <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite slow"></i>
                 </button>
             </div>
