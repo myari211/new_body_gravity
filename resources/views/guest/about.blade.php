@@ -49,7 +49,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(242,3,58, 0.6) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/strong.png') }});
     }
 
@@ -58,7 +58,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(30,155,213, 0.6) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/pain.png') }});
     }
 
@@ -67,7 +67,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(252,106,160, 0.7) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/agile.jpg') }});
     }
 
@@ -76,7 +76,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg,rgba(4,170,109, 0.7) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg,rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/posture.jpg') }});
     }
 </style>
@@ -104,39 +104,39 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="text-white wow fadeInUp" style="font-size:30px; font-weight:500">What is Body Gravity ?</span>
+                <span class="wow fadeInUp" style="font-size:30px; font-weight:500">What is Body Gravity ?</span>
             </div>
         </div>
         <div class="row mt-5 pb-5">
             <div class="col-lg-6 d-flex align-items-center">
-                <img src="{{ asset('image/body_logo.png') }}" style="width:400px;" class="wow fadeInRight">
+                <img src="{{ asset('image/body_black.jpeg') }}" style="width:400px;" class="wow fadeInRight">
             </div>
             <div class="col-lg-6">
                 <div class="row mt-3">
                     <div class="col-lg-12">
-                        <span class="text-white wow fadeInLeft" style="font-weight:600">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement</span>
+                        <span class="wow fadeInLeft" style="font-weight:600">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement</span>
                     </div>
                 </div>
                 <div class="collapse" id="collapseExample">
                     <div class='row mt-3'>
                         <div class="col-lg-12">
-                            <span class="text-white" style="font-weight:600">We aim of achieving perfect body connections of our members to gain their maximum strength. We also aim everybody to has knowledge about how a perfect body structure actually is and how to have full body awareness of yours.</span>
+                            <span style="font-weight:600">We aim of achieving perfect body connections of our members to gain their maximum strength. We also aim everybody to has knowledge about how a perfect body structure actually is and how to have full body awareness of yours.</span>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-lg-12">
-                            <span class="font-weight-bold text-white">So, what are you waiting for, go check out our programs !</span>
+                            <span class="font-weight-bold">So, what are you waiting for, go check out our programs !</span>
                         </div>
                     </div>
                     <div class="row mt-3">
                         <div class="col-lg-12">
-                            <span class="font-weight-bold text-white">Let us know goal and See you on the studio !</span>
+                            <span class="font-weight-bold">Let us know goal and See you on the studio !</span>
                         </div>
                     </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col-lg-12">
-                        <button type="button" class="wow fadeIn btn btn-sm rounded-pill btn-outline-white text-capitalize m-0" id="button_hover" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <button type="button" class="wow fadeIn btn btn-sm rounded-pill btn-outline-black text-capitalize m-0 z-depth-0 button_hover_black" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                             Read More <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite slow"></i>
                         </button>
                     </div>
@@ -145,12 +145,12 @@
         </div>
         <div class="row mt-5">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="text-white wow fadeInDown" style="font-size:30px; font-weight:500">Advantage</span>
+                <span class="wow fadeInDown" style="font-size:30px; font-weight:500">Advantage</span>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="text-white wow fadeInDown" style="font-weight:500">Come Join and get this advantage</span>
+                <span class="wow fadeInDown" style="font-weight:500">Come Join and get this advantage</span>
             </div>
         </div>
         <div class="row mt-5">
@@ -258,7 +258,7 @@
             </div>
         </div>
     </div>
-    <div class="bg-white pt-5 pb-5">
+    {{-- <div class="bg-white pt-5 pb-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
@@ -381,7 +381,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
     <div class="row">
         <div class="col-lg-12">
             <div id="header_footer">
