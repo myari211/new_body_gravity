@@ -10,6 +10,6 @@
     html, body{
         font-family: 'Montserrat', sans-serif;
         overflow-x:hidden;
-        background-color:black;
+        /* background-color:black; */
     }
 </style>

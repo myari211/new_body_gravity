@@ -15,6 +15,10 @@
                 -o-transition: all 0.5s ease;
                 transition: all 0.5s ease;
             }
+
+            .active_section {
+                border-bottom: 2px solid #000;
+            }
         </style>
     </head>
     <body>
@@ -24,23 +28,24 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top z-depth-0 p-4 d-flex justify-content-between" id="header">
                 <div class="container">
                     <a class="navbar-brand" href="#">
-                        <img src="{{ asset('image/body_logo.png') }}" style="width:140px;">
+                        <img src="{{ asset('image/body_logo.png') }}" style="width:140px;" id="image">
+                        <img src="{{ asset('image/body_black.jpeg') }}" style="width:140px;" id="other_image" class="d-none">
                     </a>
                     <ul class="navbar-nav">
                         <li class="nav-item mr-2 home">
-                            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link menu" href="/">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item mr-3 about">
-                            <a class="nav-link" href="{{ route('about') }}">About Us</a>
+                            <a class="nav-link menu" href="{{ route('about') }}">About Us</a>
                         </li>
                         <li class="nav-item mr-3 program">
-                            <a class="nav-link" href="{{ route('program') }}">Program</a>
+                            <a class="nav-link menu" href="{{ route('program') }}">Program</a>
                         </li>
                         <li class="nav-item mr-3 testimonial">
-                            <a class="nav-link" href="{{ route('testimonial') }}">Testimonial</a>
+                            <a class="nav-link menu" href="{{ route('testimonial') }}">Testimonial</a>
                         </li>
                         <li class="nav-item contact">
-                            <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
+                            <a class="nav-link menu" href="{{ route('contact') }}">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -56,7 +61,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="basicExampleNav">
-                        <ul class="navbar-nav">
+                        <ul class="navbar-nav" id="menu">
                             <li class="nav-item mr-2 home">
                                 <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                             </li>
@@ -105,17 +110,25 @@
 
             $(window).on('scroll', function () {
                 if($(window).scrollTop() > 100) {
-                    $('#header').addClass('black');
+                    $('#header').addClass('bg-white');
                     $('#header').removeClass('p-4');
-                    $('#header').addClass('pr-4 pl-4 pt-2 pb-2')
+                    $('#header').addClass('pr-4 pl-4 pt-2 pb-2');
+                    $('.menu').addClass('text-dark');
                     $('#header_mobile').addClass('black');
+                    $('#image').addClass('d-none');
+                    $('#other_image').removeClass('d-none');
+                    $('.active').addClass('active_section');
                 }
                 else
                 {
-                    $('#header').removeClass('black');
+                    $('#header').removeClass('bg-white');
                     $('#header').removeClass('pr-4 pl-4 pt-2 pb-2');
                     $('#header').addClass('p-4');
+                    $('.menu').removeClass('text-dark');
                     $('#header_mobile').removeClass('black');
+                    $('#other_image').addClass('d-none');
+                    $('#image').removeClass('d-none');
+                    $('.active').removeClass('active_section');
                 }
             });
         </script>

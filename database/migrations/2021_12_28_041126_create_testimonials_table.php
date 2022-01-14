@@ -21,6 +21,7 @@ class CreateTestimonialsTable extends Migration
             $table->string('job');
             $table->text('testimony');
             $table->string('status');
+            $table->string('avatar');
             $table->timestamps();
         });
     }

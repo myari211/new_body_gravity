@@ -28,7 +28,10 @@ class GuestController extends Controller
     }
 
     public function testimonial() {
-        return view('guest.testimonial');
+        $testimonial = DB::table('testimonials')
+            ->get();
+
+        return view('guest.testimonial', compact('testimonial'));
     }
 
 
@@ -53,6 +56,7 @@ class GuestController extends Controller
     }
 
     private function postTestimony($request) {
+        dd($request->all());
         DB::table('testimonials')
             ->insert([
                 "first_name" => $request->first_name,
@@ -63,6 +67,6 @@ class GuestController extends Controller
                 "status" => "Deactive",
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),
-            ]);
+        ]);
     }
 }

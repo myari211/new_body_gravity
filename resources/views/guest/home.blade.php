@@ -28,7 +28,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(242,3,58, 0.6) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/strong.png') }});
     }
 
@@ -37,7 +37,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(30,155,213, 0.6) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/pain.png') }});
     }
 
@@ -46,7 +46,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(252,106,160, 0.7) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/agile.jpg') }});
     }
 
@@ -55,7 +55,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg,rgba(4,170,109, 0.7) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg,rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/posture.jpg') }});
     }
 
@@ -101,7 +101,7 @@
         <div>
             <div class="row" style="margin-top: 100px;">
                 <div class="col-lg-12 d-flex justify-content-center">
-                    <span class="text-white wow fadeIn" style="font-size:30px; font-weight:500">Why Choose Body Gravity</span>
+                    <span class="wow fadeIn" style="font-size:30px; font-weight:500">Why Choose Body Gravity</span>
                 </div>
             </div>
             <div class="row mt-5">
@@ -210,7 +210,7 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-12 d-flex justify-content-center">
-                    <button type="button" class="btn btn-md rounded-pill btn-outline-white text-capitalize wow fadeIn" id="button_hover">
+                    <button type="button" class="btn btn-md rounded-pill btn-outline-black text-capitalize wow fadeIn z-depth-0 button_hover_black">
                         Look More
                     </button>
                 </div>
@@ -388,7 +388,7 @@
     <div class="container">
         <div class='row mt-5'>
             <div class="col-lg-12 d-flex justify-content-center">
-                <span style="font-size:30px; font-weight:600" class="text-white wow fadeIn">
+                <span style="font-size:30px; font-weight:600" class="wow fadeIn">
                     Meet Our Teams
                 </span>
             </div>
@@ -414,27 +414,12 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span class="text-center">
-                                    Hi, I'm the founder of Body Gravity. Body Gravity is founded because i see out there that there is no
-                                    exercise to restore body posture, especially in scoliosis...
-                                </span>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <a>
-                                    <small>Read More</small>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <a class="pl-2 pr-2">
-                                    <i class="fab fa-instagram" style="font-size:30px;"></i>
-                                </a>
-                                <a class="pr-2 pl-2">
-                                    <i class="fab fa-youtube" style="font-size:30px;"></i>
-                                </a>
+                                <button type="button" class="btn p-2 rounded-circle btn-outline-grey z-depth-0 button_hover_black" onclick="window.open('https://instagram.com/bodygravityid/');">
+                                    <i class="fab fa-instagram" style="font-size:20px;"></i>
+                                </button>
+                                <button type="button" class="btn p-2 rounded-circle btn-outline-grey z-depth-0 button_hover_black" onclick="window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hallo admin, saya tertarik dengan Body Gravity');">
+                                    <i class="fab fa-whatsapp" style="font-size:20px;"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -455,32 +440,17 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-weight:500">Coach</span>
+                                <span style="font-weight:500">Trainer</span>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span class="text-center">
-                                    Hi, since childhood i have had scoliosis with 60 Degree inclination. I have tried many ways to cure it, but none
-                                    of the result are satisfactory...
-                                </span>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <a>
-                                    <small>Read More</small>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <a class="pl-2 pr-2">
-                                    <i class="fab fa-instagram" style="font-size:30px;"></i>
-                                </a>
-                                <a class="pr-2 pl-2">
-                                    <i class="fab fa-youtube" style="font-size:30px;"></i>
-                                </a>
+                                <button class="btn btn-outline-grey p-2 rounded-circle z-depth-0 button_hover_black" onclick="window.open('https://instagram.com/bodygravityid/');">
+                                    <i class="fab fa-instagram" style="font-size:20px;"></i>
+                                </button>
+                                <button class="btn btn-outline-grey p-2 rounded-circle z-depth-0 button_hover_black" onclick="window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hallo admin, saya tertarik dengan Body Gravity');">
+                                    <i class="fab fa-whatsapp" style="font-size:20px;"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -501,32 +471,17 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-weight:500">Coach</span>
+                                <span style="font-weight:500">Trainer</span>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span class="text-center">
-                                    I used to have back pain. But everything changed after meeting Body Gravity, the pain in my shoulder was getting better,
-                                    even no it's 100% gone...
-                                </span>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <a>
-                                    <small>Read More</small>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="row mt-5">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <a class="pl-2 pr-2">
-                                    <i class="fab fa-instagram" style="font-size:30px;"></i>
-                                </a>
-                                <a class="pr-2 pl-2">
-                                    <i class="fab fa-youtube" style="font-size:30px;"></i>
-                                </a>
+                                <button class="btn p-2 btn-outline-grey rounded-circle z-depth-0 mt-0 button_hover_black" onclick="window.open('https://instagram.com/bodygravityid/');">
+                                    <i class="fab fa-instagram" style="font-size:20px;"></i>
+                                </button>
+                                <button class="btn p-2 btn-outline-grey rounded-circle z-depth-0 mt-0 button_hover_black" onclick="window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hallo admin, saya tertarik dengan Body Gravity');">
+                                    <i class="fab fa-whatsapp" style="font-size:20px;"></i>
+                                </button>
                             </div>
                         </div>
                     </div>

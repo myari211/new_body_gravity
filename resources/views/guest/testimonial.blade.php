@@ -50,7 +50,7 @@
         </div>
     </div>
     <div class="collapse" id="testimoni">
-        <form method="post" action="{{ route('testimonial_post') }}">
+        <form method="post" action="{{ route('testimonial_post') }}" enctype="multipart/form-data">
             @csrf
             <div class="row mt-4">
                 <div class="col-lg-12 d-flex justify-content-center">
@@ -99,9 +99,12 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFileLang" lang="in">
-                        <label class="custom-file-label" for="customFileLang">pilih file </label>
+                    <div class="form-group">
+                        <small class="text-white">Choose Image</small>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="customFileLang" lang="in" name="file">
+                            <label class="custom-file-label" for="customFileLang">Choose Image</label>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -113,6 +116,44 @@
                 </div>
             </div>
         </form>
+    </div>
+</div>
+<div class="bg-white pt-4">
+    <div class="container">
+        <div class="row">
+            @foreach($testimonial as $data)
+                <div class="col-lg-4 mb-4">
+                    <div class="card rounded-0 h-100">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <img src="{{ asset('image/imelda.png') }}" class="w-100 rounded-circle">
+                                </div>
+                                <div class="col-lg-8">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <span style="font-weight:600">{{ $data->first_name }}</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-lg-12">                                            
+                                            <small style="font-weight:600" class="text-muted font-italic">
+                                                {{ $data->job }}
+                                            </small>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-lg-12">
+                                            <small>{{ $data->testimony }}</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
     </div>
 </div>
 @endsection
