@@ -17,7 +17,7 @@
         <div>
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
-                    <span style="font-size:30px; font-weight:600">Testimonial</span>
+                    <span style="font-size:30px; font-weight:600">What Our Customer Say ?</span>
                 </div>
             </div>
             <div class="row">
@@ -31,12 +31,12 @@
 <div class="container">
     <div class="row mt-4 d-flex justify-content-center">
         <div class="col-lg-4 d-flex">
-            <img src="{{ asset('image/body_logo.png') }}" class="w-100">
+            <img src="{{ asset('image/body_black.jpeg') }}" class="w-100">
         </div>
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-lg-7 d-flex justify-content-center">
-            <span style="font-size:20px;" class="text-white">
+            <span style="font-size:20px;">
                 are you satisfied with our service? leave a review here
             </span>
         </div>

@@ -228,35 +228,41 @@
             </div>
             <div class="row mt-5">
                 <div class="col-lg-6">
-                    <div class="card rounded-0 wow fadeInUp h-100">
+                    <div class="card rounded-0 wow fadeInUp">
                         <div class="card-body p-0">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <img src="{{ asset('image/product_1.jpg') }}" class="w-100 h-100">
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="row mt-4">
-                                        <div class="col-lg-12">
-                                            <span style="font-size:20px; font-weight:500">Body Shaping</span>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 pr-3">
-                                        <div class="col-lg-12">
-                                            <small>{{ Str::limit("To help you achieve your dream body", 70) }}</small>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-lg-12">
-                                            <a>
-                                                <small class="d-flex align-items-center">
-                                                    See Details
-                                                </small>  
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-4">
-                                        <div class="col-lg-12 d-flex justify-content-between">
-                                            <button type="button" class="btn btn-outline-black btn-sm mb-0 mt-0 mr-4 ml-0 z-depth-0">Book Now</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card rounded-0 z-depth-0 indigo lighten-3">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <span style="font-size:30px; font-weight:600">Body Shaping</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <span style="font-size:15px; font-weight:500" class="text-center">{{ Str::limit("To Help you achieve your dream body", 70) }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3 pr-3">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <a>
+                                                        <small>
+                                                            See Details
+                                                        </small>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4 mb-4">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <button type="button" class="btn bg-white btn-md mb-0 mt-0 ml-0 rounded z-depth-0 text-capitalize" style="font-weight:500">Book Now</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -268,32 +274,38 @@
                     <div class="card rounded-0 wow fadeInUp">
                         <div class="card-body p-0">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-12">
                                     <img src="{{ asset('image/product_2.jpg') }}" class="w-100 h-100">
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="row mt-4">
-                                        <div class="col-lg-12">
-                                            <span style="font-size:20px; font-weight:500">Rehabilitation</span>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-lg-12">
-                                            <small>{{ Str::limit("There are many pains which caused by having bad posture, such as scoliosis, back pain, pinched nerve, etc. Or anyone of you are on injury recovery process. We suggest you to take this program because Body Gravity will help you to offload the joints and focus on perfect structures of the body which ultimately leading to a reduction of pain and then healed completely.", 70) }}</small>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3 pr-3">
-                                        <div class="col-lg-12">
-                                            <a>
-                                                <small>
-                                                    See Details
-                                                </small>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-4">
-                                        <div class="col-lg-12 d-flex justify-content-between">
-                                            <button type="button" class="btn btn-outline-black btn-sm mb-0 mt-0 mr-4 ml-0 z-depth-0">Book Now</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card rounded-0 z-depth-0 red lighten-3">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <span style="font-size:30px; font-weight:600">Rehabilitation</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <span style="font-size:15px; font-weight:500" class="text-center">{{ Str::limit("There are many pains which caused by having bad posture, such as scoliosis, back pain, pinched nerve, etc. Or anyone of you are on injury recovery process. We suggest you to take this program because Body Gravity will help you to offload the joints and focus on perfect structures of the body which ultimately leading to a reduction of pain and then healed completely.", 45) }}</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3 pr-3">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <a>
+                                                        <small>
+                                                            See Details
+                                                        </small>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4 mb-4">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <button type="button" class="btn bg-white btn-md mb-0 mt-0 ml-0 rounded z-depth-0 text-capitalize" style="font-weight:500">Book Now</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -307,30 +319,40 @@
                     <div class="card rounded-0 wow fadeInUp">
                         <div class="card-body p-0">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <img src="{{ asset('image/product_3.jpg') }}" class="w-100 h-100">
+                                <div class="col-lg-12">
+                                    <div class="card rounded-0 z-depth-0">
+                                        <div class="card-body p-0">
+                                            <img src="{{ asset('image/product_3.jpg') }}" class="w-100 h-100">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="row mt-4">
-                                        <div class="col-lg-12">
-                                            <span style="font-size:20px; font-weight:500">Kids</span>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4">
-                                        <div class="col-lg-12">
-                                            <small>{{ Str::limit("Teach your children from a young age to have good movement habits and to keep them active, especially most of the children do less exercise and spend more time of sitting while using tech nowadays.", 70)}}</small>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-lg-12">
-                                            <a>
-                                                <small>See Details</small>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-4">
-                                        <div class="col-lg-12 d-flex justify-content-between">
-                                            <button type="button" class="btn btn-outline-black btn-sm mb-0 mt-0 mr-4 ml-0 z-depth-0">Book Now</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body blue lighten-3">
+                                            <div class="row mt-4">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <span style="font-size:30px; font-weight:600">Kids</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <span style="font-size:15px; font-weight:500">{{ Str::limit("Teach your children from a young age to have good movement habits and to keep them active, especially most of the children do less exercise and spend more time of sitting while using tech nowadays.", 45)}}</small>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <a>
+                                                        <small>See Details</small>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4 mb-4">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <button type="button" class="btn bg-white rounded btn-md z-depth-0 text-capitalize" style="font-weight:500">Book Now</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -342,32 +364,42 @@
                     <div class="card rounded-0 wow fadeInUp">
                         <div class="card-body p-0">
                             <div class="row">
-                                <div class="col-lg-6">
-                                    <img src="{{ asset('image/product_4.jpg') }}" class="w-100 h-100">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body p-0">        
+                                            <img src="{{ asset('image/product_4.jpg') }}" class="w-100 h-100">
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-6">
-                                    <div class="row mt-4">
-                                        <div class="col-lg-12">
-                                            <span style="font-size:20px; font-weight:500">Senior</span>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4">
-                                        <div class="col-lg-12">
-                                            <small>
-                                                {{Str::limit("Senior program is perfectly fits for seniors who are hardly moved to the body. By taking some trainings the body will have a better body will have a better body connection and get stronger to move. You are never too late to begin the pillates practice due pillates will help you maintain and/or gain your balance, Strength, Flexibility, Focus, Breath and all areas you may notice have changed with age.", 70) }}
-                                            </small>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-3">
-                                        <div class="col-lg-12">
-                                            <a>
-                                                <small>See Details</small>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="row mt-4 mb-4">
-                                        <div class="col-lg-12 d-flex justify-content-between">
-                                            <button type="button" class="btn btn-outline-black btn-sm mb-0 mt-0 mr-4 ml-0 z-depth-0">Book Now</button>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-body lime lighten-3">
+                                            <div class="row mt-4">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <span style="font-size:30px; font-weight:600">Senior</span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <small style="font-size:15px; font-weight:500">
+                                                        {{Str::limit("Senior program is perfectly fits for seniors who are hardly moved to the body. By taking some trainings the body will have a better body will have a better body connection and get stronger to move. You are never too late to begin the pillates practice due pillates will help you maintain and/or gain your balance, Strength, Flexibility, Focus, Breath and all areas you may notice have changed with age.", 45) }}
+                                                    </small>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <a>
+                                                        <small>See Details</small>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-4 mb-4">
+                                                <div class="col-lg-12 d-flex justify-content-center">
+                                                    <button type="button" class="btn btn-md bg-white rounded text-capitalize z-depth-0" style="font-weight:500">Book Now</button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
