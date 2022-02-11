@@ -28,24 +28,24 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top z-depth-0 p-4 d-flex justify-content-between" id="header">
                 <div class="container">
                     <a class="navbar-brand" href="#">
-                        <img src="{{ asset('image/body_logo.png') }}" style="width:140px;" id="image">
-                        <img src="{{ asset('image/body_black.jpeg') }}" style="width:140px;" id="other_image" class="d-none">
+                        <img src="{{ asset('image/body_white.png') }}" style="width:70px;" id="image">
+                        <img src="{{ asset('image/body_gravity_black.png') }}" style="width:70px;" id="other_image" class="d-none">
                     </a>
                     <ul class="navbar-nav">
                         <li class="nav-item mr-2 home">
-                            <a class="nav-link menu" href="/">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link menu" href="/" style="font-weight:400; font-size:14px;">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item mr-3 about">
-                            <a class="nav-link menu" href="{{ route('about') }}">About Us</a>
+                            <a class="nav-link menu" href="{{ route('about') }}" style="font-weight:400; font-size:14px;">About Us</a>
                         </li>
                         <li class="nav-item mr-3 program">
-                            <a class="nav-link menu" href="{{ route('program') }}">Program</a>
+                            <a class="nav-link menu" href="{{ route('program') }}" style="font-weight:400; font-size:14px;">Our Program</a>
                         </li>
                         <li class="nav-item mr-3 testimonial">
-                            <a class="nav-link menu" href="{{ route('testimonial') }}">Testimonial</a>
+                            <a class="nav-link menu" href="{{ route('testimonial') }}" style="font-weight:400; font-size:14px;">Testimonial</a>
                         </li>
                         <li class="nav-item contact">
-                            <a class="nav-link menu" href="{{ route('contact') }}">Contact Us</a>
+                            <a class="nav-link menu" href="{{ route('contact') }}" style="font-weight:400; font-size:14px;">Contact Us</a>
                         </li>
                     </ul>
                 </div>
@@ -69,7 +69,7 @@
                                 <a class="nav-link" href="{{ route('about') }}">About Us</a>
                             </li>
                             <li class="nav-item mr-3 program">
-                                <a class="nav-link" href="{{ route('program') }}">Program</a>
+                                <a class="nav-link" href="{{ route('program') }}">Our Program</a>
                             </li>
                             <li class="nav-item contact">
                                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
@@ -118,6 +118,7 @@
                     $('#image').addClass('d-none');
                     $('#other_image').removeClass('d-none');
                     $('.active').addClass('active_section');
+                    $('#header').removeClass('z-depth-0');
                 }
                 else
                 {
@@ -129,6 +130,7 @@
                     $('#other_image').addClass('d-none');
                     $('#image').removeClass('d-none');
                     $('.active').removeClass('active_section');
+                    $('#header').addClass('z-depth-0');
                 }
             });
         </script>

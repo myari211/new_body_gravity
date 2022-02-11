@@ -9,7 +9,7 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/strong.png') }});
+        url({{ asset('image/about.jpg') }});
     }
 
     #header_footer { 
@@ -20,7 +20,7 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/pain.png') }});
+        url({{ asset('image/take_class.jpg') }});
     }
 
     #header_footer_mobile {
@@ -50,7 +50,7 @@
         min-height:300px;
         background-image:
         linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/strong.png') }});
+        url({{ asset('image/kuat.jpg') }});
     }
 
     #program_2 {
@@ -59,7 +59,7 @@
         min-height:300px;
         background-image:
         linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/pain.png') }});
+        url({{ asset('image/no_pain.jpg') }});
     }
 
     #program_3 {
@@ -68,7 +68,7 @@
         min-height:300px;
         background-image:
         linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/agile.jpg') }});
+        url({{ asset('image/stronger_image.jpg') }});
     }
 
     #program_4 {
@@ -77,23 +77,40 @@
         min-height:300px;
         background-image:
         linear-gradient(55.8deg,rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/posture.jpg') }});
+        url({{ asset('image/posture.jpeg') }});
     }
 </style>
 <div class="d-none d-lg-block">
     <div class="row">
         <div class="col-lg-12">
             <div id="header_banner">
-                <div class="h-100 w-100 d-flex align-items-center justify-content-center">
+                <div class="container h-100 w-100 d-flex justify-content-center align-items-center">   
                     <div>
                         <div class="row">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-size:40px; font-weight:600" class="animated fadeInUp">All About Body Gravity</span>
+                            <div class="col-lg-6 d-flex align-items-center">
+                                <img src="{{ asset('image/body_white.png') }}" style="width:400px; margin-top:-40px;" class="wow fadeInRight">
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <span class="text-white animated fadeInUp delay-1s" style="font-size:20px; font-weight:500">Find out the root cause, help the body recover on its own.</span>
+                            <div class="col-lg-6">
+                                <div class="row mt-3">
+                                    <div class="col-lg-12">
+                                        <span class="wow fadeInLeft" style="font-weight:400">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement</span>
+                                    </div>
+                                </div>
+                                <div class='row mt-3'>
+                                    <div class="col-lg-12">
+                                        <span style="font-weight:400">We aim of achieving perfect body connections of our members to gain their maximum strength. We also aim everybody to has knowledge about how a perfect body structure actually is and how to have full body awareness of yours.</span>
+                                    </div>
+                                </div>
+                                {{-- <div class="row mt-3">
+                                    <div class="col-lg-12">
+                                        <span class="font-weight-bold">So, what are you waiting for, go check out our programs !</span>
+                                    </div>
+                                </div>
+                                <div class="row mt-3">
+                                    <div class="col-lg-12">
+                                        <span class="font-weight-bold">Let us know goal and See you on the studio !</span>
+                                    </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>
@@ -104,53 +121,12 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="wow fadeInUp" style="font-size:30px; font-weight:500">What is Body Gravity ?</span>
-            </div>
-        </div>
-        <div class="row mt-5 pb-5">
-            <div class="col-lg-6 d-flex align-items-center">
-                <img src="{{ asset('image/body_black.jpeg') }}" style="width:400px;" class="wow fadeInRight">
-            </div>
-            <div class="col-lg-6">
-                <div class="row mt-3">
-                    <div class="col-lg-12">
-                        <span class="wow fadeInLeft" style="font-weight:600">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement</span>
-                    </div>
-                </div>
-                <div class="collapse" id="collapseExample">
-                    <div class='row mt-3'>
-                        <div class="col-lg-12">
-                            <span style="font-weight:600">We aim of achieving perfect body connections of our members to gain their maximum strength. We also aim everybody to has knowledge about how a perfect body structure actually is and how to have full body awareness of yours.</span>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-lg-12">
-                            <span class="font-weight-bold">So, what are you waiting for, go check out our programs !</span>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-lg-12">
-                            <span class="font-weight-bold">Let us know goal and See you on the studio !</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col-lg-12">
-                        <button type="button" class="wow fadeIn btn btn-sm rounded-pill btn-outline-black text-capitalize m-0 z-depth-0 button_hover_black" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            Read More <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite slow"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-5">
-            <div class="col-lg-12 d-flex justify-content-center">
-                <span class="wow fadeInDown" style="font-size:30px; font-weight:500">Advantage</span>
+                <span class="wow fadeInDown text-muted" style="font-size:34px; font-weight:400">Advantage</span>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="wow fadeInDown" style="font-weight:500">Come Join and get this advantage</span>
+                <span class="wow fadeInDown text-muted" style="font-weight:500">Come Join and get this advantage</span>
             </div>
         </div>
         <div class="row mt-5">

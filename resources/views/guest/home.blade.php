@@ -1,6 +1,11 @@
 @extends('guest.layouts.app')
 @section('content')
 <style type="text/css">
+
+    html, body{
+        overflow-y:hidden !important;
+    }
+
     #header_banner { 
         width: 100%;
         min-height: 800px;
@@ -9,7 +14,7 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/why.png') }});
+        url({{ asset('image/studio.jpg') }});
     }
 
     #header_banner_mobile { 
@@ -77,17 +82,17 @@
                     <div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-weight:600; font-size:80px;" class="animated fadeInDown">Body Gravity</span>
+                                <span style="font-weight:700; font-size:62px;" class="animated fadeInDown">Body Gravity</span>
                             </div>
                         </div>
-                        <div class="row mt-3">
+                        <div class="row mt-1">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-weight:600; font-size:24px;" class="animated fadeInDown delay-1s">Stabilize your body for a productive life</span>
+                                <span style="font-weight:400; font-size:21px;" class="animated fadeInDown delay-1s">Stabilize your body for a productive life</span>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <button type="button" class="btn blue-gradient btn-lg rounded-pill text-capitalize d-flex align-items-center animated fadeInDown delay-2s">
+                                <button type="button" class="btn blue-gradient btn-lg rounded-pill text-capitalize d-flex align-items-center animated fadeInDown delay-2s" style="font-weight:600" onclick="location.href='/about';">
                                     Take A Look <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite delay-3s"></i>
                                 </button>
                             </div>
@@ -97,7 +102,7 @@
             </div>
         </div>
     </div>
-    <div class="container">
+    {{-- <div class="container">
         <div>
             <div class="row" style="margin-top: 100px;">
                 <div class="col-lg-12 d-flex justify-content-center">
@@ -713,7 +718,12 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
+
+
+{{-- mobile --}}
+
+
 <div class="d-block d-lg-none">
     <div class="row">
         <div class="col-12">
