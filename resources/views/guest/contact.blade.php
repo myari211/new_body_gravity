@@ -9,7 +9,7 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/pain.png') }});
+        url({{ asset('image/posture.jpeg') }});
     }
 
     #program_1 {
