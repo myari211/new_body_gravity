@@ -14,7 +14,7 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/studio.jpg') }});
+        url({{ asset('image/home2.jpg') }});
     }
 
     #header_banner_mobile { 

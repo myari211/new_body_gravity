@@ -17,12 +17,7 @@
         <div>
             <div class="row">
                 <div class="col-lg-12 d-flex justify-content-center">
-                    <span style="font-size:30px; font-weight:600">What Our Customer Say ?</span>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12 d-flex justify-content-center">
-                    <span style="font-size:20px; font-weight:500">What they say about us ?</span>
+                    <span style="font-size:30px; font-weight:600">What they say about us ?</span>
                 </div>
             </div>
         </div>

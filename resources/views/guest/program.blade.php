@@ -34,16 +34,6 @@
                                 <span style="font-size:62px; font-weight:600" class="animated fadeInDown">Our Program</span>
                             </div>
                         </div>
-                            {{-- <div class="row mt-3">
-                                <div class="col-lg-12 d-flex justify-content-center">
-                                    <span style="font-size:20px; font-weight:500" class="animated fadeInDown delay-1s">Body Gravity was etablished in 2017 and until now we have helped many clients</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg-12 d-flex justify-content-center">
-                                    <span style="font-size:20px; font-weight:500" class="animated fadeInDown delay-2s">who have problems with their body posture</span>
-                                </div>
-                            </div> --}}
                     </div>
                 </div>
             </div>
@@ -78,7 +68,7 @@
                                             </div>
                                             <div class="row mt-3">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <button type="button" class="btn btn-md rounded-pill text-capitalize btn-white" style="font-weight:700; font-size:14px;" onclick="window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hi, I am found body gravity Website, and i interest about Body Shaping Program. Can i know more about this program ?');">
+                                                    <button type="button" class="btn btn-md rounded-pill text-capitalize btn-white" style="font-weight:700; font-size:14px;" onclick="sendMessage(this)" data-message-id="Body Shaping">
                                                         Take Class
                                                         <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite"></i>
                                                     </button>
@@ -137,7 +127,7 @@
                                                     {{-- <a data-toggle="collapse" href="#product2" aria-expanded="false" aria-controls="product2" class="d-flex align-items-center">
                                                         <small class="text-dark" style="font-weight:500">Details</small><i class="fas fa-arrow-down ml-2 text-dark animated fadeInDown infinite slow" style="font-size:10px;"></i>
                                                     </a> --}}
-                                                    <button type="button" class="btn btn-md btn-white rounded-pill text-capitalize" style="font-weight:600; font-size:14px">
+                                                    <button type="button" class="btn btn-md btn-white rounded-pill text-capitalize" style="font-weight:600; font-size:14px" onclick="sendMessage(this);" data-message-id="Pain Management">
                                                         Take Class
                                                         <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite"></i>
                                                     </button>
@@ -206,7 +196,7 @@
                                             </div>
                                             <div class="row mt-3">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <button type="button" class="btn btn-md bg-white rounded-pill text-capitalize" style="font-weight:600; font-size:14px;">
+                                                    <button type="button" class="btn btn-md bg-white rounded-pill text-capitalize" style="font-weight:600; font-size:14px;" onclick="sendMessage(this);" data-message-id="Kids">
                                                         Take Class
                                                         <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite"></i>
                                                     </button>
@@ -262,7 +252,7 @@
                                             </div>
                                             <div class="row mt-3">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <button type="button" class="btn btn-md bg-white rounded-pill text-capitalize" style="font-weight:600; font-size:14px;">
+                                                    <button type="button" class="btn btn-md bg-white rounded-pill text-capitalize" style="font-weight:600; font-size:14px;" onclick="sendMessage(this);" data-message-id="Senior">
                                                         Take Class
                                                         <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite"></i>
                                                     </button>
@@ -323,7 +313,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-lg-12 d-flex justify-content-center">
-                                                        <button type="button" class="btn btn-md bg-white rounded text-capitalize rounded-pill" style="font-weight:600; font-size:14px;">
+                                                        <button type="button" class="btn btn-md bg-white rounded text-capitalize rounded-pill" style="font-weight:600; font-size:14px;" onclick="sendMessage(this);" data-message-id="Basic">
                                                             Take Class
                                                             <i class="fas fa-arrow-right animated fadeInLeft infinite ml-3"></i>
                                                         </button>
@@ -360,7 +350,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-lg-12 d-flex justify-content-center">
-                                                        <button type="button" class="btn btn-md rounded-pill bg-white text-capitalize" style="font-weight:600; font-size:14px;">
+                                                        <button type="button" class="btn btn-md rounded-pill bg-white text-capitalize" style="font-weight:600; font-size:14px;" onclick="sendMessage(this);" data-message-id="Intermediate">
                                                             Take Class
                                                             <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite"></i>
                                                         </button>
@@ -401,7 +391,7 @@
                                                 </div>
                                                 <div class="row mt-3">
                                                     <div class="col-lg-12 d-flex justify-content-center">
-                                                        <button type="button" class="btn btn-md bg-white rounded-pill text-capitalize" style="font-weight:600; font-size:14px;">
+                                                        <button type="button" class="btn btn-md bg-white rounded-pill text-capitalize" style="font-weight:600; font-size:14px;" onclick="sendMessage(this);" data-message-id="Advance">
                                                             Take Class
                                                             <i class='fas fa-arrow-right ml-3 animated fadeInLeft infinite'></i>
                                                         </button>
@@ -478,7 +468,7 @@
                                             <i class="fas fa-arrow-down animated fadeInDown slow infinite ml-2" style="font-size:10px;"></i>
                                         </small>
                                     </a>
-                                    <button type="button" class="btn btn-md rounded-0 btn-outline-black text-capitalize m-0">
+                                    <button type="button" class="btn btn-md rounded-0 btn-outline-black text-capitalize m-0" onclick="sendMessage(this)" data-message-id="Body Shaping">
                                         Take Class <i class="fas fa-arrow-right animated fadeInLeft slow infinite ml-3"></i>
                                     </button>
                                 </div>
@@ -755,4 +745,17 @@
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    function sendMessage(elem) {
+        var generalID = $(elem).data('message-id');
+
+        console.log(generalID);
+
+        window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hi, I am found body gravity Website, and i interest about '+ generalID +' Program. Can i know more about this program ?');
+    }
+</script>
+
+
 @endsection

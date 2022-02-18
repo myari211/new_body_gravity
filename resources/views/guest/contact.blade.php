@@ -17,8 +17,8 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(242,3,58, 0.6) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/strong.png') }});
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/kuat.jpg') }});
     }
 
     #program_2 {
@@ -26,7 +26,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(30,155,213, 0.6) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/pain.png') }});
     }
 
@@ -35,7 +35,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(252,106,160, 0.7) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/agile.jpg') }});
     }
 
@@ -44,7 +44,7 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg,rgba(4,170,109, 0.7) 100%, rgba(0,0,0, 0) 100%),
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
         url({{ asset('image/posture.jpg') }});
     }
 </style>
@@ -121,36 +121,31 @@
     </div>
     <div class="bg-white pt-5">
         <div class="container">
-            <div class="row mt-5">
-                <div class="col-lg-12 d-flex justify-content-center">
-                    <span style="font-weight:600; font-size:30px;">Our Contact Us at</span>
-                </div>
-            </div>
             <div class="row mt-5 mb-5">
                 <div class="col-lg-6">
                     <div id="program_1">
                         <div class="row h-100">
-                            <div class="col-lg-6">
+                            <div class="col-lg-6 d-flex align-items-center justify-content-center">
+                                <div class="row">
+                                    <div class="col-lg-12 d-flex justify-content-center">
+                                        <button type="button" class="btn btn-md rounded bg-white text-capitalize z-depth-1 text-muted" style="font-weight:600; font-size:15px;" onclick="window.open('https://www.instagram.com/bodygravityid/');">
+                                            Follow Us
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-6 pl-0">
-                                <div class="card rounded-0 z-depth-0 w-100 h-100 red lighten-3">
+                                <div class="card rounded-0 z-depth-0 w-100 h-100" style="background-color:#DAE4DE">
                                     <div class="card-body d-flex align-items-center justify-content-center">
                                         <div>
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <span class="fab fa-instagram text-white" style="font-size:100px;"></span>
+                                                    <span class="fab fa-instagram text-muted" style="font-size:100px;"></span>
                                                 </div>
                                             </div>
                                             <div class="row mt-3">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <span style="font-size:20px; font-weight:500" class="text-white">@bodygravityid</span>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-3">
-                                                <div class="col-lg-12 d-flex justify-content-center">
-                                                    <button type="button" class="btn btn-md rounded bg-white text-capitalize z-depth-0" style="font-weight:500" onclick="window.open('https://www.instagram.com/bodygravityid/');">
-                                                        Follow Us
-                                                    </button>
+                                                    <span style="font-size:20px; font-weight:500" class="text-muted">@bodygravityid</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -163,28 +158,27 @@
                 <div class="col-lg-6 pl-0">
                     <div id="program_4">
                         <div class="row h-100">
-                            <div class="col-lg-6">
-                                
+                            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                                <div class="row">
+                                    <div class="col-lg-12 d-flex justify-content-center">
+                                        <button type="button" class="btn btn-md rounded bg-white text-capitalize z-depth-1 text-muted" style="font-weight:600; font-size:15px;" onclick="window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hallo admin, saya tertarik dengan Body Gravity');">
+                                            Chat Us
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-lg-6 pl-0">
-                                <div class="card rounded-0 z-depth-0 w-100 h-100 teal accent-3">
+                                <div class="card rounded-0 z-depth-0 w-100 h-100" style="background-color:#DAE4DE">
                                     <div class="card-body d-flex align-items-center justify-content-center">
                                         <div>
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <span class="fab fa-whatsapp text-white" style="font-size:100px;"></span>
+                                                    <span class="fab fa-whatsapp text-muted" style="font-size:100px;"></span>
                                                 </div>
                                             </div>
                                             <div class="row mt-3">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <span style="font-size:20px; font-weight:500" class="text-white">+62 811 877 228 3</span>
-                                                </div>
-                                            </div>
-                                            <div class="row mt-3">
-                                                <div class="col-lg-12 d-flex justify-content-center">
-                                                    <button type="button" class="btn btn-md rounded bg-white text-capitalize z-depth-0" style="font-weight:500" onclick="window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hallo admin, saya tertarik dengan Body Gravity');">
-                                                        Chat Us
-                                                    </button>
+                                                    <span style="font-size:20px; font-weight:500" class="text-muted">+62 811 877 228 3</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -192,27 +186,6 @@
                                 </div>
                             </div>
                         </div>
-                        {{-- <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-                            <div>
-                                <div class="row">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <span class="fab fa-whatsapp text-white" style="font-size:100px;"></span>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <span class="text-white" style="font-weight:600">+62 811 877 228 3</span>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <button type="button" class="btn btn-md rounded-0 btn-outline-white">
-                                            Chat Us
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                 </div>
             </div>
@@ -398,7 +371,8 @@
                             </div>
                         </div>
                     </div>
-                </di
+                </div>
+            </div>
         </div>
     </div>
 </div>

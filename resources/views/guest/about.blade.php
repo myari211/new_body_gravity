@@ -9,7 +9,7 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/about.jpg') }});
+        url({{ asset('image/home1.jpg') }});
     }
 
     #header_footer { 
@@ -138,11 +138,23 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div id="program_1">
-                                            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                                                <div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:40px; font-weight:600">Stronger</span>
+                                            <div class="w-100 h-100 d-flex align-items-center justify-content-center p-4">
+                                                <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Strength</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">And</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class='row'>
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Tone</span>    
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -163,11 +175,23 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div id="program_2">
-                                            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                                                <div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:40px; font-weight:600">No Pain</span>
+                                            <div class="p-4 w-100 h-100">
+                                                <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Agile</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">And</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">No Pain</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -190,11 +214,23 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div id="program_3">
-                                            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                                                <div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:40px; font-weight:600">Agile</span>
+                                            <div class="h-100 w-100 p-4">
+                                                <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Balance</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">And</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class='row'>
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Flexible</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -215,11 +251,18 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div id="program_4">
-                                            <div class="w-100 h-100 d-flex align-items-center justify-content-center">
-                                                <div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:40px; font-weight:600">Posture</span>
+                                            <div class="p-4 w-100 h-100">
+                                                <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
+                                                    <div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Perfect</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="row">
+                                                            <div class="col-lg-12">
+                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Posture</span>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -371,14 +414,21 @@
                         <div class="row mt-2">
                             <div class="col-lg-12 d-flex justify-content-center">
                                 <span class="wow fadeInDown">
-                                    Body Gravity aimed and is dedicated to providing the best results for our customers
+                                    Body Gravity is dedicated to providing the best results for our customers intense
                                 </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
                                 <span class="wow fadeInDown">
-                                    for their posture problems so that they can have a better quality of life in future
+                                    of for their posture problems in order to have a better quality of life in the future.
+                                </span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 d-flex justify-content-center">
+                                <span class="wow fadeInDown">
+                                    So What are you waiting for, Check out our programs, and see you on the studio ! 
                                 </span>
                             </div>
                         </div>
