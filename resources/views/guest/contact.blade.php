@@ -156,7 +156,7 @@
                             <div class="col-lg-6 d-flex justify-content-center align-items-center">
                                 <div class="row">
                                     <div class="col-lg-12 d-flex justify-content-center">
-                                        <button type="button" class="btn btn-md rounded bg-white text-capitalize z-depth-1 text-muted" style="font-weight:600; font-size:15px;" onclick="window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hallo admin, saya tertarik dengan Body Gravity');">
+                                        <button type="button" class="btn btn-md rounded bg-white text-capitalize z-depth-1 text-muted" style="font-weight:600; font-size:15px;" onclick="window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hi, Body Gravity! I read your website and interested about it');">
                                             Chat Us
                                         </button>
                                     </div>

@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12">
+                <div class="col-lg-11">
                     <div class="form-group">
                         <small class="text-white">Choose Image</small>
                         <div class="custom-file">
@@ -101,6 +101,9 @@
                             <label class="custom-file-label" for="customFileLang">Choose Image</label>
                         </div>
                     </div>
+                </div>
+                <div class="col-lg-1">
+                    <span>(Optional)</span>
                 </div>
             </div>
             <div class="row mt-4">
