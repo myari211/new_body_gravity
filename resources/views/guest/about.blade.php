@@ -50,7 +50,7 @@
         min-height:300px;
         background-image:
         linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/kuat.jpg') }});
+        url({{ asset('image/strength.jpg') }});
     }
 
     #program_2 {
@@ -140,21 +140,9 @@
                                         <div id="program_1">
                                             <div class="w-100 h-100 d-flex align-items-center justify-content-center p-4">
                                                 <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
-                                                    <div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Strength</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">And</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class='row'>
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Tone</span>    
-                                                            </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Strength And Tone</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -177,21 +165,9 @@
                                         <div id="program_2">
                                             <div class="p-4 w-100 h-100">
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
-                                                    <div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Agile</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">And</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">No Pain</span>
-                                                            </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Agile And Pain-free</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -216,21 +192,9 @@
                                         <div id="program_3">
                                             <div class="h-100 w-100 p-4">
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
-                                                    <div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Balance</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">And</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class='row'>
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Flexible</span>
-                                                            </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Balance And Flexible</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -253,16 +217,9 @@
                                         <div id="program_4">
                                             <div class="p-4 w-100 h-100">
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
-                                                    <div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Perfect</span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="row">
-                                                            <div class="col-lg-12">
-                                                                <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Posture</span>
-                                                            </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Perfect Posture</span>
                                                         </div>
                                                     </div>
                                                 </div>

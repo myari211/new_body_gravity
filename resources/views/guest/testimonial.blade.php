@@ -32,7 +32,7 @@
     <div class="row d-flex justify-content-center">
         <div class="col-lg-7 d-flex justify-content-center">
             <span style="font-size:20px;">
-                are you satisfied with our service? leave a review here
+                What do you think about our service? Leave us comment here
             </span>
         </div>
     </div>

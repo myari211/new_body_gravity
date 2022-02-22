@@ -56,12 +56,7 @@
                     <div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-size:30px; font-weight:600">Contact Us At</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-size:20px; font-weight:500">Let us know what you want and what you need</span>
+                                <span style="font-size:35px; font-weight:500">Let us know what you want and what you need</span>
                             </div>
                         </div>
                     </div>

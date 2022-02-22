@@ -81,7 +81,7 @@
                     <div class="col-lg-3">
                         <div class="row">
                             <div class="col-lg-12">
-                                <a style="font-size:12px; font-weight:700" class="text-dark">Trainier Program</a>
+                                <a style="font-size:12px; font-weight:700" class="text-dark">Trainer Program</a>
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -108,7 +108,7 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12">
-                                <a style="font-size:12px;" class="text-muted">What Our Customer Say ?</a>
+                                <a style="font-size:12px;" class="text-muted">What They Say About Us ?</a>
                             </div>
                         </div>
                     </div>
