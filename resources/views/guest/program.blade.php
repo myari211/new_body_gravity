@@ -228,7 +228,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-center">
                                                     <span style="font-size:16px; font-weight:600" class="text-center">
-                                                        Senior program is perfectly fits for seniors who are hardly moved their body.
+                                                        Senior program is perfectly fits for seniors who are hardly move their body.
                                                     </span>
                                                 </div>
                                             </div>
