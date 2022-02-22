@@ -391,7 +391,7 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <button type="button" class="btn btn-md blue-gradient rounded-pill wow fadeInDown">
+                                <button type="button" class="btn btn-md blue-gradient rounded-pill wow fadeInDown" onclick="location.href='/program';">
                                     Take Class <i class="fas fa-arrow-right ml-4 animated fadeInLeft slow infinite"></i>
                                 </button>
                             </div>
