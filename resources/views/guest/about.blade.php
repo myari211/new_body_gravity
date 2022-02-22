@@ -126,7 +126,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="wow fadeInDown text-muted" style="font-weight:500">Come, Join and get these advantages</span>
+                <span class="wow fadeInDown text-muted" style="font-weight:500">Come, join and get these advantages</span>
             </div>
         </div>
         <div class="row mt-5">
@@ -167,7 +167,7 @@
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
                                                     <div class="row">
                                                         <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Agile And Pain-free</span>
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Agile And Pain-free</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -194,7 +194,7 @@
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
                                                     <div class="row">
                                                         <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Balance And Flexible</span>
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Balance And Flexible</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -219,7 +219,7 @@
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
                                                     <div class="row">
                                                         <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Perfect Posture</span>
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Perfect Posture</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -371,21 +371,21 @@
                         <div class="row mt-2">
                             <div class="col-lg-12 d-flex justify-content-center">
                                 <span class="wow fadeInDown">
-                                    Body Gravity is dedicated to providing the best results for our customers intense
+                                    Body Gravity is dedicated to provide the best results for our members especially
                                 </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
                                 <span class="wow fadeInDown">
-                                    of for their posture problems in order to have a better quality of life in the future.
+                                    for their posture problems in order to have a better quality of life in the future.
                                 </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
                                 <span class="wow fadeInDown">
-                                    So What are you waiting for, Check out our programs, and see you on the studio ! 
+                                    So what are you waiting for, check out our programs and see you on the studio ! 
                                 </span>
                             </div>
                         </div>
