@@ -228,7 +228,7 @@
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-center">
                                                     <span style="font-size:16px; font-weight:600" class="text-center">
-                                                        Senior program is perfectly fits for seniors who are hardly moved to the body.
+                                                        Senior program is perfectly fits for seniors who are hardly moved their body.
                                                     </span>
                                                 </div>
                                             </div>
@@ -236,9 +236,8 @@
                                                 <div class="row">
                                                     <div class="col-lg-12 d-flex justify-content-center">
                                                         <span style="font-size:16px; font-weight:600" class="text-center">
-                                                            By taking some trainings the body will have a better body
-                                                            will have a better body connection and get stronger to move. You are never too late to begin the pillates practice due pillates will help
-                                                            you maintain and/or gain your balance, Strength, Flexibility, Focus, Breath and all areas you may notice have changed with age.
+                                                            By taking some trainings the body will have a better body connection and get stronger to move. You are never too late to begin the pilates practice due pilates will help
+                                                            you maintain and/or gain your Balance, Strength, Flexibility, Focus, Breath and all areas you may notice have changed with age.
                                                         </span>
                                                     </div>
                                                 </div>
@@ -345,7 +344,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-12 d-flex justify-content-center">
-                                                        <span style="font-size:16px; font-weight:600" class="text-center">A training program for those of you who work in the world of sports, where we will teach you about Body Gravity at the Intermediate Level.</span>
+                                                        <span style="font-size:16px; font-weight:600" class="text-center">A training program for those of you who work in sports field, we will teach you about Body Gravity at the Intermediate Level.</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">
@@ -386,7 +385,7 @@
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-lg-12 d-flex justify-content-center">
-                                                        <span style="font-size:16px; font-weight:600" class="text-center">A training program for those of you who work in the world of sports, where we will teach you about Body Gravity at the Advance Level.</span>
+                                                        <span style="font-size:16px; font-weight:600" class="text-center">A training program for those of you who work in sports field, we will teach you about Body Gravity at the Advance Level.</span>
                                                     </div>
                                                 </div>
                                                 <div class="row mt-3">

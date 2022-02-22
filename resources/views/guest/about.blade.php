@@ -93,7 +93,7 @@
                             <div class="col-lg-6">
                                 <div class="row mt-3">
                                     <div class="col-lg-12">
-                                        <span class="wow fadeInLeft" style="font-weight:400">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement</span>
+                                        <span class="wow fadeInLeft" style="font-weight:400">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement.</span>
                                     </div>
                                 </div>
                                 <div class='row mt-3'>
@@ -126,7 +126,7 @@
         </div>
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="wow fadeInDown text-muted" style="font-weight:500">Come Join and get this advantage</span>
+                <span class="wow fadeInDown text-muted" style="font-weight:500">Come, Join and get these advantages</span>
             </div>
         </div>
         <div class="row mt-5">
@@ -142,7 +142,7 @@
                                                 <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                                                     <div class="row">
                                                         <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px; font-weight:600">Strength And Tone</span>
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Strength and Tone</span>
                                                         </div>
                                                     </div>
                                                 </div>
