@@ -167,7 +167,7 @@
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
                                                     <div class="row">
                                                         <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Agile And Pain-free</span>
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Agile and Pain-free</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -194,7 +194,7 @@
                                                 <div class="w-100 h-100 d-flex align-items-center justify-content-center border wow fadeIn" data-wow-delay="1s">
                                                     <div class="row">
                                                         <div class="col-lg-12">
-                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Balance And Flexible</span>
+                                                            <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Balance and Flexible</span>
                                                         </div>
                                                     </div>
                                                 </div>
