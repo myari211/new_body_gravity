@@ -196,15 +196,8 @@
                         <div>
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-center">
-                                    <span style="font-size:30px; font-weight:600">
-                                        Contact Us
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12 d-flex justify-content-center">
-                                    <span style="font-weight:500" class="text-center">
-                                        Let us know what do you want, and know what do you need
+                                    <span style="font-weight:500; font-size:20px;" class="text-center">
+                                        Let us know what you want and what you need
                                     </span>
                                 </div>
                             </div>
@@ -219,7 +212,7 @@
             <div class="row mt-5">
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="first_name_mobile" style="font-weight:500" class="text-white">First Name</label>
+                        <label for="first_name_mobile" style="font-weight:600">First Name</label>
                         <input type="text" class="form-control rounded-0" style="height:50px;" placeholder="Type your first name here...">
                     </div>
                 </div>
@@ -227,7 +220,7 @@
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="last_name_mobile" style="font-weight:500" class="text-white">Last Name</label>
+                        <label for="last_name_mobile" style="font-weight:600">Last Name</label>
                         <input type="text" class="form-control rounded-0" style="height:50px;" placeholder="Type your last name here...">
                     </div>
                 </div>
@@ -235,7 +228,7 @@
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="email_mobile" style="font-weight:500" class="text-white">Email</label>
+                        <label for="email_mobile" style="font-weight:600">Email</label>
                         <input type="email" class="form-control rounded-0" style="height:50px;" placeholder="Type your email here...">
                     </div>
                 </div>
@@ -243,7 +236,7 @@
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="phone" style="font-weight:500" class="text-white">Phone</label>
+                        <label for="phone" style="font-weight:600">Phone</label>
                         <input type="text" class="form-control rounded-0" style="height:50px;" placeholder="Type your phone here...">
                     </div>
                 </div>
@@ -251,15 +244,16 @@
             <div class="row mt-2">
                 <div class="col-12">
                     <div class="form-group">
-                        <label for="exampleFormControlTextarea1" class='text-white' style="font-weight:600">Your Message</label>
+                        <label for="exampleFormControlTextarea1" style="font-weight:600">Your Message</label>
                         <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10" placeholder="Type your message here"></textarea>
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-12 d-flex justify-content-center">
-                    <button type="submit" class="btn btn-sm rounded-pill btn-outline-white">
+                    <button type="submit" class="btn btn-md rounded-0 btn-outline-black" style="font-weight:700">
                         Submit
+                        <i class="fas fa-arrow-right animated fadeInLeft infinite slow ml-3"></i>
                     </button>
                 </div>
             </div>
@@ -299,49 +293,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-lg-12">
-                    <div id="program_2">
-                        <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-                            <div>
-                                <div class="row">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <span class="fab fa-facebook text-white" style="font-size:100px;"></span>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <span style="font-size:20px; font-weight:600" class="text-white">bodygravityid</span>
-                                    </div>
-                                </div>
-                                <div class="row mt-3">
-                                    <div class="col-lg-12 d-flex justify-content-center">
-                                        <button type="button" class="btn btn-outline-white btn-md rounded-0">
-                                            Visit
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-lg-12">
-                    <div id="program_3">
-                        <div class="w-100 h-100 d-flex justify-content-center align-items-center">
-                            <div>
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <span class="fab fa-youtube text-white" style="font-size:100px;"></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
+            <div class="row mt-4 mb-4">
                 <div class="col-lg-12">
                     <div id="program_4">
                         <div class="w-100 h-100 d-flex justify-content-center align-items-center">

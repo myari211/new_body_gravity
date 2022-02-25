@@ -19,6 +19,10 @@
             .active_section {
                 border-bottom: 2px solid #000;
             }
+
+            .grey-ice {
+                background-color:#DAE4DE;
+            }
         </style>
     </head>
     <body>
@@ -55,7 +59,8 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top z-depth-0" id="header_mobile">
                 <div class="container">
                     <a class="navbar-brand" href="#">
-                        <img src="{{ asset('image/body_logo.png') }}" style="width:80px;">
+                        <img src="{{ asset('image/body_white.png') }}" style="width:80px;" id="image">
+                        <img src="{{ asset('image/body_gravity_black.png') }}" id="other_image" class="d-none">                        
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -70,6 +75,9 @@
                             </li>
                             <li class="nav-item mr-3 program">
                                 <a class="nav-link" href="{{ route('program') }}">Our Program</a>
+                            </li>
+                            <li class="nav-item mr-3 testimonial">
+                                <a class="nav-link" href="{{ route('testimonial') }}">Testimonial</a>
                             </li>
                             <li class="nav-item contact">
                                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
