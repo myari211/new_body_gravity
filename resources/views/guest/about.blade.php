@@ -31,7 +31,7 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/take_class.jpg') }});
+        url({{ asset('image/take_class_2.jpg') }});
     }
 
     #header_footer_mobile {

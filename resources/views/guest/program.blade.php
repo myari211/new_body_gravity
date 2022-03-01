@@ -117,7 +117,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <button type="button" class="btn btn-md rounded-0 p-0 z-depth-0 text-capitalize" style="font-size:12px; font-weight:700" data-toggle="collapse" data-target="#detailsPain" aria-expanded="false">
+                                                    <button type="button" class="btn btn-md rounded-0 p-0 z-depth-0 text-capitalize" style="font-size:12px; font-weight:700" data-toggle="collapse" data-target="#detailsPain" aria-expanded="false" onclick="openRead(this)" data-id="PainManagement" data-message="Read More" id="showPainManagement">
                                                         Read More
                                                     </button>
                                                 </div>
@@ -189,7 +189,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <button type="button" class="btn btn-md p-0 rounded z-depth-0 text-capitalize" style="font-size:12px; font-weight:700" data-toggle="collapse" data-target="#kidsCollapse" aria-expanded="false">
+                                                    <button type="button" class="btn btn-md p-0 rounded z-depth-0 text-capitalize" style="font-size:12px; font-weight:700" data-toggle="collapse" data-target="#kidsCollapse" aria-expanded="false" onclick="openRead(this);" data-id="Kids" data-message="Read More" id="showKids">
                                                         Read More
                                                     </button>
                                                 </div>
@@ -244,7 +244,7 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex justify-content-center">
-                                                    <button type="button" class="btn p-0 rounded-0 z-depth-0 text-capitalize" style="font-size:12px; font-weight:700" data-toggle="collapse" data-target="#seniorCollapse" aria-expanded="false">
+                                                    <button type="button" class="btn p-0 rounded-0 z-depth-0 text-capitalize" style="font-size:12px; font-weight:700" data-toggle="collapse" data-target="#seniorCollapse" aria-expanded="false" onclick="openRead(this)" data-id="Senior" data-message="Read More" id="showSenior">
                                                         Read More
                                                     </button>
                                                 </div>
@@ -741,6 +741,25 @@
         console.log(generalID);
 
         window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hi, I am found body gravity Website, and i interest about '+ generalID +' Program. Can i know more about this program ?');
+    }
+
+    function openRead(elem) {
+
+        var generalID = $(elem).data("id");
+
+        var message = $(elem).data("message");
+
+        if(message === "Read More") {
+            $(elem).data("message", "Less More").change();
+            var value = "Less More";
+        }
+        else
+        {
+            $(elem).data("message", "Read More").change();
+            var value = "Read More";
+        }
+
+        $('#show'+generalID).html(value);
     }
 </script>
 

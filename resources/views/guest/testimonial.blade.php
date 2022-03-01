@@ -9,7 +9,7 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/tools.jpg') }});
+        url({{ asset('image/testimoni.jpg') }});
     }
 </style>
 <div id="header_banner">
@@ -102,8 +102,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-1">
-                    <span>(Optional)</span>
+                <div class="col-lg-1 d-flex align-items-center">
+                    <span class="text-muted" style="font-weight:400">(Optional)</span>
                 </div>
             </div>
             <div class="row mt-4">
