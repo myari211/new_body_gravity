@@ -92,7 +92,7 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <button type="button" class="btn blue-gradient btn-lg rounded-pill text-capitalize d-flex align-items-center animated fadeInDown delay-2s" style="font-weight:600" onclick="location.href='/about';">
+                                <button type="button" class="btn blue-gradient btn-lg rounded-pill text-capitalize d-flex align-items-center animated fadeInDown delay-2s" style="font-weight:600" onclick="location.href='{{ route('about') }}';">
                                     Take A Look <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite delay-3s"></i>
                                 </button>
                             </div>
@@ -121,7 +121,7 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-12 d-flex justify-content-center">
-                                <button type="button" class="btn btn-md blue-gradient rounded-pill wow animated fadeInDown delay-2s text-capitalize" onclick="location.href='/about';">
+                                <button type="button" class="btn btn-md blue-gradient rounded-pill wow animated fadeInDown delay-2s text-capitalize" onclick="location.href='{{ route('about') }}';">
                                     Take A Look
                                     <i class="fas fa-arrow-right animated fadeInLeft infinite slow ml-4"></i>
                                 </button>

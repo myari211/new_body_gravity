@@ -42,7 +42,7 @@
         color: white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75), rgba(0,0,0,1) 100%),
-        url({{ asset('image/take_class.jpg') }});
+        url({{ asset('image/take_class_2.jpg') }});
     }
 
     #button_hover:hover{
@@ -268,7 +268,7 @@
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <button type="button" class="btn btn-md blue-gradient rounded-pill wow fadeInDown" onclick="location.href='/program';">
+                                <button type="button" class="btn btn-md blue-gradient rounded-pill wow fadeInDown" onclick="location.href='{{ route('program') }}';">
                                     Take Class <i class="fas fa-arrow-right ml-4 animated fadeInLeft slow infinite"></i>
                                 </button>
                             </div>
@@ -403,7 +403,7 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col-12 d-flex justify-content-center">
-                                    <button type="button" class="btn btn-md rounded-pill blue-gradient">
+                                    <button type="button" class="btn btn-md rounded-pill blue-gradient" onclick="location.href='{{ route('program') }}';">
                                         Take A Class <i class="fas fa-arrow-right animated fadeInLeft slow infinite ml-2"></i>
                                     </button>
                                 </div>
