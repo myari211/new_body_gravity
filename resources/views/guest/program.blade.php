@@ -499,7 +499,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-12 d-flex justify-content-center">
-                                    <a data-toggle="collapse" href="#product_2_details" aria-expanded="false" aria-controls="product_1_details" class="text-dark">
+                                    <a data-toggle="collapse" href="#product_2_details" aria-expanded="false" aria-controls="product_1_details" class="text-dark" onclick="openRead(this)" data-id="PainManagement" data-message="Read More" id="showPainManagement">
                                         <small style="font-size:10px !important;">
                                             Read More
                                         </small>
@@ -740,7 +740,7 @@
 
         console.log(generalID);
 
-        window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hi, I am found body gravity Website, and i interest about '+ generalID +' Program. Can i know more about this program ?');
+        window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hi, I am found body gravity Website, and Interested about '+ generalID +' Program. May i know more about this program ?');
     }
 
     function openRead(elem) {
