@@ -740,7 +740,7 @@
 
         console.log(generalID);
 
-        window.open('https://api.whatsapp.com/send?phone=628118772283&text=Hi, I am found body gravity Website, and Interested about '+ generalID +' Program. May i know more about this program ?');
+        window.open("https://api.whatsapp.com/send?phone=628118772283&text=Hi, I saw Body Gravity's Website and i'm interested about "+ generalID +" Program. May i know more about this program ?");
     }
 
     function openRead(elem) {
