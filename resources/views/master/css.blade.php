@@ -6,6 +6,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>Body Gravity</title>
 <link rel="icon" href="{{ asset('favicon.ico') }}">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <style type="text/css">
    @font-face
    {
