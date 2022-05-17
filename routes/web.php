@@ -51,6 +51,9 @@ Route::middleware('role:admin')->group(function() {
         //customer package
         Route::post('/admin/api/customer/add/package/{id}', 'Admin\Api\CustomerController@customer_add_package')->name('admin.api.customer.add.package');
         
+        //customer_add_trainer
+        Route::post('/admin/api/customer/add/trainer/{id}', 'Admin\Api\CustomerController@add_trainer')->name('admin.api.customer.add_trainer');
+
 
         //trainer
         Route::get('/admin/api/trainer', 'Admin\Api\TrainerController@trainer')->name('admin.api.trainer');
@@ -64,6 +67,7 @@ Route::middleware('role:trainer')->group(function() {
             return view('trainer.dashboard');
         })->name('trainer.dashboard');
     //api
+    Route::get('/trainer/{id}', 'Trainer\ApiController@dashboard');
 });
 
 

@@ -129,6 +129,7 @@ class CustomerController extends Controller
     }
 
     public function customer_details($id) {
+        $trainer_result = "";
         $customer = DB::table('users')
             ->where('id', $id)
             ->first();
@@ -141,11 +142,66 @@ class CustomerController extends Controller
             ->where('user_id', $id)
             ->first();
 
+        $trainer = DB::table('users')
+            ->leftJoin('model_has_roles', function($join) {
+                $join->on('model_has_roles.model_id', '=', 'users.id');
+            })
+            ->leftJoin('roles', function($join) {
+                $join->on('model_has_roles.role_id', '=', 'roles.id');
+            })
+            ->where('roles.name', 'trainer')
+            ->select('*', 'users.id as user_id')
+            ->get();
+
+        $trainer_count = DB::table('package_customers')
+            ->where([
+                ['user_id', $id],
+                ['trainer', '<>', null]
+            ])
+            ->count();
+
+        $trainer_show = DB::table('package_customers')
+            ->leftJoin('users', function($join) {
+                $join->on('package_customers.trainer', '=', 'users.id');
+            })
+            ->first();
+
+        foreach($trainer as $data) {
+            $trainer_result .= '<div class="col-lg-6 mb-3">'.
+                '<div class="card mb-3">'.
+                    '<div class="card-body">'.
+                        '<div class="row">'.
+                            '<div class="col-lg-6">'.
+                                '<img src="'.(asset('image/body_gravity_black.png')).'" class="w-100 rounded-circle">'.
+                            '</div>'.
+                            '<div class="col-lg-6">'.
+                                '<div class="row">'.
+                                    '<div class="col-lg-12">'.
+                                        '<span style="font-size:18px; font-weight:600; opacity:0.8">'.$data->first_name." ".$data->last_name.'</span>'.
+                                    '</div>'.
+                                '</div>'.
+                                '<div class="row mt-2">'.
+                                    '<div class="col-lg-12">'.
+                                        '<button type="button" class="m-0 btn btn-md rounded front-color text-white text-capitalize" onclick="trainerPick(this)" data-trainer-id="'.$data->user_id.'">'.
+                                            'Pilih'.
+                                        '</button>'.
+                                    '</div>'.
+                                '</div>'.
+                            '</div>'.
+                        '</div>'.
+                    '</div>'.
+                '</div>'.
+            '</div>';
+        }
+
 
         return response()->json([
             "customer" => $customer,
             "package_total" => $package_total,
             "package" => $package,
+            "trainer" => $trainer_result,
+            "trainer_show" => $trainer_show,
+            "trainer_count" => $trainer_count,
         ]);
     }
 
@@ -181,6 +237,32 @@ class CustomerController extends Controller
         return response()->json([
             "success" => true,
             "message" => "Paket Berhasil Ditambahkan",
+            "icon" => "success",
+        ]);
+    }
+
+    public function add_trainer(Request $request, $id) {
+        $validator = Validator::make($request->all(), [
+            "trainer" => "required",
+        ]);
+
+        if($validator->fails()) {
+            return response()->json([
+                "success" => false,
+                "message" => $validator->messages()->all()[0],
+                "icon" => "error",
+            ]);
+        }
+
+        $trainer = DB::table('package_customers')
+            ->where('id', $id)
+            ->update([ 
+                "trainer" => $request->trainer,
+            ]);
+
+        return response()->json([
+            "success" => true,
+            "message" => "Trainer berhasil dipasangkan",
             "icon" => "success",
         ]);
     }
