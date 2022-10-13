@@ -42,6 +42,8 @@ Route::middleware('role:admin')->group(function() {
         //trainer
         Route::get('/admin/trainer', 'Admin\Page\TrainerController@trainer')->name('admin.trainer');
     //api
+        //dashboard
+        Route::get('/admin/api/dashboard', 'Admin\Api\ApiController@dashboard')->name('admin.dashboard.api');
         // customer
         Route::get('/admin/api/customer', 'Admin\Api\CustomerController@customer')->name('admin.api.customer');
         Route::post('/admin/api/customer/create', 'Admin\Api\CustomerController@customerCreate')->name('admin.api.customer.create');
@@ -63,21 +65,51 @@ Route::middleware('role:admin')->group(function() {
 //trainer
 Route::middleware('role:trainer')->group(function() {
     //page
-        Route::get('/trainer/dashboard/{id}', function() {
-            return view('trainer.dashboard');
-        })->name('trainer.dashboard');
+        // Route::get('/trainer/dashboard/{id}', function() {
+        //     return view('trainer.dashboard');
+        // })->name('trainer.dashboard');
+        Route::get('/trainer/dashboard/{id}', 'Trainer\PageController@index')->name('trainer.dashboard');
+        Route::get('/trainer/barcode/{id}', 'Trainer\PageController@barcode')->name('trainer.barcode');
+        Route::get('/trainer/customers/{id}', 'Trainer\PageController@customer')->name('trainer.customer');
+        Route::get('/trainer/attendances/{id}', 'Trainer\PageController@attendances')->name('trainer.attendances');
+        Route::get('/trainer/profile/{id}', 'Trainer\PageController@profile')->name('trainer.profile');
     //api
     Route::get('/trainer/{id}', 'Trainer\ApiController@dashboard');
+
+    //barcode
+    Route::get('/trainer/barcode/initial/{package_id}/{customer_id}/{trainer_id}', 'Trainer\ApiController@getBarcode')->name('getQR');
+    Route::get('/trainer/barcode/{package_id}/{customer_id}/{user_id}', 'Trainer\ApiController@getBarcode')->name('getQRImage');
+    // Route::post('/trainer/barcode/{customer_id}/{trainer_id}/{package_id}', 'Trainer\ApiController@getBarcode')->name('postQR');
+    
+    //initial_barcode
+    Route::post('/trainer/barcode/initial/{package_id}/{customer_id}/{trainer_id}', 'Trainer\ApiController@initialBarcode')->name('name.initial_barcode');
+    //update_token
+    Route::post('/trainer/barcode/initial/token/{package_id}/{customer_id}/{trainer_id}', 'Trainer\ApiController@updateToken')->name('name.updateToken');
+
+
+
+
+    //test_barcode
+    Route::get('/trainer/attendance/{id}', 'Trainer\ApiController@attendaces')->name('attendaces');
 });
 
 
 //customer
 Route::middleware('role:customer')->group(function() {
     //page
-        Route::get('/customer/dashboard/{id}', function() {
-            return view('customer.dashboard');
-        })->name('customer.dashboard');
+        Route::get('/customer/dashboard/{id}', 'Customer\Page\DashboardController@dashboard')->name('customer.dashboard');
+        Route::get('/customer/attendances/{id}', 'Customer\Page\AttendancesController@index')->name('customer.attendances');
+        Route::get('/customer/package/{id}', 'Customer\Page\AttendancesController@package')->name('customer.package');
+        Route::get('/customer/profile/{id}', 'Customer\Page\AttendancesController@profile')->name('customer.profile');
+        // Route::get('/customer/dashboard/{id}', function() {
+        //     return view('customer.dashboard');
+        // })->name('customer.dashboard');
     //api
+        //dashboard
+        Route::get('/customer/api/dashboard/{id}', 'Customer\Api\ApiController@dashboard')->name('customers.dashboard');
+
+        //attendances_details
+        Route::get('/customer/api/attendances/{id}', 'Customer\Api\ApiController@attendances_details')->name('customers.attendances.details');
 });
 
 

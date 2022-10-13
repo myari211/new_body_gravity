@@ -83,6 +83,17 @@
                 url({{ asset('image/home1.jpg') }});
             }
 
+            #header_mobile {
+                width: 100%;
+                min-height: 700px;
+                background-size:cover;
+                background-attachment: fixed;
+                /* color: white; */
+                background-image:
+                linear-gradient(55.8deg, rgba(0, 0, 0, 0.75) 99.53%, rgba(0, 0, 0, 1) 100%),
+                url({{ asset('image/home1.jpg') }});
+            }
+
             input,
             input::-webkit-input-placeholder{
                 font-size: 12px;
@@ -90,66 +101,111 @@
         </style>
     </head>
     <body>
-        <div class="card-login d-flex align-items-center">
-            <div class="w-100">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6">
-                        <div class='card'>
-                            <div class="card-body p-0">
-                                <div class="row">
-                                    <div class="col-lg-6 p-0">
-                                        <div id="header_banner" class="pl-4 pr-4 d-flex align-items-center">
-                                            <div>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <span style="font-size:30px; font-weight:600">Member Area</span>
+        <div class="d-none d-lg-block">
+            <div class="card-login d-flex align-items-center">
+                <div class="w-100">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-6">
+                            <div class='card'>
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                        <div class="col-lg-6 p-0">
+                                            <div id="header_banner" class="pl-4 pr-4 d-flex align-items-center">
+                                                <div>
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span style="font-size:30px; font-weight:600">Member Area</span>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-lg-12">
-                                                        <span style="font-weight:600">Please Login to your account</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6 pl-0 d-flex align-items-center">
-                                        <div class="w-100">
-                                            <div class="row d-flex justify-content-center">
-                                                <div class="col-lg-10">
-                                                    <span style="font-size:30px; font-weight:600">Welcome Back!</span>
-                                                </div>
-                                            </div>
-                                            <form method="post" action="{{ route('login') }}">
-                                                @csrf
-                                                <div class="row d-flex justify-content-center mt-4">
-                                                    <div class="col-lg-10">
-                                                        <input type="email" class="form-control rounded-pill" style="height:50px;" placeholder="Enter Email Address..." name="email">
-                                                        <div class="col-md-6">
-                            
-                                                            @error('email')
-                                                                <span class="invalid-feedback" role="alert">
-                                                                    <strong>{{ $message }}</strong>
-                                                                </span>
-                                                            @enderror
+                                                    <div class="row">
+                                                        <div class="col-lg-12">
+                                                            <span style="font-weight:600">Please Login to your account</span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="row d-flex justify-content-center mt-3">
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 pl-0 d-flex align-items-center">
+                                            <div class="w-100">
+                                                <div class="row d-flex justify-content-center">
                                                     <div class="col-lg-10">
-                                                        <input type="password" class="form-control rounded-pill" style="height:50px;" placeholder="Password" name="password">
+                                                        <span style="font-size:30px; font-weight:600">Welcome Back!</span>
                                                     </div>
                                                 </div>
-                                                <div class="row mt-3 d-flex justify-content-center">
-                                                    <div class="col-lg-10">
-                                                        <button type="submit" class="btn btn-md rounded-pill btn-block btn-black text-white z-depth-0 text-capitalize" style="font-weight:600; height:50px;">
-                                                            Login
-                                                        </button>
+                                                <form method="post" action="{{ route('login') }}">
+                                                    @csrf
+                                                    <div class="row d-flex justify-content-center mt-4">
+                                                        <div class="col-lg-10">
+                                                            <input type="email" class="form-control rounded-pill" style="height:50px;" placeholder="Enter Email Address..." name="email">
+                                                            <div class="col-md-6">
+                                
+                                                                @error('email')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                        <strong>{{ $message }}</strong>
+                                                                    </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </form>
+                                                    <div class="row d-flex justify-content-center mt-3">
+                                                        <div class="col-lg-10">
+                                                            <input type="password" class="form-control rounded-pill" style="height:50px;" placeholder="Password" name="password">
+                                                        </div>
+                                                    </div>
+                                                    <div class="row mt-3 d-flex justify-content-center">
+                                                        <div class="col-lg-10">
+                                                            <button type="submit" class="btn btn-md rounded-pill btn-block btn-black text-white z-depth-0 text-capitalize" style="font-weight:600; height:50px;">
+                                                                Login
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
                                         </div>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-block d-lg-none">
+            <div id="header_mobile">
+                <div class="h-100 w-100 d-flex justify-content-center align-items-center">
+                    <div class="row w-100 d-flex justify-content-center">
+                        <div class="col-10">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <span style="font-size: 30px;">Welcome Back!</span>
+                                        </div>
+                                    </div>
+                                    <form method="post" action="{{ route('login') }}">
+                                        @csrf
+                                        <div class="row mt-4">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <input type="email" class="form-control rounded-pill" name="email" placeholder="Enter Email Adress..">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <div class="form-group">
+                                                    <input type="password" class="form-control rounded-pill" name="password" placeholder="Password">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-4">
+                                            <div class="col-12">
+                                                <button type="submit" class="btn btn-dark btn-md rounded-pill btn-block z-depth-0 z-depth-0 text-capitalize">
+                                                    Login
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
