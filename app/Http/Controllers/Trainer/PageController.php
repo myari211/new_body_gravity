@@ -94,6 +94,10 @@ class PageController extends Controller
         if($total_money != 0 || $total_package != 0 || $total_usage != 0) {
             $income = (($total_money/$total_package) * $total_usage);
         }
+        else
+        {
+            $incomde = 0;
+        }
 
         $attendances = DB::table('attendances')
             ->where(function($query) use ($id) {
