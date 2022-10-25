@@ -96,7 +96,7 @@ class PageController extends Controller
         }
         else
         {
-            $incomde = 0;
+            $income = 0;
         }
 
         $attendances = DB::table('attendances')
