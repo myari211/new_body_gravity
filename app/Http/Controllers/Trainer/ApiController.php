@@ -28,7 +28,7 @@ class ApiController extends Controller
         $total_usage = DB::table('attendances')
             ->where(function($query) use ($id) {
                 $query->where('trainer_id', $id);
-                $query->whereMonth('updated_at', Carbon::now()->month);
+                // $query->whereMonth('updated_at', Carbon::now()->month);
                 $query->where('status', 'done');
             })->count();
 

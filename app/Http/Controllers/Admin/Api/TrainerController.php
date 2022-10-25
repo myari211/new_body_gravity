@@ -28,22 +28,22 @@ class TrainerController extends Controller
             ->get();
 
             foreach($trainer as $data) {
-                $trainer_result .= '<div class="col-lg-4">'.
-                    '<div class="card">'.
+                $trainer_result .= '<div class="col-lg-3">'.
+                    '<div class="card z-depth-0">'.
                             '<div class="card-body">'.
                                 '<div class="row">'.
-                                    '<div class="col-lg-5">'.
-                                        '<img src="'.(asset('image/body_gravity_black.png')).'" class="w-100" class="rounded-circle border">'.
+                                    '<div class="col-lg-4">'.
+                                        '<img src="'.(asset('image/body_gravity_black.png')).'" class="rounded-circle border" style="width:80px; height:80px;">'.
                                     '</div>'.
-                                    '<div class="col-lg-7">'.
+                                    '<div class="col-lg-8">'.
                                         '<div class="row">'.
                                             '<div class="col-lg-12 d-flex justify-content-between">'.
-                                                '<span style="font-size:18px; font-weight:600; opacity:0.8">'.(Str::limit($data->first_name, 11)).'</span>'.
+                                                '<span style="font-weight:600;">'.$data->first_name.' '.$data->last_name.'</span>'.
                                                 '<button type="button" class="btn btn-md rounded-0 p-0 z-depth-0 m-0" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'.
                                                     '<i class="fas fa-ellipsis-v"></i>'.
                                                 '</button>'.
                                                 '<div class="dropdown-menu">'.
-                                                    '<a class="dropdown-item" href="'.(route('admin.customer.details', $data->user_id)).'" style="font-weight:600">'.
+                                                    '<a class="dropdown-item" href="'.(route('trainer_details', $data->user_id)).'" style="font-weight:600">'.
                                                         '<span class="badge front-color text-white p-2 rounded-circle mr-2">'.
                                                             '<i class="fas fa-user"></i>'.
                                                         '</span>'.
@@ -63,6 +63,11 @@ class TrainerController extends Controller
                                                         'Delete'.
                                                     '</a>'.
                                                 '</div>'.
+                                            '</div>'.
+                                        '</div>'.
+                                        '<div class="row">'.
+                                            '<div class="col-lg-12">'.
+                                                '<span style="font-size: 12px; font-weight: 600">'.$data->email.'</span>'.
                                             '</div>'.
                                         '</div>'.
                                     '</div>'.

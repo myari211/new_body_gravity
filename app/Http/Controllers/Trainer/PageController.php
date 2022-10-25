@@ -72,6 +72,35 @@ class PageController extends Controller
     }
 
     public function profile($id) {
-        return view('trainer.profile');
+        $total_money = DB::table('package_customers')
+            ->where(function($query) use ($id) {
+                $query->where('trainer', $id);
+            })
+            ->sum('total_money');
+
+        $total_package = DB::table('package_customers')
+            ->where(function($query) use ($id) {
+                $query->where('trainer', $id);
+            })
+            ->sum('total_package');
+
+        $total_usage = DB::table('attendances')
+            ->where(function($query) use ($id) {
+                $query->where('trainer_id', $id);
+                // $query->whereMonth('updated_at', Carbon::now()->month);
+                $query->where('status', 'done');
+            })->count();
+
+        $income = (($total_money/$total_package) * $total_usage);
+
+        $attendances = DB::table('attendances')
+            ->where(function($query) use ($id) {
+                $query->where('trainer_id', $id);
+                $query->where('status', 'done');
+            })
+            ->count();
+
+
+        return view('trainer.profile', compact('income', 'attendances'));
     }
 }

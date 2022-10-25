@@ -4,6 +4,7 @@
         <style type="text/css">
             body {
                 overflow-x: hidden !important;
+                background-color: #EDF1FB;
             }
         </style>
     </head>
@@ -170,7 +171,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-md rounded btn-primary pt-3 pb-3 pr-3 pl-3 rounded-circle m-0">
+                        <button type="button" class="btn btn-md rounded btn-primary pt-3 pb-3 pr-3 pl-3 rounded-circle m-0" onclick="openQr();">
                             <i class="fas fa-qrcode text-white" style="font-size: 20px;"></i>
                         </button>
                     </li>
@@ -204,8 +205,48 @@
                     </li>
                 </ul>
             </nav>
+            <div class="modal fade" id="qrCode" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <div id="qrcode"></div>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <span style="font-size: 12px;">Scan this link for fill ur attendances</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             @yield('content.mobile')
         </div>
         @include('master.js')
+        <script type="text/javascript">
+            var trainer = "{{ Auth::user()->id }}"
+
+            const openQr = () => {
+                $('#qrCode').modal('show');
+                createQr();
+            }
+
+            const createQr = () => {
+                var qrcode = new QRCode(document.getElementById('qrcode'), {
+                    text: "{{ url('/') }}/customer/scan/" + trainer,
+                    width: 150,
+                    height: 150,
+                    correctLevel: QRCode.CorrectLevel.H,
+                });
+
+                $('#qrCode').on('hidden.bs.modal', function() {
+                    qrcode.clear();
+                });
+            }
+
+        </script>
     </body>
 </html>

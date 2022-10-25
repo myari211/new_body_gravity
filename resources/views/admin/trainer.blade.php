@@ -1,32 +1,16 @@
 @extends('admin.layouts.app')
 @section('content')
-<div class="row mt-4">
-    <div class="col-lg-12 d-flex justify-content-between">
-        <span style="font-size:28px; opacity:0.7">Trainer</span>
-        <button type="button" class="btn btn-md front-color text-white rounded text-capitalize" style="font-weight:600" data-toggle="modal" data-target="#createTrainer">
-            <i class="fas fa-user mr-2"></i>Add New
-        </button>
-    </div>
-</div>
-<div class="row mt-4">
-    <div class="col-lg-3">
-        <div class="card">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <span>Trainer</span>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-12">
-                        <span>30</span>
-                    </div>
-                </div>
-            </div>
+<div class="pl-3 pr-3">
+    <div class="row mt-4">
+        <div class="col-lg-12 d-flex justify-content-between">
+            <span style="font-size:12px; font-weight: 600">Trainer</span>
+            <button type="button" class="btn btn-md z-depth-0 border text-capitalize p-3 rounded-circle m-0" style="font-weight:600" data-toggle="modal" data-target="#createTrainer">
+                <i class="fas fa-plus"></i>
+            </button>
         </div>
     </div>
-</div>
-<div class="row mt-4" id="trainer">
+    <div class="row mt-4" id="trainer">
+    </div>
 </div>
 
 <div class="modal fade" id="createTrainer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

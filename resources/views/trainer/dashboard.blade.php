@@ -2,7 +2,7 @@
 @section('content')
     <div class="d-none d-lg-block">
         <div class="row">
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card z-depth-0">
                     <div class="card-body">
                         <div class="row">
@@ -25,9 +25,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card z-depth-0">
-                    <div class='card-body'>
+                    <div class='card-body z-depth-0'>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-between">
                                 <span style="font-weight: 600; font-size: 14px;" class="text-muted">Sharing Income</span>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-3">
                 <div class="card z-depth-0">
                     <div class="card-body">
                         <div class="row">
@@ -74,8 +74,8 @@
     <div class="d-block d-lg-none">
         <div class="row">
             <div class="col-12">
-                <div class="card bg-primary">
-                    <div class="card-body pl-0 pr-0">
+                <div class="card z-depth-0">
+                    <div class="card-body pl-0 pr-0 z-depth-0">
                         <div class="row mt-4">
                             <div class="col-12 d-flex justify-content-center">
                                 <img src="{{ asset('image/body_black.jpeg') }}" style="width: 70px; height: 70px;" class="rounded-circle border">
@@ -83,12 +83,12 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-12 d-flex justify-content-center">
-                                <span style="font-size: 25px; font-weight: 600" class="text-white">Hi, {{ Auth::user()->first_name }}</span>
+                                <span style="font-weight: 600">Hi, {{ Auth::user()->first_name }}</span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-12 d-flex justify-content-center">
-                                <span class="text-white">{{ Auth::user()->email }}</span>
+                                <span style="font-size: 12px; font-weight: 600">{{ Auth::user()->email }}</span>
                             </div>
                         </div>
                     </div>
@@ -97,35 +97,37 @@
         </div>
         <div class="container">
             <div class="row mt-3">
-                <div class="col-12">
-                    <div class="card">
+                <div class="col-6 ">
+                    <div class="card z-depth-0">
                         <div class="card-body">
-                            <div id="headTrainer">
-                                <div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-between">
-                                            <span style="font-weight: 600" class="text-muted">Customers</span>
-                                            <span class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0">Total</span>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <span style="font-size: 30px; font-weight: 600">{{ $total_customers }}</span>
-                                        </div>
-                                    </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <span style="font-weight: 600; font-size: 12px;">Customers</span>
+                                    <span class="badge badge-primary p-1 rounded z-depth-0">
+                                        <i class="fas fa-user"></i>
+                                    </span>
                                 </div>
-                                <div>
-                                    <div class="row">
-                                        <div class="col-12 d-flex justify-content-between">
-                                            <span style="font-weight: 600" class="text-muted">Income</span>
-                                            <span class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0">{{ date("M") }}</span>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <span style="font-size: 30px; font-weight: 600" id="incomeMobile"></span>
-                                        </div>
-                                    </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span style="font-size: 30px; font-weight: 600">{{ $total_customers }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card z-depth-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-between">
+                                    <span style="font-weight: 600; font-size: 12px;">Income</span>
+                                    <span class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0">{{ date("M") }}</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span style="font-size: 30px; font-weight: 600" id="incomeMobile"></span>
                                 </div>
                             </div>
                         </div>
@@ -134,17 +136,17 @@
             </div>
             <div class="row mt-4">
                 <div class="col-12">
-                    <span style="font-size: 20px; font-weight: 600">Client</span>
+                    <span style="font-size: 12px; font-weight: 600">Client</span>
                 </div>
             </div>
-            <div class="row mt-3" id="customerCarousel" style="height: 110px;">
+            <div class="row mt-3">
                 @foreach($customers as $data)
-                    <div class="col-6">
-                        <div class="card w-100">
+                    <div class="col-6 mb-2">
+                        <div class="card w-100 z-depth-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-4">
-                                        <img src="{{ asset('image/andry.png') }}" style="width: 50px; height: 50px;" class="border rounded-circle">
+                                        <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 50px; height: 50px;" class="border rounded-circle">
                                     </div>
                                     <div class="col-7 offset-1">
                                         <div class="row">
@@ -171,8 +173,8 @@
             </div>
             <div class="row mt-3" id="attendanceScroll" style="height: 170px">
                 @foreach($attendances as $data)
-                    <div class="col-4">
-                        <div class="card">
+                    <div class="col-4 mb-2">
+                        <div class="card z-depth-0">
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-center">
@@ -207,27 +209,6 @@
         $(document).ready(function() {
             $('#mobileView').addClass('d-none');
 
-            $('#headTrainer').slick({
-                infinite: false,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-            });
-
-            $('#customerCarousel').slick({
-                infinite: true,
-                slidesToShow: 2,
-                slidesToScroll: 2,
-                arrows: false,
-            });
-
-            $('#attendanceScroll').slick({
-                infinite: false,
-                slidesToShow: 3,
-                slidesToScroll: 2,
-                arrows: false,
-            });
-
             const nFormatter = (num, digits) => {
                 const lookup = [
                     { value: 1, symbol: ""},
@@ -252,27 +233,6 @@
                     $('#customer_list').html(data.customer);
                     $('#sallary').html(nFormatter(25000000, 1));
                     $('#incomeMobile').html(nFormatter(data.income, 1));
-                    console.log(data.income);
-                    // $('#sallary').html(25000000);
-
-                    if(data.customer_count > 3) {
-                        $('#customer_list').slick({
-                            lazyload: 'ondemand',
-                            infinite:true,
-                            slidesToShow: 3,
-                            slidesToScroll: 1,
-                            nextArrow: $('#next'),
-                            prevArrow: $('#prev'),
-                        });
-
-                        $('#next').removeClass('d-none');
-                        $("#prev").removeClass('d-none');
-                    }
-                    else
-                    {
-                        $('#next').addClass('d-none');
-                        $('#prev').addClass('d-none');
-                    }
                 }
             });
         });

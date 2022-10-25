@@ -41,7 +41,7 @@
                                         <div class="card-body">
                                             <div class="row h-100">
                                                 <div class="col-3 d-flex align-items-center">
-                                                    <img src="{{ asset('image/andry.png') }}" style="width: 50px; height: 50px;" class="rounded-circle">
+                                                    <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 50px; height: 50px;" class="rounded-circle">
                                                 </div>
                                                 <div class="col-9 d-flex align-items-center">
                                                     <div>

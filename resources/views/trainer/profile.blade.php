@@ -25,7 +25,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-12">
-                            <span style="font-size: 30px; font-weight: 600">157</span>
+                            <span style="font-size: 30px; font-weight: 600">{{ $attendances }}</span>
                         </div>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                     </div>
                     <div class="row mt-2">
                         <div class="col-12">
-                            <span style="font-weight: 600; font-size: 30px;">57</span>
+                            <span style="font-weight: 600; font-size: 30px;">{{ $attendances }}</span>
                         </div>
                     </div>
                     <div class="row">
@@ -72,7 +72,7 @@
                     </div>
                     <div class="row">
                         <div class="col-12">
-                            <span style="font-weight: 600; font-size: 30px;">13M</span>
+                            <span style="font-weight: 600; font-size: 30px;">@currency($income)</span>
                         </div>
                     </div>
                     <div class="row">
@@ -104,10 +104,13 @@
     </div>
     <div class="row mt-3">
         <div class="col-12">
-            <a href="">
+            <a href="javascript:void();" onclick="document.getElementById('logoutProfile').submit();">
                 <i class="fas fa-power-off mr-2"></i>
                 Log Out
             </a>
+            <form method="post" action="{{ route('logout') }}" id="logoutProfile" class="d-none">
+                @csrf
+            </form>
         </div>
     </div>
 </div>

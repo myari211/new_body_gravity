@@ -47,7 +47,7 @@
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-center">
-                                        <img src="{{ asset('image/andry.png') }}" style="width: 70px; height: 70px;" class="rounded-circle">
+                                        <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 70px; height: 70px;" class="rounded-circle">
                                     </div>
                                 </div>
                                 <div class="row mt-3">
@@ -84,7 +84,7 @@
                             <div class="modal-body">
                                 <div class="row">
                                     <div class="col-12 d-flex justify-content-center">
-                                        <img src="{{ asset('image/andry.png') }}" style="width: 70px; height: 70px;" class="rounded-circle">
+                                        <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 70px; height: 70px;" class="rounded-circle">
                                     </div>
                                 </div>
                                 <div class="row mt-2">

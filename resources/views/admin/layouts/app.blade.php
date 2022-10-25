@@ -2,24 +2,28 @@
     <head>
         @include('master.css')
         <style>
+            body {
+                background-color: #EDF1FB;
+            }
             .menu{
                 transition: 0.5s;
                 padding-top:10px;
                 padding-bottom:10px;
-                color: #000 !important;
+                /* color: #000 !important; */
             }
 
             .menu:hover {
-                background-color:#F5F6FF;
+                /* background-color:#F5F6FF; */
                 border-radius: 10px;
             }
 
             .menu > a{
                 /* color:white; */
-                font-size:13px;
-                font-weight:600;
-                opacity:0.6;
-                color: #000 !important;
+                font-size:10px;
+                font-weight:400;
+                /* opacity:0.6; */
+                /* color: #000 !important; */
+                color: #fff;
             }
 
             .menu:hover > a{
@@ -30,51 +34,92 @@
     <body>
         <div class="d-none d-lg-block">
             <div class="row">
-                <div class="col-lg-2 pr-0 z-depth-1">
+                <div class="col-lg-2 pr-0 z-depth-1 unique-color-dark">
                     <div class="w-100 h-100" style="min-height:100vh;">
                         <div class="row d-flex justify-content-center">
                             <div class='col-lg-8 pt-4'>
-                                <img src="{{ asset('image/body_gravity_black.png') }}" class="w-100">
+                                <img src="{{ asset('image/body_white.png') }}" class="w-100">
                             </div>
                         </div>
                         <div class="pr-4 pl-4">
                             <div class="row mt-5 d-flex justify-content-center">
+                                <div class="col-12">
+                                    <span class="text-white" style="font-weight: 600; font-size: 8px; opacity: 0.6">NAVIGATION</span>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
                                 <div class="col-lg-12 menu">
-                                    <a href="/admin/dashboard/{{ Auth::user()->id }}">
-                                        <i class="fas fa-chart-pie mr-2"></i>
+                                    <a href="/admin/dashboard/{{ Auth::user()->id }}" class="text-stylish-color">
+                                        <span class="badge badge p-2 rounded z-depth-0 bg-white mr-2">
+                                            <i class="fas fa-chart-pie text-dark"></i>
+                                        </span>
                                         Dashboard
                                     </a>
                                 </div>
                             </div>
                             <div class="row mt-3">
+                                <div class="col-12">
+                                    <span class="text-white" style="font-weight: 600; font-size: 8px; opacity: 0.6">RESOURCES</span>
+                                </div>
+                            </div>
+                            <div class="row mt-2">
                                 <div class="col-lg-12 menu">
                                     <a href="/admin/customer/" class="w-100">
-                                        <i class="fas fa-user mr-2"></i>
+                                        <span class="badge badge p-2 rounded z-depth-0 bg-white mr-2">
+                                            <i class="fas fa-user text-dark"></i>
+                                        </span>
                                         Customer
                                     </a>
                                 </div>
                             </div>
-                            <div class="row mt-3">
+                            <div class="row mt-1">
                                 <div class="col-lg-12 menu">
                                     <a href="/admin/trainer">
-                                        <i class="fas fa-user mr-2"></i>
+                                        <span class="badge badge p-2 rounded z-depth-0 bg-white mr-2">
+                                            <i class="fas fa-user text-dark"></i>
+                                        </span>
                                         Trainer
                                     </a>
                                 </div>
                             </div>
-                            <div class="row mt-3">
-                                <div class="col-lg-12 menu">
-                                    <a href="/admin/customer">
-                                        <i class="fas fa-user mr-2"></i>
-                                        Customer
-                                    </a>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-10 pl-0">
-                    <div class="card front-color rounded-0 z-depth-0" style="height: 200px; border-bottom-left-radius: 25px !Important; border-bottom-right-radius: 25px !important;">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-end align-items-center">
+                                            <div class="mr-2">
+                                                <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 30px; height:30px;" class="border rounded-circle">
+                                            </div>
+                                            <div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span style="font-size: 10px; font-weight: 600">{{ Auth::user()->first_name." ".Auth::user()->last_name }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <span style="font-size: 8px;">Administrator</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12">
+                            @yield('content')
+                        </div>
+                    </div>
+                    {{-- <div class="card front-color rounded-0 z-depth-0" style="height: 200px; border-bottom-left-radius: 25px !Important; border-bottom-right-radius: 25px !important;">
                         <div class="card-body" style="border-bottom-left-radius: 25px !important; border-bottom-right-radius: 25px !important;">
                             <div class="row d-flex justify-content-center mt-3">
                                 <div class="col-lg-11">
@@ -91,7 +136,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>

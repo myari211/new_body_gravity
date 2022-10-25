@@ -31,9 +31,9 @@ Auth::routes();
 //admin
 Route::middleware('role:admin')->group(function() {
     //page
-        Route::get('/admin/dashboard/{id}', function() {
-            return view('admin.dashboard');
-        })->name('admin.dashboard');
+        Route::get('/admin/dashboard/{id}', 'Admin\Page\CustomerController@dashboard')->name('admin.dashboard');
+
+        // return view('admin.dashboard');
 
         //customer
         Route::get('/admin/customer', 'Admin\Page\CustomerController@customer')->name('admin.customer');
@@ -41,6 +41,7 @@ Route::middleware('role:admin')->group(function() {
 
         //trainer
         Route::get('/admin/trainer', 'Admin\Page\TrainerController@trainer')->name('admin.trainer');
+        Route::get('/admin/trainer/details/{id}', 'Admin\Page\TrainerController@trainerDetails')->name('trainer_details');
     //api
         //dashboard
         Route::get('/admin/api/dashboard', 'Admin\Api\ApiController@dashboard')->name('admin.dashboard.api');

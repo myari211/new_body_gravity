@@ -1,7 +1,146 @@
 @extends('admin.layouts.app')
 @section('content')
     <div class="d-none d-lg-block">
-        <div class="row">
+        <div class="pl-3 pr-3">
+            <div class="row">
+                <div class="col-12">
+                    <span style="font-size: 12px; font-weight: 600">Dashboard</span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-6">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="card z-depth-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-between">
+                                            <span style="font-size: 12px; font-weight: 600">Customers</span>
+                                            <span class="badge p-2 rounded z-depth-0 unique-color">
+                                                <i class="fas fa-users"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <span id="total_customer" style="font-size: 30px; font-weight: 600"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card z-depth-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-between">
+                                            <span style="font-size: 12px; font-weight: 600">Trainer</span>
+                                            <span class="badge p-2 rounded z-depth-0 unique-color">
+                                                <i class="fas fa-user-tie"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <span id="total_trainer" style="font-size: 30px; font-weight: 600"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="card z-depth-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-between">
+                                            <span style="font-size: 12px; font-weight: 600">Hours</span>
+                                            <span class="badge p-2 rounded z-depth-0 unique-color">
+                                                <i class="fas fa-clock"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <span id="total_hours" style="font-size: 30px; font-weight: 600"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="card z-depth-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-between">
+                                            <span style="font-size: 12px; font-weight: 600">Revenue</span>
+                                            <span class="badge p-2 rounded z-depth-0 unique-color">
+                                                <i class="fas fa-money-bill"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <span id="revenue" style="font-size: 30px; font-weight: 600"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 h-100">
+                    <div class="card z-depth-0">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span style="font-size: 12px; font-weight: 600">Revenue</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <canvas id="myChart" height="100"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <span style="font-size: 12px; font-weight: 600">Trainer</span>
+                </div>
+            </div>
+            <div class="row mt-3">
+                @foreach($trainer as $data)
+                    <div class="col-3 mb-2">
+                        <div class="card z-depth-0">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 100px; height: 100px;">
+                                    </div>
+                                    <div class="col-8">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span style="font-weight: 600">{{ $data->first_name." ".$data->last_name }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <span style="font-size: 12px; font-weight: 600">{{ $data->email }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        {{-- <div class="row">
             <div class="col-lg-4">
                 <div class="card z-depth-0">
                     <div class="card-body">
@@ -40,7 +179,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
 @endsection
 @section('content.mobile')
@@ -195,8 +334,24 @@
                 success:function(data) {
                     $('#total_customer').html(data.customer_count);
                     $('#total_trainer').html(data.trainer_count);
+                    $('#total_hours').html(data.total_hours);
+                    $('#revenue').html(nFormatter(data.total_revenue, 1));
                 }
             });
+        }
+
+        const nFormatter = (num, digits) => {
+            const lookup = [
+                { value: 1, symbol: ""},
+                { value: 1e3, symbol: "K"},
+                { value: 1e6, symbol: "M"},
+                { value: 1e9, symbol: "G"},
+            ];
+            const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+            var item = lookup.slice().reverse().find(function(item) {
+                return num >= item.value;
+            });
+            return item ? (num / item.value).toFixed(digits).replace(rx, "$1") + " " + item.symbol : "0";
         }
 
         const ctx = document.getElementById('myChart');
