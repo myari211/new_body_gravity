@@ -90,8 +90,10 @@ class PageController extends Controller
                 // $query->whereMonth('updated_at', Carbon::now()->month);
                 $query->where('status', 'done');
             })->count();
-
-        $income = (($total_money/$total_package) * $total_usage);
+        
+        if($total_money != 0 || $total_package != 0 || $total_usage != 0) {
+            $income = (($total_money/$total_package) * $total_usage);
+        }
 
         $attendances = DB::table('attendances')
             ->where(function($query) use ($id) {
