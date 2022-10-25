@@ -153,7 +153,7 @@
                                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                             </li>
                             <li class="nav-item">
-                                <button type="button" class="btn btn-md rounded btn-outline-white">
+                                <button type="button" class="btn btn-md rounded btn-outline-white" onclick='location.href="/login";'>
                                     Member
                                 </button>
                             </li>

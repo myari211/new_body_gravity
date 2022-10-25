@@ -49,7 +49,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-lg-12 menu">
-                                    <a href="/admin/dashboard/{{ Auth::user()->id }}" class="text-stylish-color">
+                                    <a href="{{ url('/') }}/admin/dashboard/{{ Auth::user()->id }}" class="text-stylish-color">
                                         <span class="badge badge p-2 rounded z-depth-0 bg-white mr-2">
                                             <i class="fas fa-chart-pie text-dark"></i>
                                         </span>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="row mt-2">
                                 <div class="col-lg-12 menu">
-                                    <a href="/admin/customer/" class="w-100">
+                                    <a href="{{ url('/') }}/admin/customer/" class="w-100">
                                         <span class="badge badge p-2 rounded z-depth-0 bg-white mr-2">
                                             <i class="fas fa-user text-dark"></i>
                                         </span>
@@ -74,7 +74,7 @@
                             </div>
                             <div class="row mt-1">
                                 <div class="col-lg-12 menu">
-                                    <a href="/admin/trainer">
+                                    <a href="{{ url('/') }}/admin/trainer">
                                         <span class="badge badge p-2 rounded z-depth-0 bg-white mr-2">
                                             <i class="fas fa-user text-dark"></i>
                                         </span>
