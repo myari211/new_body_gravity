@@ -102,76 +102,73 @@
     </head>
     <body>
         <div class="d-none d-lg-block">
-            <div class="card-login d-flex align-items-center">
-                <div class="w-100">
-                    <div class="row d-flex justify-content-center">
-                        <div class="col-lg-6">
-                            <div class='card'>
-                                <div class="card-body p-0">
-                                    <div class="row">
-                                        <div class="col-lg-6 p-0">
-                                            <div id="header_banner" class="pl-4 pr-4 d-flex align-items-center">
-                                                <div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span style="font-size:30px; font-weight:600">Member Area</span>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
-                                                            <span style="font-weight:600">Please Login to your account</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6 pl-0 d-flex align-items-center">
-                                            <div class="w-100">
-                                                <div class="row d-flex justify-content-center">
-                                                    <div class="col-lg-10">
-                                                        <span style="font-size:30px; font-weight:600">Welcome Back!</span>
-                                                    </div>
-                                                </div>
-                                                <form method="post" action="{{ route('login') }}">
-                                                    @csrf
-                                                    <div class="row d-flex justify-content-center mt-4">
-                                                        <div class="col-lg-10">
-                                                            <input type="email" class="form-control rounded-pill" style="height:50px;" placeholder="Enter Email Address..." name="email">
-                                                            <div class="col-md-6">
-                                
-                                                                @error('email')
-                                                                    <span class="invalid-feedback" role="alert">
-                                                                        <strong>{{ $message }}</strong>
-                                                                    </span>
-                                                                @enderror
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row d-flex justify-content-center mt-3">
-                                                        <div class="col-lg-10">
-                                                            <input type="password" class="form-control rounded-pill" style="height:50px;" placeholder="Password" name="password">
-                                                        </div>
-                                                    </div>
-                                                    <div class="row mt-3 d-flex justify-content-center">
-                                                        <div class="col-lg-10">
-                                                            <button type="submit" class="btn btn-md rounded-pill btn-block btn-black text-white z-depth-0 text-capitalize" style="font-weight:600; height:50px;">
-                                                                Login
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
+            <div class="row h-100">
+                <div class="col-lg-4 h-100 bg-primary d-flex align-items-center">
+                    <div class="w-100 pl-4">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="text-white" style="font-size: 40px; font-weight: 600">Body Gravity</span> <br/>
+                                <span class="text-white" style="font-size: 20px; font-weight: 500;">Stabilize your body for a productive life</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 h-100 d-flex align-items-center">
+                    <div class="w-100">
+                        <form method="post" action="{{ route('login') }}">
+                            @csrf
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 200px;">
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center mt-4">
+                                <div class="col-8">
+                                    <div class="md-form md-outline input-with-pre-icon m-0">
+                                        <input type="email" name="email" class="form-control rounded" placeholder="Enter your Email" id="email" style="height: 50px;">
+                                        <label for="email">Email</label>
+                                        <i class="fas fa-envelope input-prefix"></i>
                                     </div>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center">
+                                <div class="col-8">
+                                    <div class="md-form md-outline input-with-pre-icon m-0">
+                                        <input type="password" name="password" class="form-control rounded" placeholder="Enter your Password" id="password" style="height: 50px;">
+                                        <label for="password">Password</label>
+                                        <i class="fas fa-lock input-prefix"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row d-flex justify-content-center mt-4">
+                                <div class="col-8">
+                                    <button type="submit" class="btn btn-block btn-primary z-depth-0 rounded text-capitalize" style="font-height: 600 !important">
+                                        Sign In
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-block d-lg-none">
+            <div class="row h-100">
+                <div class="col-12 bg-primary d-flex justify-content-center">
+                    <div style="width: 95vw">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="md-form md-outline input-with-pre-icon">
+                                    <input type="email" name="email" class="form-control rounded bg-white" id="email">
+                                    <label for="email" class="text-white">Email</label>
+                                    <i class="fas fa-envelope input-prefix"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="d-block d-lg-none">
-            <div id="header_mobile">
+            {{-- <div id="header_mobile">
                 <div class="h-100 w-100 d-flex justify-content-center align-items-center">
                     <div class="row w-100 d-flex justify-content-center">
                         <div class="col-10">
@@ -211,7 +208,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
         </div>
         @include('master.js')
     </body>
