@@ -228,14 +228,23 @@
                 dataType: 'json',
                 url: '/trainer/' + userID,
                 success:function(data) {
+                    variableCard(data.customer_count, data.customer);
                     $('#name').html(data.user.first_name + " " + data.user.last_name);
-                    $('#customers_count').append(data.customer_count);
+                    // $('#customers_count').append(data.customer_count);
                     $('#customer_list').html(data.customer);
                     $('#sallary').html(nFormatter(25000000, 1));
                     $('#incomeMobile').html(nFormatter(data.income, 1));
                 }
             });
         });
+
+        const variableCard = (customer_count, customer) => {
+            var totalCustomer;
+
+            customer_count > 0 ? totalCustomer == customer_count : totalCustomer == "0";
+            console.log('totalCustomer');
+            $('#customers_count').append(totalCustomer);
+        }
 
     </script>
 @endsection
