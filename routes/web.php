@@ -42,6 +42,7 @@ Route::middleware('role:admin')->group(function() {
         //trainer
         Route::get('/admin/trainer', 'Admin\Page\TrainerController@trainer')->name('admin.trainer');
         Route::get('/admin/trainer/details/{id}', 'Admin\Page\TrainerController@trainerDetails')->name('trainer_details');
+        Route::get('/admin/trainer/performance', 'Admin\page\TrainerController@performance')->name('trainer_performance');
     //api
         //dashboard
         Route::get('/admin/api/dashboard', 'Admin\Api\ApiController@dashboard')->name('admin.dashboard.api');

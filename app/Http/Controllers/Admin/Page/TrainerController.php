@@ -10,7 +10,19 @@ use Carbon\Carbon;
 class TrainerController extends Controller
 {
     public function trainer() {
-        return view('admin.trainer');
+        $trainer_count = DB::table('users')
+            ->leftJoin('model_has_roles', function ($join) {
+                $join->on("model_has_roles.model_id", '=', 'users.id');
+            })
+            ->leftJoin('roles', function($join) {
+                $join->on('model_has_roles.role_id', '=', 'roles.id');
+            }) 
+            ->where(function($query) {
+                $query->where('roles.name', 'trainer');
+            })
+            ->count();
+
+        return view('admin.trainer', compact('trainer_count'));
     }
 
     public function trainerDetails($id) {
