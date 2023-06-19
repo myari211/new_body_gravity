@@ -18,12 +18,12 @@
     totalRevenueChartOptions = {
       series: [
         {
-          name: '2021',
-          data: [18, 7, 15, 29, 18, 12, 9]
+          name: '2023',
+          data: [60, 70, 150, 40, 120, 90]
         },
         {
-          name: '2020',
-          data: [-13, -18, -9, -14, -5, -17, -15]
+          name: '2022',
+          data: [130, 120, 90, 140, 50, 170, 150, 90, 100, 120, 110, 120]
         }
       ],
       chart: {
@@ -78,7 +78,7 @@
         }
       },
       xaxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
         labels: {
           style: {
             fontSize: '13px',
@@ -278,7 +278,7 @@
   // --------------------------------------------------------------------
   const growthChartEl = document.querySelector('#growthChart'),
     growthChartOptions = {
-      series: [78],
+      series: [100],
       labels: ['Growth'],
       chart: {
         height: 240,
@@ -394,7 +394,7 @@
       },
       series: [
         {
-          data: [110, 270, 145, 245, 205, 285]
+          data: [10, 10, 4, 12, 6, 8, 3, 7, 15, 15, 10, 30]
         }
       ],
       xaxis: {
@@ -585,6 +585,103 @@
   if (typeof incomeChartEl !== undefined && incomeChartEl !== null) {
     const incomeChart = new ApexCharts(incomeChartEl, incomeChartConfig);
     incomeChart.render();
+  }
+
+  const attendancesChartEl = document.querySelector('#attendancesChart'),
+    attendancesChartConfig = {
+      series: [
+        {
+          data: [2, 3, 2, 3, 2, 1, 4, 3, 1, 0, 3, 2]
+        }
+      ],
+      chart: {
+        height: 215,
+        parentHeightOffset: 0,
+        parentWidthOffset: 0,
+        toolbar: {
+          show: false
+        },
+        type: 'area'
+      },
+      dataLabels: {
+        enabled: false
+      },
+      stroke: {
+        width: 2,
+        curve: 'smooth'
+      },
+      legend: {
+        show: false
+      },
+      markers: {
+        size: 6,
+        colors: 'transparent',
+        strokeColors: 'transparent',
+        strokeWidth: 4,
+        discrete: [
+          {
+            fillColor: config.colors.white,
+            seriesIndex: 0,
+            dataPointIndex: 7,
+            strokeColor: config.colors.primary,
+            strokeWidth: 2,
+            size: 6,
+            radius: 8
+          }
+        ],
+        hover: {
+          size: 7
+        }
+      },
+      colors: [config.colors.primary],
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shade: shadeColor,
+          shadeIntensity: 0.6,
+          opacityFrom: 0.5,
+          opacityTo: 0.25,
+          stops: [0, 95, 100]
+        }
+      },
+      grid: {
+        borderColor: borderColor,
+        strokeDashArray: 3,
+        padding: {
+          top: -20,
+          bottom: -8,
+          left: -10,
+          right: 8
+        }
+      },
+      xaxis: {
+        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+        axisBorder: {
+          show: false
+        },
+        axisTicks: {
+          show: false
+        },
+        labels: {
+          show: true,
+          style: {
+            fontSize: '13px',
+            colors: axisColor
+          }
+        }
+      },
+      yaxis: {
+        labels: {
+          show: true
+        },
+        min: 0,
+        max: 10,
+        tickAmount: 4
+      }
+    };
+  if (typeof attendancesChartEl !== undefined && attendancesChartEl !== null) {
+    const attendancesChart = new ApexCharts(attendancesChartEl, attendancesChartConfig);
+    attendancesChart.render();
   }
 
   // Expenses Mini Chart - Radial Chart

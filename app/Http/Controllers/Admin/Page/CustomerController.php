@@ -30,4 +30,8 @@ class CustomerController extends Controller
     public function customerDetails($id) {
         return view('admin.details', compact("id"));
     }
+
+    public function customer_package() {
+        return view('admin.customer_package');
+    }
 }

@@ -25,6 +25,14 @@ class TrainerController extends Controller
         return view('admin.trainer', compact('trainer_count'));
     }
 
+    public function performance() {
+        return view('admin.performance');
+    }
+
+    public function trainerAccount() {
+        return view('admin.trainer_account');
+    }
+
     public function trainerDetails($id) {
         $trainer = DB::table('users')
             ->leftJoin('model_has_roles', function($join) {

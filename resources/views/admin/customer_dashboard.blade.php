@@ -1,6 +1,161 @@
 @extends('admin.layouts.app')
 @section('content')
+<div class="row">
+    <div class="col-8">
+        <div class="card h-100">
+            <div class="row row-bordered g-0">
+                <div class="col-md-12">
+                    <h5 class="card-header m-0 me-2 pb-3">Customer Growth</h5>
+                    <div id="totalRevenueChart" class="px-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-4 col-md-4 col-lg-4 order-3 order-md-2">
+        <div class="row">
+            <div class="col-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <img src="{{ asset('image/img/icons/unicons/paypal.png') }}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                                <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt4"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1">Customer</span>
+                        <h3 class="card-title text-nowrap mb-2" id="total_customer"></h3>
+                        <small class="text-success fw-semibold"><i class="bx bx-down-arrow-alt"></i> +14.82%</small>
+                        <small class="text-muted">From last month</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <img src="{{ asset('image/img/icons/unicons/cc-primary.png') }}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                                <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt1"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="cardOpt1">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1">Customers have package</span>
+                        <h3 class="card-title mb-2">1</h3>
+                        <small class="text-success fw-semibold"><i class="bx bx-up-arrow-alt"></i> +100%</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="card-title d-flex align-items-start justify-content-between">
+                            <div class="avatar flex-shrink-0">
+                                <img src="{{ asset('image/img/icons/unicons/paypal.png') }}" alt="Credit Card" class="rounded" />
+                            </div>
+                            <div class="dropdown">
+                                <button
+                                class="btn p-0"
+                                type="button"
+                                id="cardOpt4"
+                                data-bs-toggle="dropdown"
+                                aria-haspopup="true"
+                                aria-expanded="false"
+                                >
+                                <i class="bx bx-dots-vertical-rounded"></i>
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="cardOpt4">
+                                <a class="dropdown-item" href="javascript:void(0);">View More</a>
+                                <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="fw-semibold d-block mb-1">Customers have no package</span>
+                        <h3 class="card-title text-nowrap mb-2">0</h3>
+                        <small class="text-success fw-semibold"><i class="bx bx-down-arrow-alt"></i> +14.82%</small>
+                        <small class="text-muted">From last month</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
 <div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Trainer</th>
+                        <th>Session</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                      <tr>
+                        <td><strong>Customer Example</strong></td>
+                        <td>customer@body-gravity.com</td>
+                        <td>+62 812 7231 7198</td>
+                        <td>
+                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                            <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
+                              <img src="{{ asset('image/img/avatars/5.png') }}" alt="Avatar" class="rounded-circle">
+                            </li>
+                          </ul>
+                        </td>
+                        <td><span class="badge bg-label-primary me-1">8 Left</span></td>
+                        <td>
+                          <div class="dropdown">
+                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
+                              <i class="bx bx-dots-vertical-rounded"></i>
+                            </button>
+                            <div class="dropdown-menu">
+                              <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-edit-alt me-1"></i> Edit</a>
+                              <a class="dropdown-item" href="javascript:void(0);"><i class="bx bx-trash me-1"></i> Delete</a>
+                            </div>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- <div class="row mt-4">
     <div class="col-lg-12">
         <div class="row">
             <div class="col-lg-10">
@@ -235,7 +390,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> --}}
 @endsection
 
 
