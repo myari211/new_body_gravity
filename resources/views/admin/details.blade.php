@@ -13,13 +13,13 @@
                                 <div class="col-lg-8">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <h3>Customer Example</h3>
+                                            <h3>{{ $user->first_name." ".$user->last_name }}</h3>
                                             {{-- <span id="name"></span> --}}
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-12">
-                                            <span class="text-muted">customer@body-gravity.com</span>
+                                            <span class="text-muted">{{ $user->email }}</span>
                                         </div>
                                     </div>
                                     <div class="row mt-5">
@@ -29,7 +29,7 @@
                                                     <span>
                                                         <i class="fas fa-phone text-primary"></i>
                                                     </span>
-                                                    <span class="ml-2 fw-bold">+62 812 7231 7198</span>
+                                                    <span class="ml-2 fw-bold">{{ $user->phone == NULL ? "-" : $user->phone }}</span>
                                                 </div>
                                             </div>
                                             <div class="row mt-5">
@@ -37,7 +37,7 @@
                                                     <span>
                                                         <i class="fas fa-calendar text-primary"></i>
                                                     </span>
-                                                    <span class="ml-2 fw-bold">12 Jan 1990</span>
+                                                    <span class="ml-2 fw-bold">{{ $user->birth_date == Null ? "--/--/----" : $user->birth_date }}</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -45,9 +45,9 @@
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex align-items-center">
                                                     <span style="font-size: 20px;">
-                                                        <i class="fas fa-venus text-danger"></i>
+                                                        <i class="fas fa-{{ $user->gender == "P" ? "mars" : "venus" }} text-danger"></i>
                                                     </span>
-                                                    <span class="ml-2 fw-bold">Female</span>
+                                                    <span class="ml-2 fw-bold">{{ $user->gender == NULL ? "-" : $user->gender }}</span>
                                                 </div>
                                             </div>
                                             <div class="row mt-5">
@@ -80,7 +80,7 @@
                                     <span>Riwayat Penyakit Scoliosis</span>
                                 </div>
                                 <div class="col-6">
-                                    <span>Scoliosis Kogenital</span>
+                                    <span>{{ $user->q1 == NULL ? "-" : $user->q1 }}</span>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -88,7 +88,7 @@
                                     <span>Level</span>
                                 </div>
                                 <div class="col-lg-6">
-                                    <span>Medium</span>
+                                    <span>{{ $user->q2 == NULL ? "-" : $user->q2 }}</span>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -96,7 +96,7 @@
                                     <span>Tulang belakang tampak melengkung</span>
                                 </div>
                                 <div class="col-lg-6">
-                                    <span>Ya</span>
+                                    <span>{{ $user->q3 == NULL ? "-" : $user->q3 }}</span>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -104,7 +104,7 @@
                                     <span>Salah satu bahu lebih tinggi dari pada yang lain</span>
                                 </div>
                                 <div class="col-lg-6">
-                                    <span>Tidak</span>
+                                    <span>{{ $user->q4 == NULL ? "-" : $user->q4 }}</span>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -112,7 +112,7 @@
                                     <span>Salah satu pinggul lebih menonjol</span>
                                 </div>
                                 <div class="col-lg-6">
-                                    <span>Ya</span>
+                                    <span>{{ $user->q5 == NULL ? "-" : $user->q5 }}</span>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -120,7 +120,7 @@
                                     <span>Condong Ke Satu sisi</span>
                                 </div>
                                 <div class="col-lg-6">
-                                    <span>Tidak</span>
+                                    <span>{{ $user->q6 == NULL ? "-" : $user->q6 }}</span>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -128,7 +128,7 @@
                                     <span>Tinggi Pinggang tidak rata</span>
                                 </div>
                                 <div class="col-lg-6">
-                                    <span>Ya</span>
+                                    <span>{{ $user->q7 == NULL ? "-" : $user->q7 }}</span>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -136,7 +136,7 @@
                                     <span>Nyeri Punggung Bawah</span>
                                 </div>
                                 <div class="col-lg-6">
-                                    <span>Ya</span>
+                                    <span>{{ $user->q8 == NULL ? "-" : $user->q8 }}</span>
                                 </div>
                             </div>
                             <div class="row mt-3">
@@ -144,7 +144,7 @@
                                     <span>Kaku Pada Punggung</span>
                                 </div>
                                 <div class="col-lg-6">
-                                    <span>Ya</span>
+                                    <span>{{ $user->q9 == NULL ? "-" : $user->q9 }}</span>
                                 </div>
                             </div>
                         </div>
@@ -174,12 +174,12 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <span style="font-size: 30px; font-weight: 800">Trainer Example</span>
+                                        <span style="font-size: 30px; font-weight: 800">{{ $trainer == NULL ? "-" : $trainer->first_name." ".$trainer->last_name }}</span>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-12">
-                                        <small class="text-muted">76 Session</small>
+                                        <small class="text-muted">{{ $session }} Session</small>
                                     </div>
                                 </div>
                             </div>

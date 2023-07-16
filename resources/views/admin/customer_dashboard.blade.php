@@ -125,7 +125,19 @@
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                      <tr>
+                        @foreach($customer as $data)
+                        <tr>
+                            <td>{{ $data->first_name.' '.$data->last_name }}</td>
+                            <td>{{ $data->email }}</td>
+                            <td>{{ ($data->phone == null ? "-" : $data->phone) }}</td>
+                            <td>{{ $data->trainer_name }}</td>
+                            <td>{{ ((int)$data->total_package - (int)$data->total_usage )}}</td>
+                            <td>
+                                <button type="button" class="btn btn-primary roudned text-capitalize m-0" onclick="location.href='/admin/customer/{{ $data->user_id }}'">Profile</button>
+                            </td>
+                        </tr>
+                        @endforeach
+                      {{-- <tr>
                         <td><strong>Customer Example</strong></td>
                         <td>customer@body-gravity.com</td>
                         <td>+62 812 7231 7198</td>
@@ -148,7 +160,7 @@
                             </div>
                           </div>
                         </td>
-                      </tr>
+                      </tr> --}}
                     </tbody>
                 </table>
             </div>
