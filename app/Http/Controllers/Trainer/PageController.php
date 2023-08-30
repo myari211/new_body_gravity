@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Trainer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Auth;
 
 class PageController extends Controller
 {
@@ -24,12 +25,14 @@ class PageController extends Controller
             })
             ->count();
 
-        $customers = DB::table('package_customers')
+        $customers = DB::table('user_trainers')
             ->leftJoin('users', function($join) {
-                $join->on('users.id', '=', 'package_customers.user_id');
+                $join->on('users.id', '=', 'user_trainers.user_id');
             })
-            ->where('trainer', $id)
-            ->where('package_customers.total_package', "<>", 'package_customers.total_usage')
+            ->where(function($query) use ($id) {
+                $query->where('user_trainers.trainer_id', $id);
+            })
+            ->select('*', 'users.id as users_id')
             ->get();
 
         return view('trainer.dashboard', compact('customers', 'total_customers', 'attendances'));
@@ -39,18 +42,75 @@ class PageController extends Controller
         return view('trainer.barcode');
     }
 
-    public function customer($id) {
-        $customers = DB::table('package_customers')
-            ->where(function($query) use ($id) {
-                $query->where('package_customers.trainer', $id);
+    public function customer_dashboard() {
+        $userId = Auth::user()->id;
+
+
+        return view('trainer.customer_dashboard');
+    }
+
+    public function customer_details($id) {
+        // $customers = DB::table('package_customers')
+        //     ->where(function($query) use ($id) {
+        //         $query->where('package_customers.trainer', $id);
+        //     })
+        //     ->leftJoin('users', function($join) {
+        //         $join->on('users.id', '=', 'package_customers.user_id');
+        //     })
+        //     ->select('*', 'package_customers.user_id as customer_id')
+        //     ->get();
+
+        $trainer_id = Auth::user()->id;
+
+        $customers = DB::table("users")
+            ->where(function ($query) use ($id) {
+                $query->where("users.id", $id);
             })
-            ->leftJoin('users', function($join) {
-                $join->on('users.id', '=', 'package_customers.user_id');
-            })
-            ->select('*', 'package_customers.user_id as customer_id')
             ->get();
 
-        return view('trainer.customer', compact('customers'));
+        $session = DB::table('attendances')
+            ->where('customer_id', $id)
+            ->count();
+
+        $personal_information = DB::table('personal_information_users')
+            ->where('user_id', $id)
+            ->first();
+
+        $personal_count = DB::table('personal_information_users')
+            ->where('user_id', $id)
+            ->count();
+
+        $attendance = DB::table('attendances')
+            ->where('customer_id', $id)
+            ->get();
+
+        $details = DB::table('personal_users')
+            ->where('user_id', $id)
+            ->first();
+
+        $details_count = DB::table('personal_users')
+            ->where('user_id', $id)
+            ->count();
+
+        $package = DB::table('package_customers')
+            ->where('user_id', $id)
+            ->first();
+
+        $attendances = DB::table('attendances')
+            ->where(function ($query) use ($id) {
+                $query->where('customer_id', $id);
+                $query->where('status', 1);
+            })
+            ->leftJoin('users', function($join) {
+                $join->on('users.id', '=', 'attendances.trainer_id');
+            })
+            ->select('attendances.*', 'users.first_name', 'users.last_name')
+            ->orderBy('attendances.created_at', 'asc')
+            ->get();
+
+        $user_id = $id;
+
+        return view('trainer.customer', compact('customers', 'session', 'personal_information', 'personal_count', 'user_id', 'details', 'details_count', 'package', 'attendances'));
     }
 
     public function attendances($id) {

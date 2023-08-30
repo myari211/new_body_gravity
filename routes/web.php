@@ -37,7 +37,11 @@ Route::middleware('role:admin')->group(function() {
 
         //customer
         Route::get('/admin/customer', 'Admin\Page\CustomerController@customer')->name('admin.customer');
+
+        //customer_profile
         Route::get('/admin/customer/{id}', 'Admin\Page\CustomerController@customerDetails')->name('admin.customer.details');
+        Route::post('/admin/customer/profile/{id}', 'Admin\Page\CustomerController@customerProfile')->name('admin.customer.profile.update');
+
         Route::get('admin/customer', 'Admin\Page\CustomerController@customer')->name('customer_dashboard');
         Route::get('admin/customer/package/session', 'Admin\Page\CustomerController@customer_package')->name('admin.customer_package');
 
@@ -76,9 +80,18 @@ Route::middleware('role:trainer')->group(function() {
         // })->name('trainer.dashboard');
         Route::get('/trainer/dashboard/{id}', 'Trainer\PageController@index')->name('trainer.dashboard');
         Route::get('/trainer/barcode/{id}', 'Trainer\PageController@barcode')->name('trainer.barcode');
-        Route::get('/trainer/customers/{id}', 'Trainer\PageController@customer')->name('trainer.customer');
+        Route::get('/trainer/customer/dashboard', 'Trainer\PageController@customer_dashboard')->name('trainer.customer_dashboard');
+        Route::get('/trainer/customers/details/{id}', 'Trainer\PageController@customer_details')->name('trainer.customer_details');
         Route::get('/trainer/attendances/{id}', 'Trainer\PageController@attendances')->name('trainer.attendances');
         Route::get('/trainer/profile/{id}', 'Trainer\PageController@profile')->name('trainer.profile');
+
+        //customer
+        Route::post('/trainer/create/customer', 'Trainer\ApiController@create_customers')->name('trainer.create_customers');
+        Route::post('/trainer/create/profile/{id}', 'Trainer\ApiController@create_profile')->name('trainer.create_profile');
+        Route::post('/trainer/create/details/{id}', 'Trainer\ApiController@create_details')->name('trainer.create_details');
+        Route::post('/trainer/create/package/{id}', 'Trainer\ApiController@create_package')->name('trainer.create_package');
+        Route::post('/trainer/create/token/attendances/{user_id}/{trainer_id}/{package_id}', 'Trainer\ApiController@create_attendances')->name('trainer.create_attendances');
+
     //api
     Route::get('/trainer/{id}', 'Trainer\ApiController@dashboard');
 
@@ -118,6 +131,7 @@ Route::middleware('role:customer')->group(function() {
         Route::get('/customer/api/attendances/{id}', 'Customer\Api\ApiController@attendances_details')->name('customers.attendances.details');
 });
 
+Route::get('/customer/attendances/scan/{token}', 'Customer\Api\ApiController@attendances_scan')->name('customers.attendances.scan');
 
 Route::post('/api/test/{id}', 'Admin\Api\CustomerController@customer_add_package');
 Route::get('/api/test/{id}', 'Admin\Api\CustomerController@customer_details');

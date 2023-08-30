@@ -96,13 +96,13 @@
             </div>
         </div>
         <div class="container">
-            <div class="row mt-3">
-                <div class="col-6 ">
+            <div class="row mt-3" id="headers">
+                <div class="col-12">
                     <div class="card z-depth-0">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <span style="font-weight: 600; font-size: 12px;">Customers</span>
+                                    <span style="font-weight: 600; font-size: 12px;">Client</span>
                                     <span class="badge badge-primary p-1 rounded z-depth-0">
                                         <i class="fas fa-user"></i>
                                     </span>
@@ -116,13 +116,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-6">
+                <div class="col-12">
                     <div class="card z-depth-0">
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-between">
                                     <span style="font-weight: 600; font-size: 12px;">Income</span>
-                                    <span class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0">{{ date("M") }}</span>
+                                    <span class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0 text-capitalize">{{ date("M") }}</span>
                                 </div>
                             </div>
                             <div class="row">
@@ -133,36 +133,55 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row mt-4">
                 <div class="col-12">
-                    <span style="font-size: 12px; font-weight: 600">Client</span>
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-between">
+                                    <span style="font-weight: 600; font-size: 12px;">Total Session</span>
+                                    <span class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0">
+                                        <i class="fas fa-clock"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <span style="font-size: 30px; font-weight: 600">2</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row mt-4">
+                <div class="col-12 d-flex justify-content-between align-items-center">
+                    <span style="font-size: 12px; font-weight: 600">Client</span>
+                    <button type="button" class="btn btn-md btn-primary rounded-circle z-depth-0 p-2 border-0" data-toggle="modal" data-target="#createCustomers">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="row mt-3" id="customer_role">
                 @foreach($customers as $data)
                     <div class="col-6 mb-2">
-                        <div class="card w-100 z-depth-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 50px; height: 50px;" class="border rounded-circle">
-                                    </div>
-                                    <div class="col-7 offset-1">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px; font-weight: 700">{{ $data->first_name }}</span>
-                                            </div>
+                        <a href="/trainer/customers/details/{{ $data->users_id }}" class="w-100">
+                            <div class="card w-100 z-depth-0">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 50px; height: 50px;" class="border rounded-circle">
                                         </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 10px;">{{ $data->total_package - $data->total_usage }} Session Left</span>
+                                        <div class="col-7 offset-1 d-flex align-items-center">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <span style="font-size: 10px; font-weight: 700">{{ $data->first_name." ".$data->last_name }}</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
@@ -202,11 +221,83 @@
                 @endforeach
             </div>
         </div>
+
+
+        {{-- modal create customers --}}
+        <div class="modal fade" id="createCustomers" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <!-- Change class .modal-sm to change the size of the modal -->
+            <div class="modal-dialog modal-fluid modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header bg-primary" style="min-height: 150px; border-bottom-right-radius: 60px;">
+                        <div class="row">
+                            <div class="col-12">
+                                <span class="text-white" style="font-size: 20px;">Create</span><br />
+                                <span class="text-white" style="font-size: 20px;">Customers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <form method="post" action="/trainer/create/customer">
+                            @csrf
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form md-outline m-0">
+                                        <label for="first_name">First Name</label>
+                                        <input type="text" class="form-control rounded" name="first_name" id="first_name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form md-outline m-0">
+                                        <label for="last_name">Last Name</label>
+                                        <input type="text" class="form-control rounded" name="last_name" id="last_name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form md-outline m-0">
+                                        <label for="email">Email</label>
+                                        <input type="text" class="form-control rounded" name="email" id="email">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div class="md-form md-outline m-0">
+                                        <label for="password">Password</label>
+                                        <input type="password" class="form-control rounded" name="password" id="password">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <button type="submit" class="btn btn-primary rounded z-depth-0 border-0 text-capitalize">
+                                        Create
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{-- endmodal --}}
     </div>
     <script type="text/javascript">
         var userID = "{{ Auth::user()->id }}";
 
         $(document).ready(function() {
+            $('#headers').slick({
+                'arrows': false,
+            });
+
+            $('#customer_role').slick({
+                'arrows': false,
+                'slidesToShow': 2,
+            })
+
             $('#mobileView').addClass('d-none');
 
             const nFormatter = (num, digits) => {

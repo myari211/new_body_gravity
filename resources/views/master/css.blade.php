@@ -15,7 +15,6 @@
 <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 
 
-
 <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
 
     <!-- Core CSS -->
@@ -52,5 +51,13 @@
 
     .front-color{
         background-color:#4E73DF;
+    }
+
+    input { 
+        height: 50px !important;
+    }
+
+    select { 
+        height: 50px !important;
     }
 </style>

@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Admin\Page;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Validator;
+use RealRashid\SweetAlert\Facades\Alert;
+use \Carbon\Carbon;
+use Ramsey\Uuid\Uuid;
 
 class CustomerController extends Controller
 {
@@ -61,6 +65,7 @@ class CustomerController extends Controller
             ->leftJoin('personal_users', function($join) {
                 $join->on('personal_users.user_id', '=', 'users.id');
             })
+            ->select('*', 'users.id as user_id')
             ->first();
 
         $personal_information = DB::table('personal_information_users')
@@ -82,7 +87,7 @@ class CustomerController extends Controller
 
             $session = DB::table("attendances")
                 ->where(function($query) use ($id, $trainer_id) {
-                    $query->where('attendances.user_id', $id);
+                    $query->where('attendances.customer_id', $id);
                     $query->where('attendances.trainer_id', $trainer_id);
                 })
                 ->count();
@@ -91,7 +96,91 @@ class CustomerController extends Controller
             $session = 0;
         }
 
-        return view('admin.details', compact("user", "personal_information", 'trainer', 'session'));
+        $package_left = DB::table('package_customers')
+            ->where(function($query) use ($id) {
+                $query->where('package_customers.user_id', $id);
+                $query->where(DB::raw('package_customers.total_package - package_customers.total_usage'), '>', 0);
+            })
+            ->first();
+
+        $package = DB::table('package_customers')
+            ->where(function($query) use ($id) {
+                $query->where('package_customers.user_id', $id);
+            })
+            ->get();
+
+        $attendances = DB::table('attendances') 
+            ->where(function($query) use ($id) {
+                $query->where('attendances.customer_id', $id);
+            })
+            ->leftJoin('users', function($join) {
+                $join->on('users.id', '=', 'attendances.trainer_id');
+            })
+            ->orderBy('attendances.created_at', 'ASC')
+            ->get();
+        
+
+        return view('admin.details', compact("user", "personal_information", 'trainer', 'session', 'package_left', 'package', 'attendances'));
+    }
+
+    public function customerProfile($id, Request $request) {
+        $validator = Validator::make($request->all(), [
+            "first_name" => "required|min:2",
+            "last_name" => "required",
+            "email" => "required",
+            "phone" => "required|min:9",
+            "birth_date" => "required",
+            "gender" => "required",
+        ]);
+
+        if($validator->fails()) {
+            toast()->error('Failed', $validator->messages()->all()[0]);
+            return redirect()->back();
+        }
+        else {
+            $personalInformationCount = DB::table("personal_information_users")
+                ->where(function($query) use ($id) {
+                    $query->where("user_id", $id);
+                })
+                ->count();
+
+            $updateUser = DB::table('users')
+                ->where(function($query) use ($id) {
+                    $query->where('id', $id);
+                })
+                ->update([
+                    "first_name" => $request->first_name,
+                    "last_name" => $request->last_name,
+                    "email" => $request->email,
+                ]);
+
+            if($personalInformationCount < 1) {
+                $createPersonalInformation = DB::table("personal_information_users")
+                    ->insert([
+                        "id" => Uuid::uuid4()->toString(),
+                        "phone" => $request->phone,
+                        "birth_date" => $request->birth_date,
+                        "user_id" => $id,
+                        "gender" => $request->gender,
+                        "created_at" => Carbon::now(),
+                        "updated_at" => Carbon::now(),
+                    ]);
+            }
+            else {
+                $updatePersonalInformation = DB::table('personal_information_users')
+                    ->where(functioN($query) use ($id) {
+                        $query->where("user_id", $id);
+                    })
+                    ->update([
+                        "phone" => $request->phone,
+                        "birth_date" => $request->birth_date,
+                        "gender" => $request->gender,
+                        "updated_at" => Carbon::now(),
+                    ]);
+            }
+            toast()->success("Success", "Data has been saved");
+            return redirect()->back();
+        }
     }
 
     public function customer_package() {

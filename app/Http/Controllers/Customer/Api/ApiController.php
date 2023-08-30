@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Customer\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class ApiController extends Controller
 {
@@ -99,5 +100,32 @@ class ApiController extends Controller
         return response()->json([
             "data" => $attendances
         ]);
+    }
+
+    public function attendances_scan($token) {
+            $attendances = DB::table('attendances')
+                ->where('token', $token)
+                ->first();
+
+            $package = DB::table('package_customers')
+                ->where('user_id',$attendances->customer_id)
+                ->first();
+
+                $update_attendances = DB::table('attendances')
+                ->where('token', $token)
+                ->update([
+                    "status" => 1,
+                    "updated_at" => Carbon::now(),
+                ]);
+
+
+            $update_package = DB::table('package_customers')
+                ->where('user_id', $attendances->customer_id)
+                ->update([
+                    "total_usage" => $package->total_usage + 1,
+                    "updated_at" => Carbon::now(),
+                ]);
+
+            return "berhasil";
     }
 }

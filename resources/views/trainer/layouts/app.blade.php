@@ -32,6 +32,7 @@
         </style>
     </head>
     <body>
+        @include('sweetalert::alert')
         <div class="d-none d-lg-block">
             <div class="row" style="height: 100%">
                 <div class="col-lg-2 pr-0 h-100">
@@ -197,15 +198,15 @@
                             </a>
                             <ul class="menu-sub">
                               <li class="menu-item">
-                                <a href="{{ route('customer_dashboard') }}" class="menu-link">
+                                <a href="{{ route('trainer.customer_dashboard') }}" class="menu-link">
                                   <div data-i18n="Basic">Customer Dashboard</div>
                                 </a>
                               </li>
-                              <li class="menu-item">
+                              {{-- <li class="menu-item">
                                 <a href="{{ route('admin.customer_package') }}" class="menu-link">
                                   <div data-i18n="Basic">Customer Package</div>
                                 </a>
-                              </li>
+                              </li> --}}
                             </ul>
                           </li>
                           <!-- Components -->
@@ -340,7 +341,7 @@
                     </li>
                 </ul>
             </nav>
-            @yield('content.mobile')
+            {{-- @yield('content.mobile') --}}
         </div>
         @include('master.js')
         @yield('javascript')

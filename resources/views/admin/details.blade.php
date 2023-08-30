@@ -12,8 +12,11 @@
                                 </div>
                                 <div class="col-lg-8">
                                     <div class="row">
-                                        <div class="col-lg-12">
-                                            <h3>{{ $user->first_name." ".$user->last_name }}</h3>
+                                        <div class="col-lg-12 d-flex justify-content-between">
+                                            <h4>{{ $user->first_name." ".$user->last_name }}</h4>
+                                            <button type="button" class="btn  bg-label-primary btn-md rounded text-capitalize z-depth-0 m-0" data-toggle="modal" data-target="#profile">
+                                                Edit Profile
+                                            </button>
                                             {{-- <span id="name"></span> --}}
                                         </div>
                                     </div>
@@ -45,9 +48,9 @@
                                             <div class="row">
                                                 <div class="col-lg-12 d-flex align-items-center">
                                                     <span style="font-size: 20px;">
-                                                        <i class="fas fa-{{ $user->gender == "P" ? "mars" : "venus" }} text-danger"></i>
+                                                        <i class="fas fa-{{ $user->gender == "m" ? "mars text-primary" : "venus text-danger" }}"></i>
                                                     </span>
-                                                    <span class="ml-2 fw-bold">{{ $user->gender == NULL ? "-" : $user->gender }}</span>
+                                                    <span class="ml-2 fw-bold">{{ $user->gender == NULL ? "-" : ($user->gender == "f" ? "Female" : "Male") }}</span>
                                                 </div>
                                             </div>
                                             <div class="row mt-5">
@@ -223,12 +226,12 @@
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-12">
-                                    <span class="badge bg-label-primary me-1 text-capitalize fw-bold z-depth-0">General</span>
+                                    <span class="badge bg-label-primary me-1 text-capitalize fw-bold z-depth-0">{{ count($package) > 0 ? $package_left->package : "Belum Ada Paket" }}</span>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <span style="font-size: 30px; font-weight: 600">8</span>
+                                    <span style="font-size: 30px; font-weight: 600">{{  count($package) > 0 ? $package_left->total_package - $package_left->total_usage : "Belum Ada Paket"}}</span>
                                 </div>
                             </div>
                             <div class="row">
@@ -261,117 +264,40 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-4" id="history_payment">
-                <div class="col-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <span style="font-size: 18px;">General</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>0 Session Left</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>IDR 6,000,000.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <span style="font-size: 18px;">General</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>0 Session Left</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>IDR 6,000,000.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <span style="font-size: 18px;">General</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>0 Session Left</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>IDR 6,000,000.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <span style="font-size: 18px;">General</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>0 Session Left</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>IDR 6,000,000.00</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-4">
-                    <div class="card h-100">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12">
-                                    <span style="font-size: 18px;">General</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>0 Session Left</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span>IDR 6,000,000.00</span>
-                                </div>
-                            </div>
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card" style="max-height: 500px; overflow:auto">
+                        <div class="card-body" style="max-height: 500px; overflow:auto">
+                            <table class="table">
+                                <thead class="table-light">
+                                  <tr>
+                                    <th>Package</th>
+                                    <th>Session</th>
+                                    <th>Session Remaining</th>
+                                    <th>Price</th>
+                                    <th>Purchase Date</th>
+                                  </tr>
+                                </thead>
+                                <tbody class="table-border-bottom-0">
+                                    @foreach($package as $data)
+                                        <tr>
+                                            <td><strong>{{ $data->package }}</strong></td>
+                                            <td>{{ $data->total_package }}</td>
+                                            <td>{{ $data->total_package - $data->total_usage }}</td>
+                                            <td>@currency($data->total_money)</td>
+                                            <td>{{ date('d M Y', strtotime($data->created_at)) }}</th>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                              </table>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row mt-4">
                 <div class="col-12">
-                    <div class="card">
-                        <div class="card-body">
+                    <div class="card" style="max-height: 320px; overflow:auto">
+                        <div class="card-body" style="max-height: 320px; overflow:auto">
                             <table class="table">
                                 <thead class="table-light">
                                   <tr>
@@ -380,24 +306,24 @@
                                     <th>Customers</th>
                                     <th>Date</th>
                                     <th>Time</th>
-                                    <th>Media</th>
                                   </tr>
                                 </thead>
                                 <tbody class="table-border-bottom-0">
-                                  <tr>
-                                    <td><strong>Trainer Example</strong></td>
-                                    <td>1</td>
-                                    <td>
-                                      <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                                        <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
-                                          <img src="{{ asset('image/img/avatars/6.png') }}" alt="Avatar" class="rounded-circle">
-                                        </li>
-                                      </ul>
-                                    </td>
-                                    <td>15 jan 2023</td>
-                                    <td>16:00</th>
-                                    <td><span class="badge bg-label-primary me-1 z-depth-0">QR Code</span></td>
-                                  </tr>
+                                    @foreach($attendances as $data)
+                                        <tr>
+                                            <td><strong>{{ $data->first_name." ".$data->last_name }}</strong></td>
+                                            <td>1</td>
+                                            <td>
+                                            <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                                                <li data-bs-toggle="tooltip" data-popup="tooltip-custom" data-bs-placement="top" class="avatar avatar-xs pull-up" title="" data-bs-original-title="Lilian Fuller">
+                                                <img src="{{ asset('image/img/avatars/6.png') }}" alt="Avatar" class="rounded-circle">
+                                                </li>
+                                            </ul>
+                                            </td>
+                                            <td>{{ date("d M Y", strtotime($data->created_at)) }}</td>
+                                            <td>{{ date("H:i", strtotime($data->created_at)) }}</th>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                               </table>
                         </div>
@@ -476,6 +402,95 @@
                 <div class="row" id="trainer_pick">
                     
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- profile --}}
+<div class="modal fade" id="profile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-body">
+                <div class="row d-flex justify-content-end" style="margin-top:-80px;">
+                    <div class="col-2">
+                        <div class="card rounded-circle" style="width: 100px; height: 100px">
+                            <div class="card-body bg-label-primary rounded-circle p-1">
+                                <div class="row h-100">
+                                    <div class="col-12 h-100">
+                                        <div class="card rounded-circle h-100">
+                                            <div class="card-body rounded-circle p-0">
+                                                <img src="{{ asset('image/img/avatars/6.png') }}" class="w-100 border rounded-circle">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 d-flex justify-content-end">
+                        <h4>Edit Profile</h4>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <hr />
+                    </div>
+                </div>
+                <form method="post" action="/admin/customer/profile/{{ $user->user_id }}">
+                    @csrf
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="md-form md-outline m-0">
+                                <input type="text" class="form-control rounded" name="first_name" id="first_name" value="{{ $user->first_name }}">
+                                <label for="first_name" class="active">First Name</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="md-form md-outline m-0">
+                                <input type="text" class="form-control rounded" name="last_name" id="last_name" value="{{ $user->last_name }}">
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="md-form md-outline m-0">
+                            <input type="email" class="form-control rounded" name="email" id="email" value="{{ $user->email }}">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12">
+                            <div class="md-form md-outline m-0">
+                                <input type="number" class="form-control rounded" name="phone" id="phone" value="{{ $user->phone }}">
+                                <label for="phone">Phone</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-6">
+                            <div class="md-form md-outline m-0">
+                                <input type="date" class="form-control rounded" name="birth_date" id="birth_date" value="{{ $user->birth_date }}">
+                                <label for="birth_date">Birth Date</label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="md-form md-outline m-0">
+                                <select name="gender" class="form-control rounded" name="gender" id="gender">
+                                    <option value="m">Male</option>
+                                    <option value="f">Female</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button type="submit" class="btn btn-md rounded m-0 bg-label-primary text-capitalize z-depth-0 text-bold">Save</button>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

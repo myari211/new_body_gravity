@@ -32,6 +32,7 @@
         </style>
     </head>
     <body>
+        @include('sweetalert::alert')
         <div class="d-none d-lg-block">
             <div class="row" style="height: 100%">
                 <div class="col-lg-2 pr-0 h-100">
