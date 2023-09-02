@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Auth;
+use \Carbon\Carbon;
 
 class PageController extends Controller
 {
@@ -25,6 +26,13 @@ class PageController extends Controller
             })
             ->count();
 
+        $salary = DB::table('trainer_salaries')
+            ->where('trainer_id', $id)
+            ->where('month', Carbon::now()->format('M'))
+            ->where('year', Carbon::now()->format('Y'))
+            ->select(DB::raw('SUM(nominal) AS salary'))
+            ->first();
+
         $customers = DB::table('user_trainers')
             ->leftJoin('users', function($join) {
                 $join->on('users.id', '=', 'user_trainers.user_id');
@@ -35,7 +43,7 @@ class PageController extends Controller
             ->select('*', 'users.id as users_id')
             ->get();
 
-        return view('trainer.dashboard', compact('customers', 'total_customers', 'attendances'));
+        return view('trainer.dashboard', compact('customers', 'total_customers', 'attendances', 'salary'));
     }
 
     public function barcode($id) {
@@ -168,5 +176,33 @@ class PageController extends Controller
 
 
         return view('trainer.profile', compact('income', 'attendances'));
+    }
+
+
+    public function salary($id) {
+        $salary = DB::table('trainer_salaries')
+            ->where('trainer_salaries.trainer_id', $id)
+            ->select(
+                DB::raw('SUM(trainer_salaries.nominal) AS salary'),
+                DB::raw('trainer_salaries.month AS month'),
+                DB::raw("COUNT(trainer_salaries.id) AS total_hours"),
+            )
+            ->groupBy('month')
+            ->groupBy('year')
+            ->orderBy('trainer_salaries.created_at', 'ASC')
+            ->get();
+
+        $hours = DB::table('attendances')
+            ->where('trainer_id', $id)
+            ->select(
+                DB::raw('COUNT(*) AS total_hours, DATE_FORMAT(updated_at, "%M") AS month'),
+                // DB::raw("DATE FORMAT(updated_at, '%M') AS month"),
+                // DB::raw("DATE FORMAT(updated_at, '%Y') AS year"),
+            )
+            ->groupBy('month')
+            // ->groupBy('year')
+            ->get();
+
+        return view('trainer.salary', compact('salary', 'hours'));
     }
 }

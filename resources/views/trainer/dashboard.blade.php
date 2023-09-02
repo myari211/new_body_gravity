@@ -38,7 +38,7 @@
                         </div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <span style="font-weight: 600; font-size:50px;" id="sallary"></span>
+                                <span style="font-weight: 600; font-size:50px;">{{ $salary->salary }}</span>
                             </div>
                         </div>
                     </div>
@@ -127,7 +127,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <span style="font-size: 30px; font-weight: 600" id="incomeMobile"></span>
+                                    <span style="font-size: 30px; font-weight: 600">@currency($salary->salary)</span>
                                 </div>
                             </div>
                         </div>

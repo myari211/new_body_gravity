@@ -92,6 +92,10 @@ Route::middleware('role:trainer')->group(function() {
         Route::post('/trainer/create/package/{id}', 'Trainer\ApiController@create_package')->name('trainer.create_package');
         Route::post('/trainer/create/token/attendances/{user_id}/{trainer_id}/{package_id}', 'Trainer\ApiController@create_attendances')->name('trainer.create_attendances');
 
+        //salary
+        Route::get('/trainer/salary/{id}', 'Trainer\PageController@salary')->name('trainer.salary');
+        
+
     //api
     Route::get('/trainer/{id}', 'Trainer\ApiController@dashboard');
 

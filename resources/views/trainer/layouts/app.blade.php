@@ -506,7 +506,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url('/') }}/trainer/attendances/{{ Auth::user()->id }}" class="nav-link">
+                        <a href="{{ url('/') }}/trainer/salary/{{ Auth::user()->id }}" class="nav-link">
                             <div class="row">
                                 <div class="col-12">
                                     <i class="far fa-calendar-alt" style="font-size: 25px;"></i>
@@ -514,7 +514,7 @@
                             </div>
                             <div class="row mt-1">
                                 <div class="col-12">
-                                    <span style="font-size: 10px;">Attendances</span>
+                                    <span style="font-size: 10px;">Salary</span>
                                 </div>
                             </div>
                         </a>

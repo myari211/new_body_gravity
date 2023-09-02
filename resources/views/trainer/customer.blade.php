@@ -260,9 +260,13 @@
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-between align-items-center">
                                     <span>Attendances</span>
-                                    <button type="button" class="btn btn-md rounded btn-primary z-depth-0 border-0 p-2 text-capitalize" onClick="generateQR('{{ $package->id }}', '{{ Auth::user()->id }}', '{{ $user_id }}');">
-                                        Generate QR
-                                    </button>
+                                    @if($package != null)
+                                        <button type="button" class="btn btn-md rounded btn-primary z-depth-0 border-0 p-2 text-capitalize" onClick="generateQR('{{ $package->id }}', '{{ Auth::user()->id }}', '{{ $user_id }}');">
+                                            Generate QR
+                                        </button>
+                                    @else
+                                        <span style="font-size: 10px;">No Package</span>
+                                    @endif
                                 </div>
                             </div>
                             @if(count($attendances) > 0)
@@ -305,7 +309,7 @@
                             @else
                                 <div class="row mt-4">
                                     <div class="col-12 d-flex justify-content-center">
-                                        <span style="font-size:10px;">Belum ada data</span>
+                                        <span style="font-size:10px;">No data</span>
                                     </div>
                                 </div>
                             @endif

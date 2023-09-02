@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Ramsey\Uuid\Uuid;
 
 class ApiController extends Controller
 {
@@ -111,21 +112,76 @@ class ApiController extends Controller
                 ->where('user_id',$attendances->customer_id)
                 ->first();
 
-                $update_attendances = DB::table('attendances')
-                ->where('token', $token)
-                ->update([
-                    "status" => 1,
-                    "updated_at" => Carbon::now(),
-                ]);
+            $trainer_id = $attendances->trainer_id;
+
+            $percentage = DB::table('trainer_percentages')
+                ->where('trainer_id', $trainer_id)
+                ->first();
+
+            $packagePrice = $package->total_money / $package->total_package;
+            $nominal = ($percentage->percentage/100) * $packagePrice;
+
+            if($attendances->status == 0) {
+                DB::beginTransaction();
+                try {
+                    $update_attendances = DB::table('attendances')
+                    ->where('token', $token)
+                    ->update([
+                        "status" => 1,
+                        "updated_at" => Carbon::now(),
+                    ]);
+                }
+                catch(ValidationException $e) {
+                    DB::rollback();
+                    toast()->warning('Attendances Gagal, Harap Coba lagi');
+                    return redirect()->back();
+                }
 
 
-            $update_package = DB::table('package_customers')
-                ->where('user_id', $attendances->customer_id)
-                ->update([
-                    "total_usage" => $package->total_usage + 1,
-                    "updated_at" => Carbon::now(),
-                ]);
+                try {
+                    $update_package = DB::table('package_customers')
+                        ->where('user_id', $attendances->customer_id)
+                        ->update([
+                            "total_usage" => $package->total_usage + 1,
+                            "updated_at" => Carbon::now(),
+                        ]);
+                }
+                catch(ValidationException $e) {
+                    DB::rollback();
+                    toast()->warning('Attendances Gagal, Harap coba lagi');
+                    return redirect()->back();
+                }
 
-            return "berhasil";
+
+                try {
+                    $update_sallary = DB::table('trainer_salaries')
+                        ->insert([
+                            "id" => Uuid::uuid4()->toString(),
+                            "trainer_id" => $trainer_id,
+                            "customer_id" => $attendances->customer_id,
+                            "package_id" => $package->id,
+                            "nominal" => $nominal,
+                            "month" => Carbon::now()->format('M'),
+                            "year" => Carbon::now()->format('Y'),
+                            "percentage" => $percentage->percentage,
+                            "created_at" => Carbon::now(),
+                            "updated_at" => Carbon::now(),
+                        ]);
+                }
+                catch(ValidationException $e) {
+                    DB::rollback();
+                    toast()->warning('Attendances Gagal, Harap Coba lagi');
+                    return redirect()->back();
+                }
+
+                DB::commit();
+                toast()->success('Successfully fill attendances!');
+                return redirect('/');
+            }
+            else
+            {
+                toast()->warning('QR Code is invalid!');
+                return redirect('/');
+            }
     }
 }
