@@ -21,7 +21,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-12">
-                                    <span style="font-size: 10px;">{{ $data->total_hours}} Hours on this month</span>
+                                    <span style="font-size: 10px;">{{ $data->total_hours}} Session on this month</span>
                                 </div>
                             </div>
                         </div>

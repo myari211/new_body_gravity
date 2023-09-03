@@ -83,12 +83,42 @@
                         </div>
                         <div class="row mt-3">
                             <div class="col-12 d-flex justify-content-center">
-                                <span style="font-weight: 600">Hi, {{ Auth::user()->first_name }}</span>
+                                <span style="font-weight: 500">Hi, {{ Auth::user()->first_name." ".Auth::user()->last_name }}</span>
                             </div>
                         </div>
-                        <div class="row">
+                        <div class="row mt-1">
                             <div class="col-12 d-flex justify-content-center">
-                                <span style="font-size: 12px; font-weight: 600">{{ Auth::user()->email }}</span>
+                                <span style="font-size: 10px;" class='text-primary'>Lihat Profil</span>
+                            </div>
+                        </div>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <span style="font-size: 10px;">
+                                            Sharing Profit
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <span>@currency($salary->salary)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <span style="font-size: 10px;">
+                                            {{ \Carbon\Carbon::now()->format('M') }} Session
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <span>{{ $total_hours->total_hours }} Session</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -96,57 +126,46 @@
             </div>
         </div>
         <div class="container">
-            <div class="row mt-3" id="headers">
-                <div class="col-12">
-                    <div class="card z-depth-0">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 d-flex justify-content-between align-items-center">
-                                    <span style="font-weight: 600; font-size: 12px;">Client</span>
-                                    <span class="badge badge-primary p-1 rounded z-depth-0">
-                                        <i class="fas fa-user"></i>
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span style="font-size: 30px; font-weight: 600">{{ $total_customers }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="card z-depth-0">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-12 d-flex justify-content-between">
-                                    <span style="font-weight: 600; font-size: 12px;">Income</span>
-                                    <span class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0 text-capitalize">{{ date("M") }}</span>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-12">
-                                    <span style="font-size: 30px; font-weight: 600">@currency($salary->salary)</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="row mt-4">
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-12 d-flex justify-content-between">
-                                    <span style="font-weight: 600; font-size: 12px;">Total Session</span>
-                                    <span class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0">
-                                        <i class="fas fa-clock"></i>
-                                    </span>
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <span style="font-size: 12px; font-weight: 600">Client</span>
+                                    <button type="button" class="btn btn-md btn-primary rounded-circle z-depth-0 p-2 border-0" data-toggle="modal" data-target="#createCustomers">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
                                 </div>
                             </div>
-                            <div class="row">
+                            <div class="row mt-4">
                                 <div class="col-12">
-                                    <span style="font-size: 30px; font-weight: 600">2</span>
+                                    <table class="table table-striped">
+                                        <tbody>
+                                            @foreach($customers as $data)
+                                                <tr>
+                                                    <td style="font-size: 10px;">
+                                                        @if($data->avatar != null)
+                                                            <img src="{{ asset(url('/').'/avatar/'.$data->avatar) }}" style="width: 20px; height: 20px;" class="rounded-circle mr-2">
+                                                        @else
+                                                            <img src="{{ asset(url('/').'/image/body_black.jpeg') }}" style="width: 2 0px; height: 20px;" class="rounded-circle mr-2">
+                                                        @endif
+                                                        {{ $data->first_name }}
+                                                    </td>
+                                                    <td class="d-flex justify-content-end">
+                                                        <button type="button" class="btn btn-md rounded btn-primary text-capitalize border-0 z-depth-0 p-2 m-0" onclick="location.href='{{ url('/') }}/trainer/customers/details/{{ $data->users_id }}'">
+                                                            Profile
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <span style="font-size: 10px;">Lihat Semua</span>
                                 </div>
                             </div>
                         </div>
@@ -154,71 +173,97 @@
                 </div>
             </div>
             <div class="row mt-4">
-                <div class="col-12 d-flex justify-content-between align-items-center">
-                    <span style="font-size: 12px; font-weight: 600">Client</span>
-                    <button type="button" class="btn btn-md btn-primary rounded-circle z-depth-0 p-2 border-0" data-toggle="modal" data-target="#createCustomers">
-                        <i class="fas fa-plus"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="row mt-3" id="customer_role">
-                @foreach($customers as $data)
-                    <div class="col-6 mb-2">
-                        <a href="/trainer/customers/details/{{ $data->users_id }}" class="w-100">
-                            <div class="card w-100 z-depth-0">
-                                <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-4">
-                                            <img src="{{ asset('image/body_gravity_black.png') }}" style="width: 50px; height: 50px;" class="border rounded-circle">
-                                        </div>
-                                        <div class="col-7 offset-1 d-flex align-items-center">
-                                            <div class="row">
-                                                <div class="col-12">
-                                                    <span style="font-size: 10px; font-weight: 700">{{ $data->first_name." ".$data->last_name }}</span>
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12">
+                                    <span style="font-size: 12px; font-weight: 600">Attendances</span>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                @foreach($attendances as $data)
+                                    <div class="col-6 mb-2">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center">
+                                                        <span style="font-size: 30px; font-weight: 700" class='text-primary'>{{ date("d", strtotime($data->updated_at)) }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center">
+                                                        <span style="font-size: 12px; font-weight: 600">{{ date("M", strtotime($data->updated_at)) }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-12 d-flex justify-content-center">
+                                                        <span style="font-size: 12px; font-weight: 600">{{ date("Y", strtotime($data->updated_at)) }}</span>
+                                                    </div>
+                                                </div>
+                                                <div class="row mt-2">
+                                                    <div class="col-12 d-flex justify-content-center">
+                                                        <span style="font-size: 12px; font-weight: 600" class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0">{{ date("H:i", strtotime($data->updated_at)) }}</span>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                @endforeach
                             </div>
-                        </a>
-                    </div>
-                @endforeach
-            </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <span style="font-size: 20px; font-weight: 600">Attendances</span>
-                </div>
-            </div>
-            <div class="row mt-3" id="attendanceScroll" style="height: 170px">
-                @foreach($attendances as $data)
-                    <div class="col-4 mb-2">
-                        <div class="card z-depth-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <span style="font-size: 30px; font-weight: 700" class='text-primary'>{{ date("d", strtotime($data->updated_at)) }}</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <span style="font-size: 12px; font-weight: 600">{{ date("M", strtotime($data->updated_at)) }}</span>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <span style="font-size: 12px; font-weight: 600">{{ date("Y", strtotime($data->updated_at)) }}</span>
-                                    </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <span style="font-size: 12px; font-weight: 600" class="badge badge-primary pt-1 pb-1 pr-2 pl-2 z-depth-0">{{ date("H:i", strtotime($data->updated_at)) }}</span>
-                                    </div>
+                            <div class="row mt-3">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <span style="font-size: 10px; font-weight: 600">Lihat Semua</span>
                                 </div>
                             </div>
                         </div>
                     </div>
-                @endforeach
+                </div>
+            </div>
+            <div class="row mt-4" style="margin-bottom: 100px;">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-between align-items-center">
+                                    <span style="font-size: 12px; font-weight: 600">Sharing Profit</span>
+                                    <span style="font-size: 10px; font-weight: 600">{{ \Carbon\Carbon::now()->format('M') }}</span>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                @foreach($sharing_profit as $data)
+                                    <div class="col-12 mb-1">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="row">
+                                                            <div class="col-12">
+                                                                <span style="font-size: 10px;">{{ \Carbon\Carbon::parse($data->created_at)->format('d M Y')}}</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <div class="row">
+                                                            <div class="col-12 d-flex justify-content-end">
+                                                                <span style="font-size: 10px;" class="text-success">+ @currency($data->nominal)</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <span style="font-size: 10px;">Lihat Semua</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 

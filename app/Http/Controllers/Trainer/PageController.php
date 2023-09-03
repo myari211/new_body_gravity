@@ -17,7 +17,16 @@ class PageController extends Controller
                 $query->where('trainer_id', $id);
             })
             ->orderBy('updated_at', 'DESC')
+            ->limit(4)
             ->get();
+
+        $total_hours = DB::table('attendances')
+            ->where(function($query) use ($id) {
+                $query->where("trainer_id", $id);
+                $query->where("status", 1);
+            })
+            ->select(DB::raw('COUNT(*) AS total_hours'))
+            ->first();
 
         $total_customers = DB::table('package_customers')
             ->where('trainer', $id)
@@ -41,32 +50,38 @@ class PageController extends Controller
                 $query->where('user_trainers.trainer_id', $id);
             })
             ->select('*', 'users.id as users_id')
+            ->limit(5)
             ->get();
 
-        return view('trainer.dashboard', compact('customers', 'total_customers', 'attendances', 'salary'));
+        $sharing_profit = DB::table('trainer_salaries')
+            ->where(function($query) use ($id) {
+                $query->where('trainer_id', $id);
+            })
+            ->where("month", Carbon::now()->format('M'))
+            ->where('year', Carbon::now()->format('Y'))
+            ->orderBy('created_at', 'ASC')
+            ->limit(5)
+            ->get();
+
+        return view('trainer.dashboard', compact('customers', 'total_customers', 'attendances', 'salary', 'total_hours', 'sharing_profit'));
     }
 
     public function barcode($id) {
         return view('trainer.barcode');
     }
 
-    public function customer_dashboard() {
-        $userId = Auth::user()->id;
+    public function customer_dashboard($id) {
+        $customers = DB::table('user_trainers')
+            ->where('trainer_id', $id)
+            ->leftJoin('users', function($join) {
+                $join->on('users.id', '=', 'user_trainers.user_id');
+            })
+            ->get();
 
-
-        return view('trainer.customer_dashboard');
+        return view('trainer.customer_dashboard', compact('customers'));
     }
 
     public function customer_details($id) {
-        // $customers = DB::table('package_customers')
-        //     ->where(function($query) use ($id) {
-        //         $query->where('package_customers.trainer', $id);
-        //     })
-        //     ->leftJoin('users', function($join) {
-        //         $join->on('users.id', '=', 'package_customers.user_id');
-        //     })
-        //     ->select('*', 'package_customers.user_id as customer_id')
-        //     ->get();
 
         $trainer_id = Auth::user()->id;
 
@@ -140,11 +155,12 @@ class PageController extends Controller
     }
 
     public function profile($id) {
-        $total_money = DB::table('package_customers')
-            ->where(function($query) use ($id) {
-                $query->where('trainer', $id);
-            })
-            ->sum('total_money');
+        $total_money = DB::table('trainer_salaries')
+                ->where('trainer_id', $id)
+                ->where('month', Carbon::now()->format('M'))
+                ->where('year', Carbon::now()->format('Y'))
+                ->select(DB::raw('SUM(nominal) AS total_salary'))
+                ->first();
 
         $total_package = DB::table('package_customers')
             ->where(function($query) use ($id) {
@@ -159,13 +175,6 @@ class PageController extends Controller
                 $query->where('status', 'done');
             })->count();
         
-        if($total_money != 0 || $total_package != 0 || $total_usage != 0) {
-            $income = (($total_money/$total_package) * $total_usage);
-        }
-        else
-        {
-            $income = 0;
-        }
 
         $attendances = DB::table('attendances')
             ->where(function($query) use ($id) {
@@ -174,8 +183,16 @@ class PageController extends Controller
             })
             ->count();
 
+            $total_hours = DB::table('attendances')
+            ->where(function($query) use ($id) {
+                $query->where("trainer_id", $id);
+                $query->where("status", 1);
+            })
+            ->select(DB::raw('COUNT(*) AS total_hours'))
+            ->first();
 
-        return view('trainer.profile', compact('income', 'attendances'));
+
+        return view('trainer.profile', compact('attendances', 'total_money', 'total_hours'));
     }
 
 

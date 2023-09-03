@@ -120,6 +120,7 @@ class ApiController extends Controller
 
             $packagePrice = $package->total_money / $package->total_package;
             $nominal = ($percentage->percentage/100) * $packagePrice;
+            $profit = $packagePrice - $nominal;
 
             if($attendances->status == 0) {
                 DB::beginTransaction();
@@ -171,6 +172,29 @@ class ApiController extends Controller
                 catch(ValidationException $e) {
                     DB::rollback();
                     toast()->warning('Attendances Gagal, Harap Coba lagi');
+                    return redirect()->back();
+                }
+
+                try {
+                    $update_revenue = DB::table('revenues')
+                        ->insert([
+                            "id" => Uuid::uuid4()->toString(),
+                            "trainer_id" => $trainer_id,
+                            "costumer_id" => $attendances->customer_id,
+                            "package_id" => $package->id,
+                            "nominal" => $packagePrice,
+                            "revenue" => $percentage->percentage,
+                            "profit" => $profit,
+                            "month" => Carbon::now()->format("M"),
+                            "year" => Carbon::now()->format('Y'),
+                            "from" => NULL,
+                            "created_at" => Carbon::now(),
+                            "updated_at" => Carbon::now(),
+                        ]);
+                }
+                catch(ValidationException $e) {
+                    DB::rollback();
+                    toast()->warning('Attendances Gagal, Harap Coba Lagi');
                     return redirect()->back();
                 }
 
