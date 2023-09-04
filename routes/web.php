@@ -120,20 +120,24 @@ Route::middleware('role:trainer')->group(function() {
 
 //customer
 Route::middleware('role:customer')->group(function() {
-    //page
-        Route::get('/customer/dashboard/{id}', 'Customer\Page\DashboardController@dashboard')->name('customer.dashboard');
-        Route::get('/customer/attendances/{id}', 'Customer\Page\AttendancesController@index')->name('customer.attendances');
-        Route::get('/customer/package/{id}', 'Customer\Page\AttendancesController@package')->name('customer.package');
-        Route::get('/customer/profile/{id}', 'Customer\Page\AttendancesController@profile')->name('customer.profile');
-        // Route::get('/customer/dashboard/{id}', function() {
-        //     return view('customer.dashboard');
-        // })->name('customer.dashboard');
-    //api
-        //dashboard
-        Route::get('/customer/api/dashboard/{id}', 'Customer\Api\ApiController@dashboard')->name('customers.dashboard');
+//page
+    Route::get('/customer/dashboard/{id}', 'Customer\Page\DashboardController@dashboard')->name('customer.dashboard');
+    Route::get('/customer/attendances/{id}', 'Customer\Page\AttendancesController@index')->name('customer.attendances');
+    Route::get('/customer/package/{id}', 'Customer\Page\AttendancesController@package')->name('customer.package');
+    Route::get('/customer/profile/{id}', 'Customer\Page\AttendancesController@profile')->name('customer.profile');
 
-        //attendances_details
-        Route::get('/customer/api/attendances/{id}', 'Customer\Api\ApiController@attendances_details')->name('customers.attendances.details');
+    // Route::get('/customer/dashboard/{id}', function() {
+    //     return view('customer.dashboard');
+    // })->name('customer.dashboard');
+//api
+    //dashboard
+    Route::get('/customer/api/dashboard/{id}', 'Customer\Api\ApiController@dashboard')->name('customers.dashboard');
+
+    //attendances_details
+    Route::get('/customer/api/attendances/{id}', 'Customer\Api\ApiController@attendances_details')->name('customers.attendances.details');
+
+    //fill_attendances_with_token
+    Route::post('/customer/attendances/fill/token/{id}', 'Customer\Page\AttendancesController@fill_token')->name('customers.fill_attendances_with_token');
 });
 
 Route::get('/customer/attendances/scan/{token}', 'Customer\Api\ApiController@attendances_scan')->name('customers.attendances.scan');

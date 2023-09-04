@@ -3,381 +3,231 @@
 <div class="d-block d-lg-none">
     <div class="row">
         <div class="col-12">
-            <div class="card front-color rounded-0 z-depth-0" style="height: 150px;">
-                <div class="card-body">
-                    
+            <div class="card bg-primary z-depth-0 rounded-0">
+                <div class="card-body z-depth-0">
+                    <div class="row">
+                        <div class="col-12 d-flex justify-content-center">
+                            @if(Auth::user()->avatar != null)
+                                <img src="{{ asset(url('/').'/avatar/'.Auth::user()->avatar) }}" style="width: 70px; height: 70px;" class="rounded-circle">
+                            @else
+                                <img src="{{ asset(url('/').'/image/body_black.jpeg') }}" style="width: 70px; height: 70px;" class="rounded-circle">
+                            @endif
+                        </div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span class="text-white">{{ Auth::user()->first_name." ".Auth::user()->last_name }}</span>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <span style="font-size: 10px;" class="text-white">Active Package</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    @if($package_count < 1)
+                                        <span class="text-white">{{ $package }}</span>
+                                    @else
+                                        <span class="text-white">{{ $package->package_left }} Session</span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <span style="font-size: 10px;" class="text-white">Session This Month</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12 d-flex justify-content-center">
+                                    @if($monthAttendances < 1)
+                                        <span class="text-white">0</span>
+                                    @else
+                                        <span class="text-white">{{ $monthAttendances }}</span>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="row" style="margin-top: -80px; !important">
+        <div class="row mt-4">
             <div class="col-12">
-                <div class="card z-depth-0 border rounded">
+                <div class="card">
                     <div class="card-body">
                         <div class="row">
-                            <div class="col-12 d-flex justify-content-center">
-                                <img src="{{ asset('image/body_black.jpeg') }}" style="width: 80px; height: 80px;" class="border rounded-circle">
+                            <div class="col-12">
+                                <span style="font-size: 12px;">Trainer Profile</span>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-12 d-flex justify-content-center">
-                                <span style="font-size: 20px; font-weight: 600">Hi!, {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</span>
+                                @if($trainer->avatar != null)
+                                    <img src="{{ asset(url('/').'/avatar/'.$trainer->avatar) }}" style="width: 70px; height: 70px;" class="rounded-circle border">
+                                @else
+                                    <img src="{{ asset(url('/').'/image/body_black.jpeg') }}" style="width: 70px; height: 70px;" class="rounded-circle border">
+                                @endif
                             </div>
                         </div>
-                        <div class="row mt-1">
+                        <div class="row mt-3">
                             <div class="col-12 d-flex justify-content-center">
-                                <span style="font-weight: 500">{{ Auth::user()->email }}</span>
+                                <span style="font-size: 10px;font-weight: 600">{{ $trainer->first_name." ".$trainer->last_name }}</span>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-12">
-                <div class="card z-depth-0 border">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12">
-                                <span style="font-size: 18px; font-weight: 600">Package</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <span style="font-size: 12px;">Find you active package here!</span>
-                            </div>
-                        </div>
-                        <div class="row mt-3" id="package_data">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-12">
-                <div class="card z-depth-0 border">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class='col-12'>
-                                <span style="font-size: 18px; font-weight: 600">Attendances</span>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <span style="font-size: 12px;">Your Attendances List!</span>
-                            </div>
-                        </div>
-                        <div class="row mt-3" id="attendances">
-                            @foreach($attendances as $data)
-                                <div class="col-4">
-                                    <a class="w-100" href="javascript:void();" onclick="openAttendaces(this);" data-id="{{ $data->id }}">
-                                        <div class="card z-depth-0 border">
-                                            <div class="card-body">
-                                                <div class="row">
-                                                    <div class="col-12 d-flex justify-content-center">
-                                                        <span style="font-size: 20px; font-weight: 600">{{ date("d", strtotime($data->updated_at)) }}</span>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-12 d-flex justify-content-center">
-                                                        <span>{{ date("M", strtotime($data->updated_at)) }}</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                            @endforeach
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-12">
-                <div class="card z-depth-0 border-0">
-                    <div class="card-body">
-                        <div class="row">
+                        <div class="row mt-4">
                             <div class="col-6">
                                 <div class="row">
-                                    <div class="col-12">
-                                        <span style="font-size: 20px; font-weight: 600">Trainer</span>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <span style="font-size: 10px;">All Session With You</span>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12">
-                                        <span style="font-size: 12px;">Your Trainer Profile!</span>
+                                    <div class="col-12 d-flex justify-content-center">
+                                        @if($monthAttendances < 1)
+                                            <span>0</span>
+                                        @else
+                                            <span>{{ $monthAttendances }}</span>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6 d-flex justify-content-end align-items-center">
-                                <button type="button" class="btn btn-outline-primary rounded z-depth-0 btn-sm text-capitalize">
-                                    Details
+                            <div class="col-6">
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <span style="font-size: 10px;">Session on this Month</span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        @if($monthAttendances < 1)
+                                            <span>0</span>
+                                        @else
+                                            <span>{{ $monthAttendances }}</span>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <button type="button" class="btn btn-md rounded btn-primary btn-block z-depth-0 text-capitalize">
+                                    Create Schedule
                                 </button>
                             </div>
                         </div>
-                        <div class="row mt-3">
-                            <div class="col-3">
-                                <img src="{{ asset('image/body_black.jpeg') }}" style="width: 50px; height: 50px;" class="border rounded-circle">
-                            </div>
-                            <div class="col-9 d-flex align-items-center">
-                                <span style="font-weight: 600">Trainer Example</span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row mt-2">
+        <div class="row mt-4" style="margin-bottom: 100px;">
             <div class="col-12">
-                <div class="card rounded z-depth-0">
+                <div class="card">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-12">
-                                <span style="font-size: 20px; font-weight: 600">History</span>
+                                <span style="font-size: 12px;">Package</span>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-12">
-                                <span style="font-size: 12px;">Your Package History Here!</span>
+                        @if($package_count < 1)
+                            <div class="row mt-4">
+                                <div class="col-12 d-flex justify-content-center">
+                                    <span style="font-size: 10px;">You don't have any active package</span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row mt-3" id="package_history" style="margin-bottom: 70px;">
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-md rounded btn-primary btn-block z-depth-0 text-capitalize">
+                                        Buy Package
+                                    </button>
+                                </div>
+                            </div>
+                        @else
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <span style="font-size: 10px;">{{ $package_details->package }}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
+                                            <div class="row mt-3">
+                                                <div class="col-12">
+                                                    <span style="font-size: 10px;">@currency($package_details->total_money - ($package_details->total_money * ($package_details->total_usage/$package_details->total_package)))</span>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-12">
+                                                    <span style="font-size: 10px;">{{ $package_details->total_package - $package_details->total_usage }} Session Left</span>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="card z-depth-0 border">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size:20px; font-weight: 600">General</span>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-12">
-                                                <span style="font-size: 12px;">0 Session Left</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endif
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
-<div class="modal fade" id="attendances_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-6">
-                        <div class="card z-depth-0 border rounded">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <span style="font-size: 30px; font-weight: 600" id="date_attendances"></span>
+    <div class="modal fade" id="attendances_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-6">
+                            <div class="card z-depth-0 border rounded">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <span style="font-size: 30px; font-weight: 600" id="date_attendances"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <span style="font-weight: 600; font-size: 20px;" id="year_attendances"></span>
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <span style="font-weight: 600; font-size: 20px;" id="year_attendances"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <span id="clock_attendances"></span>
+                                    <div class="row">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <span id="clock_attendances"></span>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="row mt-2">
-                                    <div class="col-12 d-flex justify-content-center">
-                                        <span class="badge badge-success pt-1 pb-1 pr-2 pl-2 rounded-pill z-depth-0">
-                                            Success
-                                        </span>
+                                    <div class="row mt-2">
+                                        <div class="col-12 d-flex justify-content-center">
+                                            <span class="badge badge-success pt-1 pb-1 pr-2 pl-2 rounded-pill z-depth-0">
+                                                Success
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-12 d-flex justify-content-center">
-                        <img src="{{ asset('image/body_black.jpeg') }}" style="width:75px; height: 75px;" class="rounded-circle">
+                    <div class="row mt-4">
+                        <div class="col-12 d-flex justify-content-center">
+                            <img src="{{ asset('image/body_black.jpeg') }}" style="width:75px; height: 75px;" class="rounded-circle">
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-2">
-                    <div class="col-12 d-flex justify-content-center">
-                        <span>Trainer Example</span>
+                    <div class="row mt-2">
+                        <div class="col-12 d-flex justify-content-center">
+                            <span>Trainer Example</span>
+                        </div>
                     </div>
-                </div>
-                <div class="row mt-4">
-                    <div class="col-12 d-flex justify-content-center">
-                        <button type="button" class="btn front-color text-white rounded z-depth-0" data-dismiss="modal">
-                            OK
-                        </button>
+                    <div class="row mt-4">
+                        <div class="col-12 d-flex justify-content-center">
+                            <button type="button" class="btn front-color text-white rounded z-depth-0" data-dismiss="modal">
+                                OK
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

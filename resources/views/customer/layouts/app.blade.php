@@ -8,6 +8,7 @@
         </style>
     </head>
     <body>
+        @include('sweetalert::alert')
         <div class="d-block d-lg-none">
             <nav class="navbar navbar-expand fixed-bottom bg-white">
                 <ul class="navbar-nav nav-justified w-100">
@@ -38,11 +39,6 @@
                                 </div>
                             </div>
                         </a>
-                    </li>
-                    <li class="nav-item">
-                        <button type="button" class="btn btn-md rounded btn-primary pt-3 pb-3 pr-3 pl-3 rounded-circle m-0" id="btn-scan-qr">
-                            <i class="fas fa-qrcode text-white" style="font-size: 20px;"></i>
-                        </button>
                     </li>
                     <li class="nav-item">
                         <a href="{{ url('/') }}/customer/package/{{ Auth::user()->id }}" class="nav-link">

@@ -595,6 +595,11 @@
                                         <span style="font-size: 10px">Let the customers scan the QR Code</span>
                                     </div>
                                 </div>
+                                <div class="row mt-4">
+                                    <div class="col-12 d-flex justify-conten-center">
+                                        <span id="token" style="font-size: 10px;"></span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -806,6 +811,7 @@
                 headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
                 success:function(data) {
                     $('#qr').attr('src', 'https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=' + url + '/customer/attendances/scan/' + data.token +'&chld=L|1&choe=UTF-8')
+                    $('#token').html("Use this token on Customer Account on Attendances Page, Token: " + data.token);
                 }
             });
 
