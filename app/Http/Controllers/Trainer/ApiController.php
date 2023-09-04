@@ -425,7 +425,7 @@ class ApiController extends Controller
                 "updated_at" => Carbon::now(),
             ]);
 
-        toast()->success("Successfully Adding Package");
+        toast()->success("Successfully Add Package");
         return redirect()->back();
     }
 
@@ -471,6 +471,56 @@ class ApiController extends Controller
                 "customer_id" => $user_id,
                 "trainer_id" => $trainer_id,
                 "package_id" => $package_id,
+                "status" => 0,
+                "created_at" => Carbon::now(),
+                "updated_at" => Carbon::now(),
+                "token" => random_int(1000000, 9999999),
+            ]);
+        }
+
+        return response()->json([
+            "success" => true,
+            "messages" => "Berhasil generate",
+            "token" => $attendances->token,
+        ]);
+    }
+
+    public function all_barcode($id) {
+        $checkAttendances = DB::table('attendances')
+            ->where('trainer_id', $id)
+            ->where('status', 0)
+            ->where('customer_id', NULL)
+            ->count();        
+
+        if($checkAttendances > 0) {
+            $attendances_first = DB::table('attendances')
+                ->where('trainer_id', $id)
+                ->where('status', 0)
+                ->where('customer_id', null)
+                ->first();
+
+            $updateAttendances = Attendance::find($attendances_first->id)
+                ->update([
+                    "token" => random_int(1000000, 9999999),
+                    "updated_at" => Carbon::now(),
+                ]);
+
+            $attendances = DB::table('attendances')
+                ->where(function($query) use ($id) {
+                    $query->where("customer_id", null);
+                    $query->where('trainer_id', $id);
+                    $query->where('package_id', null);
+                    $query->where('status', 0);
+                })
+                ->first();
+        }
+        else
+        {
+            $attendances = Attendance::create([
+                "id" => Uuid::uuid4()->toString(),
+                "customer_id" => null,
+                "trainer_id" => $id,
+                "package_id" => null,
                 "status" => 0,
                 "created_at" => Carbon::now(),
                 "updated_at" => Carbon::now(),

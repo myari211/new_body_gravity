@@ -120,27 +120,69 @@
                 </div>
             </div>
             @yield('content.mobile')
+            <div class="modal fade" id="qr_code_free" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <!-- Change class .modal-sm to change the size of the modal -->
+                    <div class="modal-dialog modal-fluid modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header bg-primary" style="min-height: 150px; border-bottom-right-radius: 60px;">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <span class="text-white" style="font-size: 20px;">Generate</span><br />
+                                        <span class="text-white" style="font-size: 20px;">Attendances</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center align-items-center">
+                                        <img id="qr_app">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 d-flex justify-content-center">
+                                        <span style="font-size: 10px">Let the customers scan the QR Code</span>
+                                    </div>
+                                </div>
+                                <div class="row mt-4">
+                                    <div class="col-12 d-flex justify-conten-center">
+                                        <span id="token_app" style="font-size: 10px;"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
         @include('master.js')
         <script type="text/javascript">
-            var trainer = "{{ Auth::user()->id }}"
+            var trainer = "{{ Auth::user()->id }}";
+            var url = "{{ url('/') }}";
 
             const openQr = () => {
-                $('#qrCode').modal('show');
+                $('#qr_code_free').modal('show');
                 createQr();
             }
 
             const createQr = () => {
-                var qrcode = new QRCode(document.getElementById('qrcode'), {
-                    text: "{{ url('/') }}/customer/scan/" + trainer,
-                    width: 150,
-                    height: 150,
-                    correctLevel: QRCode.CorrectLevel.H,
-                });
-
-                $('#qrCode').on('hidden.bs.modal', function() {
-                    qrcode.clear();
-                });
+                // var qrcode = new QRCode(document.getElementById('qrcode'), {
+                //     text: "{{ url('/') }}/customer/scan/" + trainer,
+                //     width: 150,
+                //     height: 150,
+                //     correctLevel: QRCode.CorrectLevel.H,
+                // });
+                $.ajax({
+                    method: 'POST',
+                    url: url + '/trainer/generate/qr/' + trainer,
+                    dataType: 'json',
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    success: function(data) {
+                        console.log(data);
+                        $('#qr_app').attr('src', 'https://chart.googleapis.com/chart?chs=250x250&cht=qr&chl=' + url + '/customer/attendances/scan/' + data.token +'&chld=L|1&choe=UTF-8')
+                        $('#token_app').html("Use this token on Customer Account on Attendances Page, Token: " + data.token);
+                    }
+                })
             }
 
         </script>

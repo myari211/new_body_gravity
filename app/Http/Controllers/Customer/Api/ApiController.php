@@ -208,4 +208,14 @@ class ApiController extends Controller
                 return redirect('/');
             }
     }
+
+    public function free_scan($token) {
+        if(Auth::check()) {
+            
+        }
+        else
+        {
+            return view('customer.login_first');
+        }
+    }
 }

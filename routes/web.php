@@ -100,7 +100,6 @@ Route::middleware('role:trainer')->group(function() {
     //api
     Route::get('/trainer/{id}', 'Trainer\ApiController@dashboard');
 
-    //barcode
     Route::get('/trainer/barcode/initial/{package_id}/{customer_id}/{trainer_id}', 'Trainer\ApiController@getBarcode')->name('getQR');
     Route::get('/trainer/barcode/{package_id}/{customer_id}/{user_id}', 'Trainer\ApiController@getBarcode')->name('getQRImage');
     // Route::post('/trainer/barcode/{customer_id}/{trainer_id}/{package_id}', 'Trainer\ApiController@getBarcode')->name('postQR');
@@ -141,6 +140,7 @@ Route::middleware('role:customer')->group(function() {
 });
 
 Route::get('/customer/attendances/scan/{token}', 'Customer\Api\ApiController@attendances_scan')->name('customers.attendances.scan');
+Route::get('/customer/free/scan/{token}', 'Customer\Api\ApiController@free_scan')->name('customers.free.scan');
 
 Route::post('/api/test/{id}', 'Admin\Api\CustomerController@customer_add_package');
 Route::get('/api/test/{id}', 'Admin\Api\CustomerController@customer_details');
@@ -148,3 +148,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/csrf', function() {
     return csrf_token();
 });
+//barcode
+Route::post('/trainer/generate/qr/{id}', 'Trainer\ApiController@all_barcode')->name('trainer.genereate_free_qr');
