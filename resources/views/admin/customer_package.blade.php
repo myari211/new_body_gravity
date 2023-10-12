@@ -10,12 +10,33 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone</th>
-                        <th>Trainer</th>
-                        <th>Session</th>
+                        <th>PARQ</th>
+                        <th>Session Left</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                      <tr onclick="openTab();">
+                      @foreach($user as $data)
+                      <tr>
+                        <td>{{ $data->first_name." ".$data->last_name }}</td>
+                        <td>{{ $data->email }}</td>
+                        <td>{{ $data->phone == NULL ? "-" : $data->phone }}</td>
+                        <td>
+                          @if($data->q1 == null)
+                            <button type="button" class="btn btn-danger text-capitalize z-depth-0 p-1">
+                              Undone
+                            </button>
+                          @else
+                            <button type="button" class="btn btn-success text-capitalize z-depth-0 p-1">
+                              Done
+                            </button>
+                          @endif
+                        </td>
+                        <td>
+
+                        </td>
+                      </tr>
+                      @endforeach
+                      {{-- <tr onclick="openTab();">
                         <td><strong>Customer Example</strong></td>
                         <td>customer@body-gravity.com</td>
                         <td>+62 812 7231 7198</td>
@@ -38,7 +59,7 @@
                             </div>
                           </div>
                         </td>
-                      </tr>
+                      </tr> --}}
                     </tbody>
                 </table>
             </div>

@@ -37,6 +37,7 @@ Route::middleware('role:admin')->group(function() {
 
         //customer
         Route::get('/admin/customer', 'Admin\Page\CustomerController@customer')->name('admin.customer');
+        Route::get('/admin/customer/list', 'Admin\Page\CustomerController@list')->name('admin.customer.list');
 
         //customer_profile
         Route::get('/admin/customer/{id}', 'Admin\Page\CustomerController@customerDetails')->name('admin.customer.details');
@@ -50,6 +51,9 @@ Route::middleware('role:admin')->group(function() {
         Route::get('/admin/trainer/details/{id}', 'Admin\Page\TrainerController@trainerDetails')->name('trainer_details');
         Route::get('/admin/trainer/performance', 'Admin\page\TrainerController@performance')->name('trainer_performance');
         Route::get('/admin/trainer/account', 'Admin\Page\TrainerController@trainerAccount')->name('trainer_account');
+
+        //revenue
+        Route::get('/admin/revenue/dashboard', 'Admin\Page\RevenueController@dashboard')->name('admin.revenue.dashboard');
 
     //api
         //dashboard

@@ -6,7 +6,7 @@
     width: 100%;
     height: 100%;
     z-index: 9999;
-    background-color: #000;
+    background-color: #fff;
   }
   .preloader .loading {
     position: absolute;
@@ -19,6 +19,6 @@
 
 <div class="preloader">
     <div class="loading">
-        <img src="{{ asset('image/body_logo.png') }}" width="200" class="animated fadeIn infinite slower">
+        <img src="{{ asset('image/body_gravity.png') }}" width="200" class="animated fadeIn infinite slower bg-white rounded-circle">
     </div>
 </div>

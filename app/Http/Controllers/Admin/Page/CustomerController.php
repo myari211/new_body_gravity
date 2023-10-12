@@ -9,23 +9,64 @@ use Validator;
 use RealRashid\SweetAlert\Facades\Alert;
 use \Carbon\Carbon;
 use Ramsey\Uuid\Uuid;
+use Illuminate\Support\Facades\App;
+use App\Traits\UserTraits;
+
 
 class CustomerController extends Controller
 {
+    use UserTraits;
+
+
+    public function initiateVariable() {
+        $controller = App::make('\App\Http\Controllers\GlobalVariable\GlobalVariableController');
+
+        return $controller;
+    }
+
     public function dashboard($id) {
-        $trainer = DB::table('users')
-            ->leftJoin('model_has_roles', function($join) {
-                $join->on('model_has_roles.model_id', '=', 'users.id');
-            })
-            ->leftJoin('roles', function($join) {
-                $join->on('roles.id', '=', 'model_has_roles.role_id');
-            })
-            ->where(function($query) {
-                $query->where('roles.name', 'trainer');
-            })
+        $trainer = $this->initiateVariable()->callAction('getUser', ['trainer']);
+
+        $revenue = DB::table('revenues')
+            ->where('month', Carbon::now()->format('M'))
+            ->where('year', Carbon::now()->format('Y'))
+            ->select(DB::raw("SUM(nominal) as revenue"))
+            ->first();
+
+
+        $revenue_day = DB::table('revenues')
+            ->select(DB::raw("SUM(nominal) as revenue"))
+            ->whereDate('created_at', Carbon::now())
+            ->first();
+
+        $revenue_before_day = DB::table('revenues')
+            ->select(DB::raw("SUM(nominal) as revenue"))
+            ->whereDate("created_at", Carbon::now()->subDay())
+            ->first();
+
+        $revenue_chart = DB::table('revenues')
+            ->select(DB::raw("SUM(nominal) as revenue"))
+            ->groupBy('month')
             ->get();
 
-        return view('admin.dashboard', compact('trainer'));
+        $revenue_before_month = DB::table('revenues')
+            ->select(DB::raw("SUM(nominal) as revenue"))
+            ->where('month', Carbon::now()->subMonth(1)->format('M'))
+            ->where('year', Carbon::now()->format('Y'))
+            ->first();
+
+        $profit = DB::table('revenues')
+            ->where('month', Carbon::now()->format('M'))
+            ->where('year', Carbon::now()->format('Y'))
+            ->select(DB::raw("SUM(profit) as profit"))
+            ->first();
+
+        $profit_day = DB::table('revenues')
+            ->select(DB::raw("SUM(profit) as profit"))
+            ->whereDate('created_at', Carbon::now())
+            ->first();
+
+        return view('admin.dashboard', compact('trainer', 'revenue', 'profit', 'revenue_day', 'profit_day', 'revenue_before_month', 'revenue_before_day', 'revenue_chart'));
     }
     public function customer() {
         $customer = DB::table('users')
@@ -183,7 +224,9 @@ class CustomerController extends Controller
         }
     }
 
-    public function customer_package() {
-        return view('admin.customer_package');
+    public function list() {
+        $user = $this->getUserAllPersonalInformation();
+
+        return view('admin.customer_package', compact('user'));
     }
 }

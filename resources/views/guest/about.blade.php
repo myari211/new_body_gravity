@@ -99,17 +99,17 @@
                     <div>
                         <div class="row">
                             <div class="col-lg-6 d-flex align-items-center">
-                                <img src="{{ asset('image/body_white.png') }}" style="width:400px; margin-top:-40px;" class="wow fadeInRight">
+                                <img src="{{ asset('image/body_gravity.png') }}" style="width:400px; margin-top:-40px;" class="wow fadeInRight bg-white rounded-circle">
                             </div>
                             <div class="col-lg-6">
                                 <div class="row mt-3">
                                     <div class="col-lg-12">
-                                        <span class="wow fadeInLeft" style="font-weight:400">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement.</span>
+                                        <span class="wow fadeInLeft" style="font-weight:500; font-size: 20px;">Body Gravity is a pilates studio located in South Jakarta established since 2017. What differentiate Body Gravity from another pilates studio is we use different approach that focus on a perfect structure of the body which applied in each of our movement.</span>
                                     </div>
                                 </div>
                                 <div class='row mt-3'>
                                     <div class="col-lg-12">
-                                        <span style="font-weight:400">We aim of achieving perfect body connections of our members to gain their maximum strength. We also aim everybody to has knowledge about how a perfect body structure actually is and how to have full body awareness of yours.</span>
+                                        <span style="font-weight:500; font-size: 20px">We aim of achieving perfect body connections of our members to gain their maximum strength. We also aim everybody to has knowledge about how a perfect body structure actually is and how to have full body awareness of yours.</span>
                                     </div>
                                 </div>
                             </div>
@@ -122,12 +122,12 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="wow fadeInDown text-muted" style="font-size:34px; font-weight:400">Advantage</span>
+                <span class="wow fadeInDown" style="font-size:34px; font-weight:600; color: black">Advantage</span>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
-                <span class="wow fadeInDown text-muted" style="font-weight:500">Come, join and get these advantages</span>
+                <span class="wow fadeInDown text-dark" style="font-weight:500; font-size: 20px;">Come, join and get these advantages</span>
             </div>
         </div>
         <div class="row mt-5">
@@ -247,28 +247,28 @@
                         </div>
                         <div class="row mt-2">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span class="wow fadeInDown">
+                                <span class="wow fadeInDown" style="font-size:20px;">
                                     Body Gravity is dedicated to provide the best results for our members especially
                                 </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span class="wow fadeInDown">
+                                <span class="wow fadeInDown" style="font-size:20px;">
                                     for their posture problems in order to have a better quality of life in the future.
                                 </span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span class="wow fadeInDown">
+                                <span class="wow fadeInDown" style="font-size:20px;">
                                     So what are you waiting for, check out our programs and see you on the studio ! 
                                 </span>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <button type="button" class="btn btn-md blue-gradient rounded-pill wow fadeInDown" onclick="location.href='{{ route('program') }}';">
+                                <button type="button" class="btn btn-lg dusty-grass-gradient rounded-pill wow fadeInDown text-white text-capitalize" style="font-weight: 600" onclick="location.href='{{ route('program') }}';">
                                     Take Class <i class="fas fa-arrow-right ml-4 animated fadeInLeft slow infinite"></i>
                                 </button>
                             </div>

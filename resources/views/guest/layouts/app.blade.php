@@ -32,8 +32,8 @@
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top z-depth-0 p-4 d-flex justify-content-between" id="header">
                 <div class="container">
                     <a class="navbar-brand" href="#">
-                        <img src="{{ asset('image/body_white.png') }}" style="width:70px;" id="image">
-                        <img src="{{ asset('image/body_gravity_black.png') }}" style="width:70px;" id="other_image" class="d-none">
+                        <img src="{{ asset('image/body_gravity.png') }}" style="width: 50px;" class="bg-white rounded-circle" id="image">
+                        <img src="{{ asset('image/body_gravity.png') }}" style="width:50px; border: 1px solid #000" id="other_image" class="d-none bg-white rounded-circle">
                     </a>
                     <ul class="navbar-nav d-flex align-items-center">
                         <li class="nav-item mr-2 home">

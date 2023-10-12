@@ -16,6 +16,7 @@ class PageController extends Controller
             ->where(function($query) use ($id) {
                 $query->where('trainer_id', $id);
             })
+            ->where('status', 1)
             ->orderBy('updated_at', 'DESC')
             ->limit(4)
             ->get();

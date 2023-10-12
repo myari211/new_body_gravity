@@ -26,7 +26,7 @@
 <div class="container">
     <div class="row mt-4 d-flex justify-content-center">
         <div class="col-lg-4 d-flex">
-            <img src="{{ asset('image/body_black.jpeg') }}" class="w-100">
+            <img src="{{ asset('image/body_gravity.png') }}" class="w-100">
         </div>
     </div>
     <div class="row d-flex justify-content-center">
@@ -38,7 +38,7 @@
     </div>
     <div class="row mt-4 mb-4">
         <div class="col-lg-12 d-flex justify-content-center">
-            <button type="button" class="btn btn-md rounded-pill blue-gradient z-depth-0 text-capitalize" data-toggle="collapse" data-target="#testimoni" aria-expanded="false" aria-controls="testimoni">
+            <button type="button" class="btn btn-lg rounded-pill dusty-grass-gradient text-white z-depth-0 text-capitalize" data-toggle="collapse" data-target="#testimoni" aria-expanded="false" aria-controls="testimoni" style="font-weight: 600">
                 Click Here
                 <i class="fas fa-arrow-right animated fadeInLeft infinite slow ml-3"></i>
             </button>

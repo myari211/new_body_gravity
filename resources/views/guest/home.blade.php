@@ -78,7 +78,7 @@
     <div class="row">
         <div class="col-lg-12">
             <div id="header_banner" class="parallax">
-                <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                <div class="w-100 d-flex justify-content-center align-items-center" style="height: 100vh !important;">
                     <div>
                         <div class="row">
                             <div class="col-lg-12 d-flex justify-content-center">
@@ -87,12 +87,12 @@
                         </div>
                         <div class="row mt-1">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-weight:400; font-size:21px;" class="animated fadeInDown delay-1s">Stabilize your body for a productive life</span>
+                                <span style="font-weight:400; font-size:21px;" class="animated fadeInDown delay-1s">It's time for recovery</span>
                             </div>
                         </div>
                         <div class="row mt-4">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <button type="button" class="btn blue-gradient btn-lg rounded-pill text-capitalize d-flex align-items-center animated fadeInDown delay-2s" style="font-weight:600" onclick="location.href='{{ route('about') }}';">
+                                <button type="button" class="btn dusty-grass-gradient text-white btn-lg rounded-pill text-capitalize d-flex align-items-center animated fadeInDown delay-2s" style="font-weight:600" onclick="location.href='{{ route('about') }}';">
                                     Take A Look <i class="fas fa-arrow-right ml-3 animated fadeInLeft infinite delay-3s"></i>
                                 </button>
                             </div>

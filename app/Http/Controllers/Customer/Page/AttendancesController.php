@@ -48,6 +48,7 @@ class AttendancesController extends Controller
         $package = DB::table('attendances')
             ->where(function($query) use ($id) {
                 $query->where('customer_id', $id);
+                $query->where('status', 1);
             })
             ->count();
 
@@ -55,7 +56,7 @@ class AttendancesController extends Controller
             ->where(function($query) use ($id) {
                 $query->where('customer_id', $id);
                 $query->where('updated_at', date('M'));
-                $query->where('status', 'done');
+                $query->where('status', '1');
                 // $query->where('updated_at', date('Y'));
             })
             ->count();

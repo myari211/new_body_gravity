@@ -203,6 +203,11 @@
                                 </a>
                               </li>
                               <li class="menu-item">
+                                <a href="{{ route('admin.customer.list') }}" class="menu-link">
+                                  <div data-i18n="Basic">Customer List</div>
+                                </a>
+                              </li>
+                              <li class="menu-item">
                                 <a href="{{ route('admin.customer_package') }}" class="menu-link">
                                   <div data-i18n="Basic">Customer Package</div>
                                 </a>
@@ -213,13 +218,30 @@
                           <li class="menu-header small text-uppercase"><span class="menu-header-text">Finance</span></li>
                           <!-- Cards -->
                           <li class="menu-item">
-                            <a href="cards-basic.html" class="menu-link">
+                            <a href="javascript:void(0);" class="menu-link menu-toggle">
                               <i class="menu-icon tf-icons bx bx-collection"></i>
                               <div data-i18n="Basic">Revenue</div>
                             </a>
-                        </li>
+                            <ul class="menu-sub">
+                                <li class="menu-item">
+                                  <a href="{{ url('/') }}/admin/revenue/dashboard" class="menu-link">
+                                    <div data-i18n="Account">Revenue Dashboard</div>
+                                  </a>
+                                </li>
+                                <li class="menu-item">
+                                  <a href="{{ route('trainer_performance') }}" class="menu-link">
+                                    <div data-i18n="Notifications">Trainer Performance</div>
+                                  </a>
+                                </li>
+                                <li class="menu-item">
+                                  <a href="{{ route('trainer_account') }}" class="menu-link">
+                                    <div data-i18n="Connections">Trainer Account</div>
+                                  </a>
+                                </li>
+                            </ul>
+                          </li>
                         </ul>
-                      </aside>
+                    </aside>
                 </div>
                 <div class="col-lg-10 pl-0">
                     <div class="row">

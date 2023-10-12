@@ -1,5 +1,6 @@
 <div class="d-none d-lg-block">
-    <footer class="page-footer font-small pt-4 pb-4" style="background-color:#DAE4DE;">
+    {{-- <footer class="page-footer font-small pt-4 pb-4" style="background-color:#DAE4DE;"> --}}
+    <footer class="page-footer font-small pt-4 pb-4">    
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-lg-2 d-flex justify-content-between">
@@ -123,13 +124,13 @@
             </div>
             <div class="row">
                 <div class='col-lg-1'>
-                    <img src="{{ asset('image/body_gravity_black.png') }}" style="width:70px;">
+                    <img src="{{ asset('image/body_gravity.png') }}" style="width:70px;">
                 </div>
                 <div class="col-lg-11 d-flex align-items-center">
                     <div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <small class="text-muted" style="font-weight:600; font-size:12px">&copy; {{ date('Y') }} Body Gragity | All rights reserved</small>
+                                <small class="text-muted" style="font-weight:600; font-size:12px">&copy; {{ date('Y') }} Body Gravity | All rights reserved</small>
                             </div>
                         </div>
                         <div class="row">
@@ -262,13 +263,13 @@
             </div>
             <div class="row d-flex align-items-center">
                 <div class='col-3'>
-                    <img src="{{ asset('image/body_gravity_black.png') }}" style="width:70px;">
+                    <img src="{{ asset('image/body_gravity.png') }}" style="width:70px;">
                 </div>
                 <div class="col-9 d-flex align-items-center">
                     <div>
                         <div class="row">
                             <div class="col-lg-12">
-                                <small class="text-muted" style="font-weight:600; font-size:12px">&copy; {{ date('Y') }} Body Gragity | All rights reserved</small>
+                                <small class="text-muted" style="font-weight:600; font-size:12px">&copy; {{ date('Y') }} Body Gravity | All rights reserved</small>
                             </div>
                         </div>
                         <div class="row">
