@@ -288,7 +288,7 @@
                         <div>
                             <div class="row">
                                 <div class="col-12 d-flex justify-content-center">
-                                    <img src="{{ asset('image/body_logo.png') }}" style="width:200px;">
+                                    <img src="{{ asset('image/body_gravity.png') }}" style="width:100px;" class="bg-white rounded-circle">
                                 </div>
                             </div>
                             <div class="row mt-4">
@@ -310,7 +310,7 @@
     <div class="container">
         <div class="row mt-5">
             <div class="col-12 d-flex justify-content-center">
-                <span class="text-muted" style="font-size:30px; font-weight:400">Advantage</span>
+                <span class="text-dark" style="font-size:30px; font-weight:400">Advantage</span>
             </div>
         </div>
         <div class="row">
@@ -403,7 +403,7 @@
                             </div>
                             <div class="row mt-4">
                                 <div class="col-12 d-flex justify-content-center">
-                                    <button type="button" class="btn btn-md rounded-pill blue-gradient" onclick="location.href='{{ route('program') }}';">
+                                    <button type="button" class="btn btn-md rounded-pill dusty-grass-gradient text-capitalize text-white" onclick="location.href='{{ route('program') }}';">
                                         Take A Class <i class="fas fa-arrow-right animated fadeInLeft slow infinite ml-2"></i>
                                     </button>
                                 </div>

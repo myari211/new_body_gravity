@@ -107,7 +107,7 @@
     <div class="row">
         <div class="col-12">
             <div id="header_banner_mobile">
-                <div class="w-100 h-100 d-flex justify-content-center align-items-center">
+                <div class="w-100 d-flex justify-content-center align-items-center" style="height: 100vh">
                     <div>
                         <div class="row">
                             <div class="col-12 d-flex justify-content-center">
@@ -116,12 +116,12 @@
                         </div>
                         <div class="row">
                             <div class="col-12 d-flex justify-content-center">
-                                <span style="font-weight:500" class="wow animated fadeInDown delay-1s">Stabilize your body for a productive life</span>
+                                <span style="font-weight:500" class="wow animated fadeInDown delay-1s">It's time for recovery</span>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-12 d-flex justify-content-center">
-                                <button type="button" class="btn btn-md blue-gradient rounded-pill wow animated fadeInDown delay-2s text-capitalize" onclick="location.href='{{ route('about') }}';">
+                                <button type="button" class="btn btn-md dusty-grass-gradient text-white rounded-pill wow animated fadeInDown delay-2s text-capitalize" onclick="location.href='{{ route('about') }}';">
                                     Take A Look
                                     <i class="fas fa-arrow-right animated fadeInLeft infinite slow ml-4"></i>
                                 </button>

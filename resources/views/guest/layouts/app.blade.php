@@ -126,11 +126,11 @@
             </div>
         </div>
         <div class="d-block d-lg-none">
-            <nav class="navbar navbar-expand-lg navbar-dark fixed-top z-depth-0" id="header_mobile">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top z-depth-0 bg-white" id="header_mobile">
                 <div class="container">
                     <a class="navbar-brand" href="#">
-                        <img src="{{ asset('image/body_white.png') }}" style="width:80px;" id="image">
-                        <img src="{{ asset('image/body_gravity_black.png') }}" id="other_image" class="d-none">                        
+                        <img src="{{ asset('image/body_gravity.png') }}" style="width:40px;" id="image" class="bg-white rounded-circle">
+                        <img src="{{ asset('image/body_gravity.png') }}" id="other_image" class="d-none">                        
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -152,11 +152,11 @@
                             <li class="nav-item contact">
                                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                             </li>
-                            <li class="nav-item">
+                            {{-- <li class="nav-item">
                                 <button type="button" class="btn btn-md rounded btn-outline-white" onclick='location.href="{{url("/login") }}";'>
                                     Member
                                 </button>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                 </div>
@@ -203,7 +203,7 @@
                     $('#header').removeClass('p-4');
                     $('#header').addClass('pr-4 pl-4 pt-2 pb-2');
                     $('.menu').addClass('text-dark');
-                    $('#header_mobile').addClass('black');
+                    $('#header_mobile').addClass('bg-white');
                     $('#image').addClass('d-none');
                     $('#other_image').removeClass('d-none');
                     $('.active').addClass('active_section');
