@@ -152,6 +152,9 @@
                             <li class="nav-item contact">
                                 <a class="nav-link" href="{{ route('contact') }}">Contact Us</a>
                             </li>
+                            <li class="nav-item login">
+                                <a class="nav-link" href="{{ route('login') }}">Login</a>
+                            </li>
                             {{-- <li class="nav-item">
                                 <button type="button" class="btn btn-md rounded btn-outline-white" onclick='location.href="{{url("/login") }}";'>
                                     Member
