@@ -73,7 +73,7 @@ Route::middleware('role:admin')->group(function() {
 
         //trainer
         Route::get('/admin/api/trainer', 'Admin\Api\TrainerController@trainer')->name('admin.api.trainer');
-        Route::post('/admin/api/trainer/create', 'Admin\Api\TrainerController@trainerCreate')->name('admin.api.trainer.create');
+        Route::post('/admin/api/trainer/create', 'Admin\Api\TrainerController@trainerCreate')->name('admin_api_trainer_create');
     });
 
 //trainer

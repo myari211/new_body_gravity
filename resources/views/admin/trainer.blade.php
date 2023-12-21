@@ -222,16 +222,18 @@
             "password_confirmation": $("#retype_password").val(),
         }
 
+        const createUrl = "{{ route('admin_api_trainer_create') }}";
+
         $.ajax({
             type: 'POST',
             dataType: 'json',
-            url: '/admin/api/trainer/create',
+            url: createUrl,
             headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content') },
             data: formData,
             success:function(data) {
                 $('#createTrainer').modal('hide');
                 status(data.icon, data.message);
-                // initial();
+                initial();
             }
         });
     }
