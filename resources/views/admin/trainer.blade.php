@@ -203,10 +203,11 @@
     })
 
     const initial = () => {
+        const url = "{{ route('admin.api.trainer') }}"
         $.ajax({
             type: 'GET',
             dataType: 'json',
-            url: '/admin/api/trainer',
+            url: url,
             success:function(data) {
                 $("#trainer").html(data.trainer);
             }
