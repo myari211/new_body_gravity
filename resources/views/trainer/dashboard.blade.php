@@ -282,7 +282,7 @@
                         </div>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="/trainer/create/customer">
+                        <form method="post" action="{{ route('trainer.create_customer') }}">
                             @csrf
                             <div class="row">
                                 <div class="col-12">
