@@ -95,6 +95,7 @@
         background-position:center center;
     }
 </style>
+
 <div class="d-none d-lg-block">
     <div class="row">
         <div class="col-lg-12">
@@ -329,7 +330,7 @@
                         <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Strength and Tone</span>
+                                    <span class="text-white wow fadeIn text-center" data-wow-delay="1s" style="font-size:30px;">Strength and Tone</span>
                                 </div>
                             </div>
                         </div>
@@ -345,7 +346,7 @@
                             <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                                 <div class="row">
                                     <div class="col-lg-12">
-                                        <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Agile and Pain-free</span>
+                                        <span class="text-white wow fadeIn text-center" data-wow-delay="1s" style="font-size:30px;">Agile and Pain-free</span>
                                     </div>
                                 </div>
                             </div>
@@ -361,7 +362,7 @@
                         <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Balance and Flexible</span>
+                                    <span class="text-white wow fadeIn text-center" data-wow-delay="1s" style="font-size:30px;">Balance and Flexible</span>
                                 </div>
                             </div>
                         </div>
@@ -376,7 +377,7 @@
                         <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <span class="text-white wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Perfect Posture</span>
+                                    <span class="text-white text-center wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Perfect Posture</span>
                                 </div>
                             </div>
                         </div>
