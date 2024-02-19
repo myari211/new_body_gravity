@@ -58,37 +58,41 @@
     #program_1 {
         width:100%;
         background-size:cover;
-        min-height:300px;
+        min-height:450px;
         background-image:
-        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/strength.jpg') }});
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.171) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/STRENGTH.jpeg') }});
+        background-position:center center;
     }
 
     #program_2 {
         width:100%;
         background-size:cover;
-        min-height:300px;
+        min-height:450px;
         background-image:
-        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/no_pain.jpg') }});
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.171) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/PAINFREE.jpeg') }});
+        background-position:center center;
     }
 
     #program_3 {
         width:100%;
         background-size:cover;
-        min-height:300px;
+        min-height:450px;
         background-image:
-        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/stronger_image.jpg') }});
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.171) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/BALANCE.jpeg') }});
+        background-position:center center;
     }
 
     #program_4 {
         width:100%;
         background-size:cover;
-        min-height:300px;
+        min-height:450px;
         background-image:
-        linear-gradient(55.8deg,rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/posture.jpeg') }});
+        linear-gradient(55.8deg,rgba(0, 0, 0, 0.171) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/PERFECTPOSTURE.jpeg') }});
+        background-position:center center;
     }
 </style>
 <div class="d-none d-lg-block">

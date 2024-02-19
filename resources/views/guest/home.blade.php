@@ -14,7 +14,10 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/home2.jpg') }});
+        url({{ asset('image/Background.jpeg') }});
+        background-position:center;
+        display: flex;
+        align-items:center;
     }
 
     #header_banner_mobile { 
@@ -25,7 +28,9 @@
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/home2.jpg') }});
+        url({{ asset('image/Background.jpeg') }});
+        background-position:center;
+        align-items:center;
     }
 
     #program_1 {
@@ -87,7 +92,7 @@
                         </div>
                         <div class="row mt-1">
                             <div class="col-lg-12 d-flex justify-content-center">
-                                <span style="font-weight:400; font-size:21px;" class="animated fadeInDown delay-1s">It's time for recovery</span>
+                                <span style="font-weight:400; font-size:21px;" class="animated fadeInDown delay-1s">Posture Perfected, Confident Elevated</span>
                             </div>
                         </div>
                         <div class="row mt-4">
@@ -116,7 +121,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12 d-flex justify-content-center">
-                                <span style="font-weight:500" class="wow animated fadeInDown delay-1s">It's time for recovery</span>
+                                <span style="font-weight:500" class="wow animated fadeInDown delay-1s">Posture Perfected, Confident Elevated</span>
                             </div>
                         </div>
                         <div class="row mt-3">

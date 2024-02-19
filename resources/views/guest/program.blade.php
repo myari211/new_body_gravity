@@ -16,11 +16,12 @@
         width: 100%;
         min-height: 800px;
         background-size:cover;
-        /* background-attachment: fixed; */
+        background-attachment: fixed;
         color:white;
         background-image:
         linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/product_1.jpg') }});
+        url({{ asset('image/BODYSHAPING.jpeg') }});
+        background-position:center;
     }
 
     #program-1 {
@@ -29,8 +30,9 @@
         background-size:cover;
         color: white;
         background-image:
-        linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/body_shaping.jpg') }});
+        linear-gradient(55.8deg, rgba(0,0,0, 0.171) 99.53%, rgba(0,0,0, 0.171) 100%),
+        url({{ asset('image/BODYSHAPING.jpeg') }});
+        /* background-position:center center; */
     }
     #program-2 {
         width: 100%;
@@ -38,8 +40,9 @@
         background-size:cover;
         color: white;
         background-image:
-        linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/pain_management.jpg') }});
+        linear-gradient(55.8deg, rgba(0,0,0, 0.171) 99.53%, rgba(0,0,0, 1) 100%),
+        url({{ asset('image/PAINMANAGEMENT.jpeg') }});
+        background-position:center center;
     }
     #program-3 {
         width: 100%;
@@ -47,8 +50,9 @@
         background-size:cover;
         color: white;
         background-image:
-        linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/product_3.jpg') }});
+        linear-gradient(55.8deg, rgba(0,0,0, 0.171) 99.53%, rgba(0,0,0, 1) 100%),
+        url({{ asset('image/KIDS.jpeg') }});
+        background-position:center center;
     }
     #program-4 {
         width: 100%;
@@ -56,8 +60,9 @@
         background-size:cover;
         color: white;
         background-image:
-        linear-gradient(55.8deg, rgba(0,0,0, 0.75) 99.53%, rgba(0,0,0, 1) 100%),
-        url({{ asset('image/product_4.jpg') }});
+        linear-gradient(55.8deg, rgba(0,0,0, 0.171) 99.53%, rgba(0,0,0, 1) 100%),
+        url({{ asset('image/SENIOR.jpeg') }});
+        background-position:center center;
     }
 
     #program_5 {
@@ -65,8 +70,8 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/body_shaping.jpg') }});
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.400) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/BODYSHAPING.jpeg') }});
     }
 
     #program_6 {
@@ -74,8 +79,8 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/pain_management.jpg') }});
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.400) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/PAINFREE.jpeg') }});
     }
 
     #program_7 {
@@ -83,8 +88,8 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/product_3.jpg') }});
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.400) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/KIDS.jpeg') }});
     }
 
     #program_8 {
@@ -92,8 +97,8 @@
         background-size:cover;
         min-height:300px;
         background-image:
-        linear-gradient(55.8deg, rgba(0, 0, 0, 0.726) 100%, rgba(0,0,0, 0) 100%),
-        url({{ asset('image/product_4.jpg') }});
+        linear-gradient(55.8deg, rgba(0, 0, 0, 0.400) 100%, rgba(0,0,0, 0) 100%),
+        url({{ asset('image/SENIOR.jpeg') }});
     }
 </style>
 <div class="d-none d-lg-block">
@@ -113,7 +118,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-3 p-0 wow fadeInDownBig">
+        <div class="col-lg-6 p-0 wow fadeInDownBig">
             <div id="program-1">
                 <div class="w-100 h-100 p-4">
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center wow fadeIn" data-wow-delay="1s" style="border:1px solid #fff">
@@ -143,7 +148,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 p-0 wow fadeInDownBig" data-wow-delay="0.4s">
+        <div class="col-lg-6 p-0 wow fadeInDownBig" data-wow-delay="0.4s">
             <div id="program-2">
                 <div class="w-100 h-100 p-4">
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center wow fadeIn" data-wow-delay="1s" style="border:1px solid #fff">
@@ -173,7 +178,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 p-0  wow fadeInDownBig" data-wow-delay="0.6s">
+    </div>
+    <div class="row">
+        <div class="col-lg-6 p-0  wow fadeInDownBig" data-wow-delay="0.6s">
             <div id="program-3">
                 <div class="w-100 h-100 p-4">
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center wow fadeIn" data-wow-delay="1s" style="border:1px solid #fff">
@@ -203,7 +210,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-3 p-0 wow fadeInDownBig" data-wow-delay="0.8s">
+        <div class="col-lg-6 p-0 wow fadeInDownBig" data-wow-delay="0.8s">
             <div id="program-4">
                 <div class="w-100 h-100 p-4">
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center wow fadeIn" data-wow-delay="1s" style="border:1px solid #fff">
@@ -255,8 +262,8 @@
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row mt-4">
+    {{-- <div class="container"> --}}
+        <div class="row">
             <div class="col-lg-12">
                 <div class="card rounded-0 z-depth-0 border-0 wow fadeInDown">
                     <div class="card-body p-0">
@@ -293,7 +300,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="card rounded-0 z-depth-0 border-0 wow fadeInDown">
                     <div class="card-body p-0">
@@ -330,7 +337,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="card rounded-0 z-depth-0 border-0 wow fadeInDown">
                     <div class="card-body p-0">
@@ -367,7 +374,7 @@
                 </div>
             </div>
         </div>
-        <div class="row mt-3">
+        <div class="row">
             <div class="col-lg-12">
                 <div class="card rounded-0 z-depth-0 border-0 wow fadeInDown">
                     <div class="card-body p-0">
@@ -404,7 +411,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    {{-- </div> --}}
 </div>
 
 
