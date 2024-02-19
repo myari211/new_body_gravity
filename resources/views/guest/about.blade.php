@@ -329,7 +329,7 @@
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center p-4">
                         <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 d-flex justify-content-center">
                                     <span class="text-white wow fadeIn text-center" data-wow-delay="1s" style="font-size:30px;">Strength and Tone</span>
                                 </div>
                             </div>
@@ -345,7 +345,7 @@
                         <div class="w-100 h-100 d-flex align-items-center justify-content-center p-4">
                             <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                                 <div class="row">
-                                    <div class="col-lg-12">
+                                    <div class="col-lg-12 d-flex justify-content-center">
                                         <span class="text-white wow fadeIn text-center" data-wow-delay="1s" style="font-size:30px;">Agile and Pain-free</span>
                                     </div>
                                 </div>
@@ -361,7 +361,7 @@
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center p-4">
                         <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 d-flex justify-content-center">
                                     <span class="text-white wow fadeIn text-center" data-wow-delay="1s" style="font-size:30px;">Balance and Flexible</span>
                                 </div>
                             </div>
@@ -376,7 +376,7 @@
                     <div class="w-100 h-100 d-flex align-items-center justify-content-center p-4">
                         <div class="border d-flex align-items-center justify-content-center w-100 h-100 wow fadeIn" data-wow-delay="1s">
                             <div class="row">
-                                <div class="col-lg-12">
+                                <div class="col-lg-12 d-flex justify-content-center">
                                     <span class="text-white text-center wow fadeIn" data-wow-delay="1s" style="font-size:30px;">Perfect Posture</span>
                                 </div>
                             </div>
